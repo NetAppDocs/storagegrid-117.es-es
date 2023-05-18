@@ -1,0 +1,18 @@
+---
+permalink: maintain/site-decommissioning.html 
+sidebar: sidebar 
+keywords: site decommission 
+summary: Es posible que deba eliminar un sitio de centro de datos del sistema StorageGRID. Para quitar un sitio, debe retirarlo. 
+---
+= Retirada del sitio: Información general
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible que deba eliminar un sitio de centro de datos del sistema StorageGRID. Para quitar un sitio, debe retirarlo.
+
+El diagrama de flujo muestra los pasos de alto nivel para retirar un sitio.
+
+image::../media/overview_decommission_site.png[Resumen: Retirar sitio]

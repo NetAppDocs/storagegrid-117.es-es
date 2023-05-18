@@ -1,0 +1,150 @@
+---
+permalink: installconfig/viewing-boot-up-codes-for-sgf6112.html 
+sidebar: sidebar 
+keywords: storagegrid, sgf6112, sg6100, boot codes, boot-up codes, start codes, codes, boot, start, bmc 
+summary: Cuando se enciende el aparato, el BMC registra una serie de códigos de inicio. Puede ver estos códigos en una consola gráfica que está conectada al puerto de gestión del BMC. 
+---
+= Ver códigos de arranque (SGF6112)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Cuando se enciende el aparato, el BMC registra una serie de códigos de inicio. Puede ver estos códigos en una consola gráfica que está conectada al puerto de gestión del BMC.
+
+.Antes de empezar
+* Sabe cómo acceder al panel de BMC.
+* Si desea utilizar Serial-Over-LAN (sol), tendrá experiencia utilizando las aplicaciones de la consola sol de IPMI.
+
+
+.Pasos
+. Seleccione uno de los siguientes métodos para ver los códigos de arranque del controlador del dispositivo y recopilar el equipo necesario.
++
+[cols="1a,2a"]
+|===
+| Método | Equipo necesario 
+
+
+ a| 
+Consola VGA
+ a| 
+** Monitor compatible con VGA
+** Cable VGA
+
+
+
+
+ a| 
+KVM
+ a| 
+** Cable RJ-45
+
+
+
+
+ a| 
+Puerto serie
+ a| 
+** Cable serie DB-9
+** Terminal serie virtual
+
+
+
+
+ a| 
+SOL
+ a| 
+** Terminal serie virtual
+
+
+|===
+. Si está utilizando una consola VGA, siga estos pasos:
++
+.. Conecte un monitor compatible con VGA al puerto VGA de la parte posterior del dispositivo.
+.. Ver los códigos mostrados en el monitor.
+
+
+. Si está utilizando BMC KVM, realice estos pasos:
++
+.. Conéctese al puerto de gestión BMC e inicie sesión en la interfaz web de BMC.
+.. Seleccione *Control remoto*.
+.. Inicie el KVM.
+.. Ver los códigos en el monitor virtual.
+
+
+. Si utiliza un puerto serie y un terminal, realice los siguientes pasos:
++
+.. Conéctese al puerto USB serie de la parte posterior del aparato.
+.. Utilice la configuración `115200 8-N-1`.
+.. Ver los códigos impresos en el terminal de serie.
+
+
+. Si va a utilizar sol, realice los siguientes pasos:
++
+.. Conéctese a IPMI sol mediante la dirección IP del BMC y las credenciales de inicio de sesión.
++
+`ipmitool -I lanplus -H _BMC_Port_IP_ -U root -P _Password_ sol activate`
+
+.. Ver los códigos en el terminal de serie virtual.
+
+
+. Utilice la tabla para buscar los códigos del aparato.
++
+[cols="1a,3a"]
+|===
+| Codificación | Lo que indica 
+
+
+ a| 
+HOLA
+ a| 
+Se ha iniciado la secuencia de comandos de inicio maestra.
+
+
+
+ a| 
+HP
+ a| 
+El sistema comprueba si es necesario actualizar el firmware de la tarjeta de interfaz de red (NIC).
+
+
+
+ a| 
+RB
+ a| 
+El sistema se reinicia después de aplicar las actualizaciones de firmware.
+
+
+
+ a| 
+P F
+ a| 
+Se completaron las comprobaciones de actualización del firmware del subsistema de hardware. Se están iniciando los servicios de comunicación entre controladoras.
+
+
+
+ a| 
+HC
+ a| 
+El sistema comprueba si hay datos de instalación de StorageGRID existentes.
+
+
+
+ a| 
+HO
+ a| 
+El dispositivo StorageGRID se está ejecutando.
+
+
+
+ a| 
+HA
+ a| 
+StorageGRID está ejecutando.
+
+|===
+
+
+.Información relacionada
+link:accessing-bmc-interface.html["Acceda a la interfaz de BMC"]

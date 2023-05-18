@@ -1,0 +1,35 @@
+---
+permalink: upgrade/impact-of-upgrade-on-groups-and-user-accounts.html 
+sidebar: sidebar 
+keywords: upgrade, permissions 
+summary: Debe comprender el impacto de la actualización de StorageGRID de modo que pueda actualizar los grupos y las cuentas de usuario según corresponda una vez completada la actualización. 
+---
+= Impacto de una actualización en grupos y cuentas de usuario
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe comprender el impacto de la actualización de StorageGRID de modo que pueda actualizar los grupos y las cuentas de usuario según corresponda una vez completada la actualización.
+
+
+
+== Cambios en los permisos y opciones de grupo
+
+Después de actualizar a StorageGRID 11,7, asigne opcionalmente el siguiente permiso nuevo a los grupos de usuarios de inquilinos.
+
+[cols="1a,2a"]
+|===
+| Permiso | Descripción 
+
+
+ a| 
+Administrador de inquilinos > Gestionar objetos con la consola S3
+ a| 
+Cuando se combina con el permiso Gestionar todos los depósitos, este permiso permite a los usuarios acceder a link:../tenant/use-s3-console.html["Consola experimental S3"] En la página Buckets.
+
+Los usuarios que tienen este permiso pero que no tienen el permiso Administrar todos los depósitos pueden navegar directamente a la Consola Experimental S3.
+
+|===
+Consulte link:../tenant/tenant-management-permissions.html["Permisos de gestión de inquilinos"].

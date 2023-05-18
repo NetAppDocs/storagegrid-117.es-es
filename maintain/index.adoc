@@ -1,0 +1,45 @@
+---
+permalink: maintain/index.html 
+sidebar: sidebar 
+keywords: maintain overview, maintenance overview, about maintain, about maintenance 
+summary: Siga estas instrucciones para mantener su sistema StorageGRID y recuperarse de fallos. 
+---
+= Recuperación y mantenimiento: Descripción general
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Siga estas instrucciones para mantener su sistema StorageGRID y recuperarse de fallos.
+
+
+
+== Acerca de estas instrucciones
+
+Estas instrucciones describen cómo aplicar una revisión de software, recuperar nodos de cuadrícula, recuperar un sitio fallido, retirar nodos de red o un sitio entero, realizar el mantenimiento de la red, realizar procedimientos de mantenimiento de nivel de host y middleware y realizar procedimientos de nodo de red.
+
+
+NOTE: En estas instrucciones, "'Linux'" se refiere a una implementación de Red Hat® Enterprise Linux®, Ubuntu®, CentOS o Debian®. Utilice la https://["Herramienta de matriz de interoperabilidad de NetApp"^] para obtener una lista de las versiones compatibles.
+
+
+
+== Antes de empezar
+
+* Debe conocer en gran medida el sistema StorageGRID.
+* Ha revisado la topología del sistema StorageGRID y comprende la configuración de grid.
+* Usted entiende que usted debe seguir todas las instrucciones exactamente y tener en cuenta todas las advertencias.
+* Usted entiende que los procedimientos de mantenimiento no descritos no son compatibles o requieren un acuerdo de servicios.
+
+
+
+
+== Procedimientos de mantenimiento para aparatos
+
+Para conocer los procedimientos de hardware, consulte las instrucciones de mantenimiento de su dispositivo StorageGRID.
+
+* link:../sg6100/index.html["Mantenimiento del dispositivo SGF6112"]
+* link:../sg100-1000/index.html["Mantenimiento de los dispositivos SG100 y SG1000"]
+* link:../sg6000/index.html["Mantenimiento del dispositivo SG6000"]
+* link:../sg5700/index.html["Mantenga el dispositivo SG5700"]
+

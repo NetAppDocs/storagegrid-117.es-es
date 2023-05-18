@@ -1,0 +1,24 @@
+---
+permalink: monitor/index.html 
+sidebar: sidebar 
+keywords: monitor StorageGRID 
+summary: Use estas instrucciones para supervisar un sistema StorageGRID y para evaluar y resolver los problemas que puedan producirse. 
+---
+= Supervisar un sistema StorageGRID: Descripción general
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Utilice estas instrucciones para supervisar un sistema StorageGRID y evaluar los problemas que puedan producirse.
+
+Estas instrucciones describen cómo utilizar Grid Manager para supervisar un sistema StorageGRID. Aprenderá qué información debe supervisar con regularidad, cómo gestionar alertas y alarmas heredadas, cómo utilizar SNMP para realizar la supervisión y cómo obtener datos de StorageGRID adicionales, incluidos métricas y diagnósticos.
+
+.Antes de empezar
+* Debe iniciar sesión en Grid Manager mediante un link:../admin/web-browser-requirements.html["navegador web compatible"].
+* Debe tener link:../admin/admin-group-permissions.html["permisos de acceso específicos"].
+
+
+
+NOTE: Para cambiar las unidades de los valores de almacenamiento que se muestran en Grid Manager, seleccione el menú desplegable de usuario en la parte superior derecha del Grid Manager y, a continuación, seleccione *Preferencias de usuario*.

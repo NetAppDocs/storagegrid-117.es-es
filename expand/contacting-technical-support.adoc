@@ -1,0 +1,61 @@
+---
+permalink: expand/contacting-technical-support.html 
+sidebar: sidebar 
+keywords: contact technical support 
+summary: Si se producen errores durante el proceso de expansión de cuadrícula que no puede resolver o si una tarea de cuadrícula falla, póngase en contacto con el soporte técnico. 
+---
+= Póngase en contacto con el soporte técnico
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Si se producen errores durante el proceso de expansión de cuadrícula que no puede resolver o si una tarea de cuadrícula falla, póngase en contacto con el soporte técnico.
+
+.Acerca de esta tarea
+Cuando se pone en contacto con el soporte técnico, se deben proporcionar los archivos de registro necesarios para ayudar a solucionar los errores que se encuentran.
+
+.Pasos
+. Conéctese al nodo de ampliación que ha experimentado errores:
++
+.. Introduzca el siguiente comando:``ssh -p 8022 admin@_grid_node_IP_``
++
+
+NOTE: El puerto 8022 es el puerto SSH del sistema operativo base, mientras que el puerto 22 es el puerto SSH del motor del contenedor que ejecuta StorageGRID.
+
+.. Introduzca la contraseña que aparece en `Passwords.txt` archivo.
+.. Introduzca el siguiente comando para cambiar a la raíz: `su -`
+.. Introduzca la contraseña que aparece en `Passwords.txt` archivo.
+
+
++
+Una vez que haya iniciado sesión como root, el símbolo del sistema cambia de `$` para `#`.
+
+. Según la etapa en la que se haya alcanzado la instalación, recupere cualquiera de los siguientes registros disponibles en el nodo de grid:
++
+[cols="1a,2a"]
+|===
+| Plataforma | Registros 
+
+
+ a| 
+VMware
+ a| 
+** `/var/log/daemon.log`
+** `/var/log/storagegrid/daemon.log`
+** `/var/log/storagegrid/nodes/<node-name>.log`
+
+
+
+
+ a| 
+Linux
+ a| 
+** `/var/log/storagegrid/daemon.log`
+** `/etc/storagegrid/nodes/<node-name>.conf` (para cada nodo con fallos)
+** `/var/log/storagegrid/nodes/<node-name>.log` (para cada nodo con errores; es posible que no exista)
+
+
+|===
+

@@ -1,0 +1,54 @@
+---
+permalink: s3/accessing-and-reviewing-audit-logs.html 
+sidebar: sidebar 
+keywords: access audit logs, review audit logs, view audit logs 
+summary: Los servicios de StorageGRID generan los mensajes de auditoría y se almacenan en archivos de registro de texto. Los mensajes de auditoría específicos de API de los registros de auditoría ofrecen datos críticos de seguridad, operación y supervisión del rendimiento que pueden ayudar a evaluar el estado del sistema. 
+---
+= Acceder y revisar registros de auditoría
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Los servicios de StorageGRID generan los mensajes de auditoría y se almacenan en archivos de registro de texto. Los mensajes de auditoría específicos de API de los registros de auditoría ofrecen datos críticos de seguridad, operación y supervisión del rendimiento que pueden ayudar a evaluar el estado del sistema.
+
+.Antes de empezar
+* Tiene permisos de acceso específicos.
+* Usted tiene la `Passwords.txt` archivo.
+* Conoce la dirección IP de un nodo de administrador.
+
+
+.Acerca de esta tarea
+Se denomina el archivo de registro de auditoría activo `audit.log`, Y se almacena en los nodos Admin.
+
+Una vez al día, se guarda el archivo audit.log activo, y otro nuevo `audit.log` se ha iniciado el archivo. El nombre del archivo guardado indica cuándo se guardó, en el formato `_yyyy-mm-dd.txt_`.
+
+Después de un día, el archivo guardado se comprime y cambia su nombre, en el formato `_yyyy-mm-dd.txt.gz_`, que conserva la fecha original.
+
+En este ejemplo se muestra el activo `audit.log` archivo, el archivo del día anterior (`2018-04-15.txt`), y el archivo comprimido del día anterior (`2018-04-14.txt.gz`).
+
+[listing]
+----
+audit.log
+2018-04-15.txt
+2018-04-14.txt.gz
+----
+.Pasos
+. Inicie sesión en un nodo de administrador:
++
+.. Introduzca el siguiente comando: `ssh admin@_primary_Admin_Node_IP_`
+.. Introduzca la contraseña que aparece en `Passwords.txt` archivo.
+.. Introduzca el siguiente comando para cambiar a la raíz: `su -`
+.. Introduzca la contraseña que aparece en `Passwords.txt` archivo.
++
+Cuando ha iniciado sesión como root, el símbolo del sistema cambia de `$` para `#`.
+
+
+
+. Vaya al directorio que contiene los archivos del registro de auditoría:
++
+`cd /var/local/audit/export`
+
+. Ver el archivo de registro de auditoría actual o guardado, según sea necesario.
+

@@ -1,0 +1,76 @@
+---
+permalink: maintain/step-4-remove-ilm-references.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, remove ilm reference 
+summary: 'En el paso 4 \(Eliminar referencias de ILM\) del asistente para el sitio de desmisión, puede quitar la directiva propuesta si existe y eliminar o editar las reglas de ILM no utilizadas que aún hacen referencia al sitio.' 
+---
+= Paso 4: Eliminar referencias de ILM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+En el paso 4 (Eliminar referencias de ILM) del asistente del sitio de desmisión, puede quitar la directiva propuesta si existe y eliminar o editar las reglas de ILM que todavía no se utilicen en el sitio.
+
+.Acerca de esta tarea
+Se le impide iniciar el procedimiento de retirada de instalaciones en estos casos:
+
+* Existe una política de ILM propuesta. Si tiene una política propuesta, debe eliminarla.
+* Cualquier regla de ILM se refiere al sitio, incluso si esa regla no se usa en ninguna política de ILM. Debe eliminar o editar todas las reglas que hacen referencia al sitio.
+
+
+.Pasos
+. Si aparece una directiva propuesta, elimínela.
++
+.. Seleccione *Eliminar directiva propuesta*.
+.. Seleccione *Aceptar* en el cuadro de diálogo de confirmación.
+
+
+. Determine si alguna regla de ILM sin usar se refiere al sitio.
++
+image::../media/decommission_site_step_4_ilm_rules.png[Reglas de gestión de la vida útil del paso 4 del sitio de retirada]
+
++
+Las reglas de ILM que se enumeran siguen haciendo referencia al sitio pero no se usan en ninguna política. En el ejemplo:
+
++
+** La regla *Hacer 2 copias* utiliza el grupo de almacenamiento *Todos los nodos de almacenamiento* (StorageGRID 11,6 y anteriores), que utiliza el sitio *Todos los sitios*.
+** La regla *3 copias no utilizadas para el inquilino S3* se refiere a la piscina de almacenamiento *Raleigh*.
+** La norma *2 Copy 2 no utilizada para objetos más pequeños* se refiere a la piscina de almacenamiento *Raleigh*.
+** Las reglas de *EC objetos más grandes* no utilizadas utilizan el sitio de Raleigh en el perfil de codificación de borrado de *All 3 Sites*.
+** Si no aparece ninguna regla de ILM, seleccione *Siguiente* para ir a. link:step-5-resolve-node-conflicts.html["Paso 5: Resolver conflictos de nodos (e iniciar retirada)"].
++
+
+NOTE: Cuando StorageGRID decomisiona el sitio, desactivará automáticamente todos los perfiles de código de borrado no utilizados que se refieran al sitio, y eliminará automáticamente los grupos de almacenamiento no utilizados que hagan referencia al sitio. El pool de almacenamiento Todos los nodos de almacenamiento (StorageGRID 11,6 y anteriores) se elimina porque utiliza el sitio Todos los sitios.
+
+** Si aparece una o varias reglas de ILM, vaya al paso siguiente.
+
+
+. Edite o elimine cada regla no utilizada:
++
+** Para editar una regla, vaya a la página reglas de ILM y actualice todas las ubicaciones que utilicen un perfil de código de borrado o un pool de almacenamiento que haga referencia al sitio. A continuación, vuelva a *Paso 4 (Eliminar referencias de ILM)*.
++
+
+NOTE: Para obtener más detalles, consulte las instrucciones para gestionar objetos con gestión del ciclo de vida de la información.
+
+** Para eliminar una regla, seleccione el icono de papelera image:../media/icon_trash_can.png["CAN de papelera de iconos"] Y seleccione *OK*.
++
+
+IMPORTANT: Debe eliminar la regla *Hacer 2 copias* antes de poder retirar un sitio.
+
+
+
+. Confirme que no existe ninguna política de ILM propuesta, que no haya reglas de ILM sin usar consulte el sitio y que el botón *Siguiente* esté activado.
++
+image::../media/decommission_site_step_4_no_policy_or_rules.png[Retirada del emplazamiento Paso 4 no hay normas ni políticas]
+
+. Seleccione *Siguiente*.
++
+
+NOTE: Los pools de almacenamiento restantes y los perfiles de codificación de borrado que hagan referencia al sitio dejarán de ser válidos cuando se elimine el sitio. Cuando StorageGRID decomisiona el sitio, desactivará automáticamente todos los perfiles de código de borrado no utilizados que se refieran al sitio, y eliminará automáticamente los grupos de almacenamiento no utilizados que hagan referencia al sitio. El pool de almacenamiento Todos los nodos de almacenamiento (StorageGRID 11,6 y anteriores) se elimina porque utiliza el sitio Todos los sitios.
+
++
+Aparece el paso 5 (resolver conflictos de nodos).
+
+

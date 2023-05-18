@@ -1,0 +1,75 @@
+---
+permalink: sg6100/powering-on-sgf6112-and-verifying-operation.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6100, sgf6112,storage node, storage appliance, power on, turn on, start 
+summary: Encienda el aparato después de realizar el mantenimiento. 
+---
+= Encienda el SGF6112 y verifique el funcionamiento
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Encienda la controladora después de completar el mantenimiento.
+
+.Antes de empezar
+* Instaló la controladora en un armario o rack y conecta los cables de datos y alimentación.
++
+link:reinstalling-sgf6112-into-cabinet-or-rack.html["Vuelva a instalar el controlador SGF6112 en el armario o el rack"]
+
+* Localizó físicamente la controladora en el centro de datos.
++
+link:locating-sgf6112-in-data-center.html["Localice el dispositivo SGF6112 en el centro de datos"]
+
+
+
+.Pasos
+. Encienda el aparato.
++
+Es posible que tenga que retirar el bisel para acceder al interruptor de encendido; si es así, recuerde volver a instalarlo después.
+
+. Supervise los LED del controlador y los códigos de arranque mediante uno de los métodos siguientes:
++
+** Pulse el interruptor de alimentación de la parte frontal del controlador.
+** Use la interfaz del BMC del controlador:
++
+... Acceda a la interfaz del BMC del controlador.
++
+link:../installconfig/accessing-bmc-interface.html["Acceda a la interfaz de BMC"]
+
+... Seleccione *Control de alimentación*.
+... Selecciona *Encendido* y luego selecciona *Realizar acción*.
++
+image::../media/sgf6112_power_on_from_bmc.png[Encienda el dispositivo de BMC]
+
++
+Utilice la interfaz de BMC para supervisar el estado de inicio.
+
+
+
+
+
+. Confirme que el controlador del dispositivo se muestra en Grid Manager y sin alertas.
++
+La controladora puede tardar hasta 20 minutos en mostrarse en Grid Manager.
+
++
+
+CAUTION: No desconecte otro nodo del dispositivo a menos que este tenga un icono verde.
+
+. Para confirmar que el nuevo dispositivo esté completamente operativo, inicie sesión en el nodo de grid mediante PuTTY u otro cliente ssh:
++
+.. Introduzca el siguiente comando: `ssh _Appliance_IP_`
+.. Introduzca la contraseña que aparece en `Passwords.txt` archivo.
+.. Introduzca el siguiente comando para cambiar a la raíz: `su -`
+.. Introduzca la contraseña que aparece en `Passwords.txt` archivo.
++
+Cuando ha iniciado sesión como root, el símbolo del sistema cambia de `$` para `#`.
+
+
+
+
+
+.Información relacionada
+link:../installconfig/viewing-status-indicators.html["Ver indicadores de estado"]

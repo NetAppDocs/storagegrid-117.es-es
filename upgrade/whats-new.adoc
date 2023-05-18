@@ -1,0 +1,245 @@
+---
+permalink: upgrade/whats-new.html 
+sidebar: sidebar 
+keywords: what is new in StorageGRID 11.7 
+summary: Esta versión de StorageGRID presenta las siguientes funciones. 
+---
+= Novedades en StorageGRID 11,7
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Esta versión de StorageGRID introduce las siguientes funciones y cambios funcionales.
+
+
+
+== Otras nuevas
+
+
+
+=== federación de grid
+
+Puede configurar una conexión de federación de grid entre dos sistemas StorageGRID para clonar información de la cuenta de inquilino y replicar objetos de buckets entre los grid para la recuperación ante desastres. Consulte link:../admin/grid-federation-overview.html["¿Qué es GRID federation?"], link:../admin/grid-federation-what-is-account-clone.html["Qué es el clon de cuenta"], y. link:../admin/grid-federation-what-is-cross-grid-replication.html["Qué es la replicación entre grid"].
+
+
+
+=== Disponibilidad de lectura mejorada
+
+Se ha mejorado el control de consistencia de lectura tras nueva escritura (predeterminado) para que esté más disponible. Las solicitudes GET/HEAD para objetos no existentes se realizarán correctamente con hasta un nodo de almacenamiento desconectado en cada sitio. Ya no es necesario definir los bloques en el control de coherencia disponible para este escenario. Por ejemplo, las aplicaciones que comprueban la existencia de un objeto antes de la creación funcionarán correctamente con lectura tras nueva escritura incluso durante la actualización de software cuando un nodo de almacenamiento esté sin conexión.
+
+
+
+=== Cambie el nombre de cuadrícula, sitios y nodos
+
+Un nuevo procedimiento de mantenimiento le permite cambiar los nombres mostrados en Grid Manager. Puede actualizar los nombres mostrados de forma segura y siempre que lo necesite. Consulte link:../maintain/rename-grid-site-node-overview.html["Cambie el nombre de cuadrícula, sitios y nodos"].
+
+
+
+=== Asistente de configuración de FabricPool y S3
+
+El asistente de configuración de FabricPool y S3 le guiará en cada paso de configuración de StorageGRID para usarlo con ONTAP FabricPool u otra aplicación cliente de S3 y producirá un archivo que puede utilizar cuando introduzca los valores requeridos en la otra aplicación. Consulte link:../fabricpool/use-fabricpool-setup-wizard.html["Use el asistente de configuración de FabricPool"] y.. link:../admin/use-s3-setup-wizard.html["Utilice el asistente de configuración de S3"].
+
+Relacionado con este cambio, ahora se muestra un banner en el panel de control para recordar a los nuevos usuarios que deben configurar link:../admin/configuring-s3-api-endpoint-domain-names.html["Nombres de dominio de punto final S3"] Para S3 solicitudes virtuales de tipo hospedado y configuración link:../monitor/email-alert-notifications.html["notificaciones por correo electrónico para alertas"].
+
+
+
+=== Controles de firewall
+
+La página de control de firewall le permite administrar el acceso externo de los puertos en los nodos de la cuadrícula y definir direcciones de host y subredes IP que tienen permiso para acceder a los puertos cerrados. La nueva página también incluye la configuración de la red cliente que no es de confianza, que ahora le permite seleccionar puertos adicionales que desea abrir cuando se configura la red cliente que no es de confianza. Consulte link:../admin/configure-firewall-controls.html["Configure el firewall interno"].
+
+
+
+=== Políticas de seguridad mejoradas
+
+Ahora puede determinar qué protocolos y cifrados se utilizan para establecer conexiones TLS seguras con aplicaciones cliente y conexiones SSH seguras a los servicios StorageGRID internos. Consulte link:../admin/manage-tls-ssh-policy.html["Gestione la política TLS y SSH"].
+
+
+
+=== Cambios de punto final del equilibrador de carga
+
+Cuando link:../admin/configuring-load-balancer-endpoints.html["configuración de puntos finales del equilibrador de carga"], ahora puede:
+
+* Permitir que todos los inquilinos accedan al punto final (predeterminado) o especificar una lista de inquilinos permitidos o bloqueados para proporcionar un mejor aislamiento de seguridad entre los inquilinos y sus puntos finales.
+* Utilice el modo de enlace *Node Type* para requerir que los clientes utilicen la dirección IP (o FQDN correspondiente) de cualquier nodo de administración o la dirección IP de cualquier nodo de gateway, según el tipo de nodo que seleccione.
+
+
+
+
+== Dispositivo all-flash SGF6112
+
+El nuevo dispositivo de almacenamiento StorageGRID SGF6112 cuenta con un diseño compacto con controladora de computación y controladora de almacenamiento integrada en un chasis 1U. El dispositivo admite 12 unidades SSD NVMe con una capacidad de almacenamiento de hasta 15,3 TB por unidad. Las unidades SSD están en un RAID que proporciona un almacenamiento de objetos resiliente. Consulte link:../installconfig/hardware-description-sg6100.html["Dispositivo SGF6112: Información general"].
+
+
+
+== Otras mejoras de Grid Manager
+
+
+
+=== Mejoras de ILM
+
+El asistente de ILM mejorado facilita la especificación de filtros, la introducción de periodos de tiempo y ubicaciones y la visualización de diagramas de retención. Los perfiles de código de borrado se crean automáticamente cuando se selecciona un pool de almacenamiento y un esquema de EC para una colocación. Para las nuevas instalaciones de StorageGRID 11,7 (no actualizaciones), se crea automáticamente un grupo de almacenamiento para cada sitio y la nueva regla predeterminada *1 Copia por sitio* garantiza que las nuevas instalaciones de varios sitios tengan protección contra pérdida de sitio de forma predeterminada. Consulte link:../ilm/index.html["Gestión de objetos con ILM"].
+
+
+
+=== Panel personalizable
+
+Ahora puede configurar paneles personalizados para Grid Manager. Consulte link:../monitor/viewing-dashboard.html["Permite ver y gestionar el panel de control"].
+
+
+
+=== IU de restauración de volúmenes
+
+La restauración de volúmenes de almacenamiento le permite restaurar datos de objetos en caso de que falle un volumen de almacenamiento. Para StorageGRID 11,7, puede iniciar la restauración de volumen desde Grid Manager, además del método existente de introducir los comandos manualmente. El uso de Grid Manager es ahora el método preferido para restaurar datos de objetos. Consulte link:../maintain/restoring-volume.html["Restaurar datos de objetos con Grid Manager"].
+
+
+
+=== Actualice y corrija la IU
+
+Cuando actualice a StorageGRID 11,7, puede aplicar la revisión 11,7 más reciente al mismo tiempo. La página de actualización de StorageGRID muestra la ruta de actualización recomendada y enlaza directamente a las páginas de descarga correctas. Consulte link:performing-upgrade.html["Realizar la actualización"].
+
+
+
+=== Unidades para valores de almacenamiento
+
+Ahora puede seleccionar unidades base 10 o base 2 para los valores de almacenamiento mostrados en Grid Manager y Tenant Manager. Seleccione el menú desplegable de usuario en la parte superior derecha del Administrador de grid o el Administrador de inquilinos y, a continuación, seleccione *Preferencias de usuario*.
+
+
+
+=== Acceda a MIB desde Grid Manager
+
+Ahora puede acceder a archivos MIB compatibles con SNMP desde Grid Manager mediante la página del agente SNMP. Consulte link:../monitor/access-snmp-mib.html["Acceda a los archivos MIB"].
+
+
+
+=== Grados de almacenamiento personalizados para nuevos nodos
+
+Cuando ejecuta una ampliación para añadir un sitio nuevo o nodos de almacenamiento nuevos, ahora puede asignar un nivel de almacenamiento personalizado a cada nodo nuevo. Consulte link:../expand/performing-expansion.html["Realizar la expansión"].
+
+
+
+== Actualizaciones del gestor de inquilinos
+
+
+
+=== Replicación entre grid
+
+Cuentas de inquilino que tienen permiso para utilizar a. <<grid-federation,conexión de federación de grid>> Puede clonar grupos de inquilinos, usuarios y claves S3 de un grid en otro y utilizar la replicación entre grid para replicar objetos de buckets entre dos grids. Consulte link:../tenant/grid-federation-account-clone.html["Clone los usuarios y los grupos de inquilinos"] y.. link:../tenant/grid-federation-manage-cross-grid-replication.html["Gestionar la replicación entre grid"].
+
+
+
+=== Elimine todos los objetos del depósito
+
+Los usuarios del gestor de inquilinos ahora pueden eliminar todos los objetos de un bloque, de manera que se pueda eliminar el bloque. Consulte link:../tenant/deleting-s3-bucket-objects.html["Suprimir objetos del depósito"].
+
+
+
+=== S3 Retención predeterminada de bloqueo de objetos
+
+Los usuarios del gestor de inquilinos ahora pueden habilitar y configurar la retención predeterminada al crear buckets de bloqueo de objetos de S3. Consulte link:../tenant/creating-s3-bucket.html["Cree un bloque de S3"].
+
+
+
+== Actualizaciones de S3
+
+
+
+=== S3 Modo de gobierno de bloqueo de objetos
+
+Al especificar la configuración de bloqueo de objetos S3 para un objeto o la configuración de retención predeterminada para un bloque, ahora puede utilizar el modo de gobernanza. Este modo de retención permite a los usuarios con permiso especial omitir ciertos ajustes de retención. Consulte link:../tenant/using-s3-object-lock.html["Utilice Bloqueo de objetos S3 para retener objetos"] y.. link:../s3/use-s3-api-for-s3-object-lock.html["Use la API REST DE S3 para configurar el bloqueo de objetos de S3"].
+
+
+
+=== Política del grupo S3 para la mitigación del ransomware
+
+Cuando se añade como política de grupo para una cuenta de inquilino S3, la política de muestra ayuda a mitigar los ataques de ransomware. Evita que las versiones de objetos más antiguas se eliminen de forma permanente. Consulte link:../tenant/creating-groups-for-s3-tenant.html["Cree grupos para un inquilino de S3"].
+
+
+
+=== Umbral NewerNoncurrentVersions para bloques de S3
+
+La `NewerNoncurrentVersions` La acción en la configuración del ciclo de vida del bloque especifica el número de versiones no actuales retenidas en un segmento S3 con versiones. Este umbral anula las reglas de ciclo de vida que proporciona ILM. Consulte link:../ilm/how-objects-are-deleted.html["Cómo se eliminan los objetos"].
+
+
+
+=== S3 Seleccione ACTUALIZACIONES
+
+S3 SelectObjectContent ahora ofrece soporte para objetos de parquet. Además, ahora puede usar S3 Select con puntos finales de equilibrio de carga Admin y Gateway que son nodos de configuración básica que ejecutan un núcleo con cgroup v2 habilitado. Consulte link:../s3/select-object-content.html["S3 SelectObjectContent"].
+
+
+
+== Otras mejoras
+
+
+
+=== Asunto del certificado opcional
+
+El campo de asunto del certificado ahora es opcional. Si este campo se deja en blanco, el certificado generado utiliza el primer nombre de dominio o la dirección IP como nombre común del asunto (CN). Consulte link:../admin/using-storagegrid-security-certificates.html["Gestionar certificados de seguridad"].
+
+
+
+=== Categoría de mensajes de auditoría ILM y nuevos mensajes
+
+Se ha agregado una categoría de mensaje de auditoría para las operaciones de ILM e incluye los mensajes IDEL, LKCU y ORLM. Esta nueva categoría se establece en *Normal*. Consulte link:../audit/ilm-audit-messages.html["Mensajes de auditoría de operaciones de ILM"].
+
+Además, se agregaron nuevos mensajes de auditoría para admitir la nueva funcionalidad 11,7:
+
+* link:../audit/bror-bucket-read-only-request.html["BROR: Solicitud de solo lectura de bucket"]
+* link:../audit/cgrr-cross-grid-replication-request.html["CGRR: Solicitud de Replicación de Cuadrícula Cruzada"]
+* link:../audit/ebdl-empty-bucket-delete.html["EBDL: Eliminación de bloque vacío"]
+* link:../audit/ebkr-empty-bucket-request.html["EBKR: Solicitud de depósito vacío"]
+* link:../audit/s3-select-request.html["S3SL: S3 Seleccione Solicitud"]
+
+
+
+
+=== Nuevas alertas
+
+Se han añadido las siguientes alertas nuevas para StorageGRID 11,7:
+
+* Fallo de la unidad DAS del dispositivo detectado
+* Reconstrucción de la unidad DAS del dispositivo
+* Se ha detectado un fallo en el ventilador del dispositivo
+* Fallo de NIC del dispositivo detectado
+* Advertencia crítica del SSD del dispositivo
+* No se pudo enviar el mensaje de AutoSupport
+* Error de escritura de sobretamaño de Cassandra
+* Error permanente de solicitud de replicación entre grid
+* Recursos de replicación entre grid no disponibles
+* Depuración del impacto en el rendimiento
+* Caducidad del certificado de federación de grid
+* El bloque de FabricPool tiene una configuración de coherencia de bloques no compatible
+* Fallo de configuración del firewall
+* Error de conexión de federación de grid
+* Fallo del ventilador del dispositivo de almacenamiento detectado
+* El nodo de almacenamiento no está en el estado de almacenamiento deseado
+* El volumen de almacenamiento necesita atención
+* Se debe restaurar el volumen de almacenamiento
+* Volumen de almacenamiento sin conexión
+* Configuración de seguimiento activada
+* La restauración de volumen no pudo iniciar la reparación de datos replicados
+
+
+
+
+=== Cambios en la documentación
+
+* Una nueva referencia rápida resume cómo StorageGRID admite las API de Amazon Simple Storage Service (S3). Consulte link:../s3/quick-reference-support-for-aws-apis.html["Referencia rápida: Solicitudes de API de S3 admitidas"].
+* Lo nuevo link:../primer/quick-start.html["Inicio rápido de StorageGRID"] Enumera los pasos de alto nivel para configurar y utilizar un sistema StorageGRID y proporciona enlaces a las instrucciones pertinentes.
+* Las instrucciones de instalación del hardware del dispositivo se combinaron y consolidaron para facilitar su uso. Se agregó un inicio rápido como una guía de alto nivel para la instalación de hardware. Consultelink:../installconfig/index.html["Inicio rápido para la instalación de hardware"].
+* Las instrucciones de mantenimiento comunes a todos los modelos de electrodomésticos se combinaron, consolidaron y trasladaron a la sección de mantenimiento del sitio de documentación. Consulte link:../commonhardware/index.html["Mantenimiento de nodos comunes: Descripción general"].
+* Las instrucciones de mantenimiento específicas para cada modelo de dispositivo también se han trasladado a la sección de mantenimiento:
++
+link:../sg6100/index.html["Mantener el hardware de SGF6112"]
+
++
+link:../sg6000/index.html["Mantener el hardware de SG6000"]
+
++
+link:../sg5700/index.html["Mantener el hardware de SG5700"]
+
++
+link:../sg100-1000/index.html["Mantener el hardware de SG100 y SG1000"]
+
+

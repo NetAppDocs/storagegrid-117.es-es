@@ -1,0 +1,22 @@
+---
+permalink: admin/archiving-to-cloud-through-s3-api.html 
+sidebar: sidebar 
+keywords: archive node to AWS, Amazon Web Services 
+summary: 'Puede configurar un nodo de archivado para conectarse directamente a Amazon Web Services \(AWS\) o a cualquier otro sistema que pueda conectarse desde el sistema StorageGRID a través de la API S3.' 
+---
+= Archivado en el cloud mediante la API de S3
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede configurar un nodo de archivado para conectarse directamente a Amazon Web Services (AWS) o a cualquier otro sistema que pueda conectarse al sistema StorageGRID a través de la API de S3.
+
+[CAUTION]
+====
+La compatibilidad con los nodos de archivo (tanto para archivar en la nube mediante la API S3 como para archivar en cinta mediante el middleware TSM) está obsoleta y se eliminará en una versión futura. Mover objetos de un nodo de archivado a un sistema de almacenamiento de archivado externo ha sido reemplazado por ILM Cloud Storage Pools, que ofrecen más funcionalidad.
+
+Consulte link:../ilm/what-cloud-storage-pool-is.html["Utilice Cloud Storage Pools"].
+
+====

@@ -1,0 +1,70 @@
+= 
+:allow-uri-read: 
+
+
+En la siguiente tabla se muestran los servicios principales de los nodos de administrador; sin embargo, esta tabla no enumera todos los servicios de nodo.
+
+[cols="1a,2a"]
+|===
+| Servicio | Función de la tecla 
+
+
+ a| 
+Sistema de gestión de auditorías (AMS)
+ a| 
+Realiza un seguimiento de la actividad y los eventos del sistema.
+
+
+
+ a| 
+Nodo de gestión de configuraciones (CMN)
+ a| 
+Gestiona la configuración en todo el sistema. Solo nodo de administrador principal.
+
+
+
+ a| 
+Interfaz de programas de aplicaciones de gestión (API de gestión)
+ a| 
+Procesa las solicitudes de la API de gestión de grid y la API de gestión de inquilinos.
+
+
+
+ a| 
+Alta disponibilidad
+ a| 
+Administra direcciones IP virtuales de alta disponibilidad para grupos de nodos de administración y nodos de puerta de enlace.
+
+*Nota:* este servicio también se encuentra en los nodos Gateway.
+
+
+
+ a| 
+Equilibrador de carga
+ a| 
+Proporciona el equilibrio de carga del tráfico de S3 y Swift desde los clientes a los nodos de almacenamiento.
+
+*Nota:* este servicio también se encuentra en los nodos Gateway.
+
+
+
+ a| 
+Sistema de gestión de redes (NMS)
+ a| 
+Proporciona funcionalidad para Grid Manager.
+
+
+
+ a| 
+Prometheus
+ a| 
+Recopila y almacena métricas de series temporales de los servicios en todos los nodos.
+
+
+
+ a| 
+Monitor de estado del servidor (SSM)
+ a| 
+Supervisa el sistema operativo y el hardware subyacente.
+
+|===

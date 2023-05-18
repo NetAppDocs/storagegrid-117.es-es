@@ -1,0 +1,54 @@
+---
+permalink: sg6100/removing-sgf6112-from-cabinet-or-rack.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6100, storage node, storage appliance, remove, removing, removal, cabinet, rack, appliance, sgf6112 
+summary: Retire el SGF6112 de un armario o rack para acceder a la cubierta superior o para mover el aparato a una ubicación diferente. 
+---
+= Quite SGF6112 del armario o rack
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Retire el SGF6112 de un armario o rack para acceder a la cubierta superior o para mover el aparato a una ubicación diferente.
+
+.Antes de empezar
+* Tiene etiquetas para identificar cada cable que está conectado al SGF6112.
+* Ha localizado físicamente el SGF6112 en el que realiza tareas de mantenimiento en el centro de datos.
++
+link:locating-sgf6112-in-data-center.html["Localice SGF6112 en el centro de datos"]
+
+* Ha cerrado el SGF6112.
++
+link:shut-down-sgf6112.html["Apague SGF6112"]
+
++
+
+CAUTION: No apague el aparato con el interruptor de alimentación.
+
+
+
+.Pasos
+. Etiquete y desconecte los cables de alimentación del aparato.
+. Envuelva el extremo de la correa de la muñequera ESD alrededor de su muñeca y fije el extremo de la pinza a una masa metálica para evitar descargas estáticas.
+. Etiquete y desconecte los cables de datos del dispositivo y los transceptores SFP+ o SFP28.
++
+
+IMPORTANT: Para evitar un rendimiento degradado, no tuerza, pliegue, pellizque ni pise los cables.
+
+. Afloje los dos tornillos cautivos del panel frontal del aparato.
++
+image::../media/sg6060_rack_retaining_screws.png[SGF6112 tornillos de retención del bastidor]
+
+. Deslice el SGF6112 hacia delante para sacarlo del rack hasta que los raíles de montaje estén completamente extendidos y oiga un clic en los pestillos de ambos lados.
++
+Se puede acceder a la cubierta superior del aparato.
+
+. Opcional: Si está retirando completamente el dispositivo del armario o rack, siga las instrucciones del kit de guías para quitar el aparato de los rieles.
+
+
+Tras sustituir la pieza, devuelva la pieza que ha fallado a NetApp, tal y como se describe en las instrucciones de RMA incluidas con el kit. Consulte https://["Retorno de artículo  sustituciones"^] para obtener más información.
+
+.Información relacionada
+link:removing-sgf6112-cover.html["Retire la cubierta SGF6112"]

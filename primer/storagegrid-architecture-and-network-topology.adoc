@@ -1,0 +1,470 @@
+---
+permalink: primer/storagegrid-architecture-and-network-topology.html 
+sidebar: sidebar 
+keywords: architecture, deployment, topology, site, node redundancy, services, nodes 
+summary: Un sistema StorageGRID consta de varios tipos de nodos de grid en uno o varios sitios de centros de datos. 
+---
+= Arquitectura de StorageGRID y topología de red
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Un sistema StorageGRID consta de varios tipos de nodos de grid en uno o varios sitios de centros de datos.
+
+Para obtener información adicional sobre la topología de red, los requisitos y las comunicaciones de grid de StorageGRID, consulte link:../network/index.html["Directrices sobre redes"].
+
+
+
+== Topologías de puesta en marcha
+
+El sistema StorageGRID se puede poner en marcha en un solo centro de datos o en varios sitios de centros de datos.
+
+
+
+=== Sitio único
+
+En una puesta en marcha con un único sitio, la infraestructura y las operaciones del sistema StorageGRID están centralizadas.
+
+image::../media/data_center_site_single.png[Sitio de un único centro de datos]
+
+
+
+=== Múltiples sitios
+
+En una implementación con varios sitios, se pueden instalar diferentes tipos y números de recursos de StorageGRID en cada sitio. Por ejemplo, es posible que se necesite más almacenamiento en un centro de datos que en otro.
+
+Con frecuencia, se ubican en distintas ubicaciones geográficas en diferentes dominios de fallo, como una línea de fallo de terremotos o un flujo de inundación. El uso compartido de datos y la recuperación ante desastres se consigue mediante la distribución automatizada de datos a otros sites.
+
+image::../media/data_center_sites_multiple.png[Sitio de varios centros de datos]
+
+También pueden existir varios sitios lógicos en un único centro de datos y así permitir el uso de replicación distribuida y código de borrado para aumentar la disponibilidad y la resiliencia.
+
+
+
+=== Redundancia de nodos de grid
+
+En una puesta en marcha de un único sitio o de varios sitios, de manera opcional, puede incluir más de un nodo de administración o un nodo de puerta de enlace para obtener redundancia. Por ejemplo, puede instalar más de un nodo de administración en un solo sitio o en varios sitios. Sin embargo, cada sistema StorageGRID solo puede tener un nodo de administrador principal.
+
+
+
+== Arquitectura del sistema
+
+Este diagrama muestra cómo se organizan los nodos de cuadrícula en un sistema StorageGRID.
+
+image::../media/grid_nodes_and_components.png[diagrama descrito por texto circundante]
+
+Los clientes de S3 y Swift almacenan y recuperan objetos en StorageGRID. Otros clientes se usan para enviar notificaciones por correo electrónico, para acceder a la interfaz de gestión de StorageGRID y, opcionalmente, para acceder al recurso compartido de auditoría.
+
+Los clientes S3 y Swift pueden conectarse a un nodo de puerta de enlace o un nodo de administrador para usar la interfaz de equilibrio de carga en los nodos de almacenamiento. De manera alternativa, los clientes S3 y Swift pueden conectarse directamente a los nodos de almacenamiento mediante HTTPS.
+
+Los objetos pueden almacenarse en StorageGRID en nodos de almacenamiento basados en software o en hardware, o en pools de almacenamiento en cloud, que constan de bloques S3 externos o contenedores de almacenamiento de Azure Blob.
+
+
+
+== Nodos de grid y servicios
+
+El elemento básico de un sistema StorageGRID es el nodo de Grid. Los nodos contienen servicios, que son módulos de software que proporcionan un conjunto de funcionalidades a un nodo de grid.
+
+El sistema StorageGRID utiliza cuatro tipos de nodos de grid:
+
+* *Los nodos de administración* proporcionan servicios de administración tales como la configuración del sistema, la supervisión y el registro. Cuando inicia sesión en Grid Manager, se conecta a un nodo de administración. Cada grid debe tener un nodo de administrador primario y puede tener nodos de administrador no primarios adicionales para la redundancia. Puede conectarse a cualquier nodo de administrador y cada nodo de administrador muestra una vista similar del sistema StorageGRID. Sin embargo, se deben realizar los procedimientos de mantenimiento usando el nodo de administración principal.
++
+Los nodos de administración también se pueden usar para equilibrar la carga del tráfico de clientes S3 y Swift.
+
+* *Nodos de almacenamiento* gestionar y almacenar metadatos y datos de objetos. Cada sistema StorageGRID debe tener al menos tres nodos de almacenamiento. Si tiene varios sitios, cada sitio dentro del sistema StorageGRID también debe tener tres nodos de almacenamiento.
+* *Los nodos de puerta de enlace (opcionales)* proporcionan una interfaz de equilibrio de carga que las aplicaciones cliente pueden utilizar para conectarse a StorageGRID. Un equilibrador de carga dirige sin problemas a los clientes a un nodo de almacenamiento óptimo, de modo que el fallo de los nodos o incluso de todo un sitio sea transparente. Puede utilizar una combinación de nodos de puerta de enlace y nodos de administración para el equilibrio de carga o puede implementar un equilibrador de carga HTTP de terceros.
+* * Los nodos de archivo (anticuados)* proporcionan una interfaz opcional a través de la cual los datos de objetos se pueden archivar en cinta.
+
+
+Para obtener más información, consulte link:../admin/index.html["Administre StorageGRID"].
+
+
+
+=== Nodos basados en software
+
+Los nodos de grid basados en software se pueden poner en marcha de las siguientes formas:
+
+* Como máquinas virtuales en VMware vSphere
+* Dentro de los motores de contenedor en los hosts Linux. Se admiten los sistemas operativos siguientes:
++
+** Red Hat Enterprise Linux
+** CentOS
+** Ubuntu
+** Debian
+
+
+
+
+En la siguiente sección, se ofrece más información:
+
+* link:../vmware/index.html["Instale VMware"]
+* link:../rhel/index.html["Instale Red Hat Enterprise Linux o CentOS"]
+* link:../ubuntu/index.html["Instalar Ubuntu o Debian"]
+
+
+Utilice la https://["Herramienta de matriz de interoperabilidad de NetApp (IMT)"^] para obtener una lista de las versiones compatibles.
+
+
+
+=== Nodos del dispositivo StorageGRID
+
+Los dispositivos de hardware StorageGRID están especialmente diseñados para su uso en un sistema StorageGRID. Algunos dispositivos se pueden usar como nodos de almacenamiento. Otros dispositivos se pueden usar como nodos de administrador o nodos de puerta de enlace. Puede combinar nodos de dispositivos con nodos basados en software o poner en marcha grids de dispositivo completamente diseñados que no tengan dependencias en hipervisores externos, almacenamiento ni hardware de computación.
+
+Se encuentran disponibles los siguientes tipos de dispositivos StorageGRID:
+
+* El dispositivo de almacenamiento *SGF6112* es un servidor all-flash de 1 unidades de rack (1U) que cuenta con 12 unidades SSD NVMe (memoria no volátil exprés) con controladores de computación y almacenamiento integrados.
+* Los dispositivos *SG100 y SG1000 de servicios* son servidores de 1 unidad de bastidor (1U) que pueden funcionar como el nodo de administración principal, un nodo de administración no primario o un nodo de puerta de enlace. Ambos dispositivos pueden funcionar al mismo tiempo como nodos de puerta de enlace y nodos de administración (principal y no primario).
+* El dispositivo de almacenamiento *SG6000* funciona como nodo de almacenamiento y combina el controlador de computación SG6000-CN 1U con una bandeja de controladoras de almacenamiento 2U o 4U. El SG6000 está disponible en dos modelos:
++
+** *SGF6024*: Combina el controlador informático SG6000-CN con una bandeja de controlador de almacenamiento 2U que incluye 24 unidades de estado sólido (SSD) y controladores de almacenamiento redundantes.
+** *SG6060*: Combina el controlador de computación SG6000-CN con un alojamiento de 4U que incluye 58 unidades NL-SAS, 2 SSD y controladoras de almacenamiento redundantes. Cada dispositivo SG6060 admite una o dos bandejas de expansión de 60 unidades, que ofrecen hasta 178 unidades dedicadas al almacenamiento de objetos.
+
+
+* El dispositivo de almacenamiento *SG5700* es una plataforma de almacenamiento e informática integrada que funciona como nodo de almacenamiento. SG5700 está disponible en dos modelos:
++
+** *SG5712*: Carcasa 2U que incluye 12 unidades NL-SAS y controladoras integradas de almacenamiento e informática.
+** *SG5760*: Carcasa 4U que incluye 60 unidades NL-SAS y controladoras de almacenamiento e informática integradas.
+
+
+
+
+En la siguiente sección, se ofrece más información:
+
+* https://["Hardware Universe de NetApp"^]
+* link:../installconfig/hardware-description-sg6100.html["Dispositivo de almacenamiento SGF6112"]
+* link:../installconfig/hardware-description-sg100-and-1000.html["Servicios de aplicaciones SG100 y SG1000"]
+* link:../installconfig/hardware-description-sg6000.html["Dispositivos de almacenamiento SG6000"]
+* link:../installconfig/hardware-description-sg5700.html["Dispositivos de almacenamiento SG5700"]
+
+
+
+
+=== Servicios primarios para nodos de administración
+
+En la siguiente tabla se muestran los servicios principales de los nodos de administrador; sin embargo, esta tabla no enumera todos los servicios de nodo.
+
+[cols="1a,2a"]
+|===
+| Servicio | Función de la tecla 
+
+
+ a| 
+Sistema de gestión de auditorías (AMS)
+ a| 
+Realiza un seguimiento de la actividad y los eventos del sistema.
+
+
+
+ a| 
+Nodo de gestión de configuraciones (CMN)
+ a| 
+Gestiona la configuración en todo el sistema. Solo nodo de administrador principal.
+
+
+
+ a| 
+Interfaz de programas de aplicaciones de gestión (API de gestión)
+ a| 
+Procesa las solicitudes de la API de gestión de grid y la API de gestión de inquilinos.
+
+
+
+ a| 
+Alta disponibilidad
+ a| 
+Administra direcciones IP virtuales de alta disponibilidad para grupos de nodos de administración y nodos de puerta de enlace.
+
+*Nota:* este servicio también se encuentra en los nodos Gateway.
+
+
+
+ a| 
+Equilibrador de carga
+ a| 
+Proporciona el equilibrio de carga del tráfico de S3 y Swift desde los clientes a los nodos de almacenamiento.
+
+*Nota:* este servicio también se encuentra en los nodos Gateway.
+
+
+
+ a| 
+Sistema de gestión de redes (NMS)
+ a| 
+Proporciona funcionalidad para Grid Manager.
+
+
+
+ a| 
+Prometheus
+ a| 
+Recopila y almacena métricas de series temporales de los servicios en todos los nodos.
+
+
+
+ a| 
+Monitor de estado del servidor (SSM)
+ a| 
+Supervisa el sistema operativo y el hardware subyacente.
+
+|===
+
+
+=== Servicios principales para nodos de almacenamiento
+
+En la siguiente tabla se muestran los servicios principales de los nodos de almacenamiento; sin embargo, esta tabla no enumera todos los servicios de los nodos.
+
+
+NOTE: Algunos servicios, como el servicio ADC y el servicio RSM, normalmente solo existen en tres nodos de almacenamiento de cada sitio.
+
+[cols="1a,2a"]
+|===
+| Servicio | Función de la tecla 
+
+
+ a| 
+Cuenta (acct)
+ a| 
+Administra cuentas de arrendatario.
+
+
+
+ a| 
+Controlador de dominio administrativo (ADC)
+ a| 
+Mantiene la topología y la configuración en todo el grid.
+
+
+
+ a| 
+Cassandra
+ a| 
+Almacena y protege los metadatos de objetos.
+
+
+
+ a| 
+Cassandra Reaper
+ a| 
+Realiza reparaciones automáticas de metadatos de objetos.
+
+
+
+ a| 
+Segmento
+ a| 
+Gestiona datos codificados de borrado y fragmentos de paridad.
+
+
+
+ a| 
+Transmisor de datos (dmv)
+ a| 
+Transfiere datos a Cloud Storage Pools.
+
+
+
+ a| 
+Almacén de datos distribuidos (DDS)
+ a| 
+Supervisa el almacenamiento de metadatos de objetos.
+
+
+
+ a| 
+Identidad (no)
+ a| 
+Federe las identidades de usuario de LDAP y Active Directory.
+
+
+
+ a| 
+Router de distribución local (LDR)
+ a| 
+Procesa las solicitudes del protocolo de almacenamiento de objetos y gestiona los datos de objetos en el disco.
+
+
+
+ a| 
+Máquina de estado replicada (RSM)
+ a| 
+Garantiza que las solicitudes de servicios de la plataforma S3 se envíen a sus respectivos puntos finales.
+
+
+
+ a| 
+Monitor de estado del servidor (SSM)
+ a| 
+Supervisa el sistema operativo y el hardware subyacente.
+
+|===
+
+
+=== Servicios principales para nodos de puerta de enlace
+
+La siguiente tabla muestra los servicios principales para los nodos de puerta de enlace; sin embargo, esta tabla no enumera todos los servicios de nodo.
+
+[cols="1a,2a"]
+|===
+| Servicio | Función de la tecla 
+
+
+ a| 
+Alta disponibilidad
+ a| 
+Administra direcciones IP virtuales de alta disponibilidad para grupos de nodos de administración y nodos de puerta de enlace.
+
+*Nota:* este servicio también se encuentra en los nodos de administración.
+
+
+
+ a| 
+Equilibrador de carga
+ a| 
+Proporciona un equilibrio de carga de capa 7 del tráfico de S3 y Swift de clientes a nodos de almacenamiento. Este es el mecanismo de equilibrio de carga recomendado.
+
+*Nota:* este servicio también se encuentra en los nodos de administración.
+
+
+
+ a| 
+Monitor de estado del servidor (SSM)
+ a| 
+Supervisa el sistema operativo y el hardware subyacente.
+
+|===
+
+
+=== Servicios principales para nodos de archivado
+
+En la siguiente tabla se muestran los servicios principales para los nodos de archivado (ahora anticuados); sin embargo, esta tabla no muestra todos los servicios de nodo.
+
+
+NOTE: La compatibilidad con los nodos de archivo está obsoleta y se eliminará en una versión futura.
+
+[cols="1a,2a"]
+|===
+| Servicio | Función de la tecla 
+
+
+ a| 
+Archivo (ARC)
+ a| 
+Se comunica con un sistema de almacenamiento en cinta externo Tivoli Storage Manager (TSM).
+
+
+
+ a| 
+Monitor de estado del servidor (SSM)
+ a| 
+Supervisa el sistema operativo y el hardware subyacente.
+
+|===
+
+
+=== Servicios de StorageGRID
+
+A continuación, se muestra una lista completa de los servicios StorageGRID.
+
+* *Servicio de cuenta Forwarder*
++
+Proporciona una interfaz para que el servicio Load Balancer pueda consultar el Servicio de cuenta en hosts remotos y proporciona notificaciones de cambios de configuración de Load Balancer Endpoint al servicio Load Balancer. El servicio Load Balancer está presente en los nodos de administración y de puerta de enlace.
+
+* *Servicio ADC (controlador de dominio administrativo)*
++
+Mantiene información de topología, proporciona servicios de autenticación y responde a las consultas de los servicios LDR y CMN. El servicio de ADC está presente en cada uno de los tres primeros nodos de almacenamiento instalados en un sitio.
+
+* *Servicio AMS (sistema de Gestión de Auditoría)*
++
+Supervisa y registra todos los eventos y transacciones auditados del sistema en un archivo de registro de texto. El servicio AMS está presente en los nodos Admin.
+
+* *Servicio ARC (Archivo)*
++
+Ofrece la interfaz de gestión con la que se configuran las conexiones a un almacenamiento de archivado externo, como cloud a través de una interfaz S3 o una cinta a través del middleware TSM. El servicio ARC está presente en los nodos de archivado.
+
+* *Cassandra Servicio Reaper*
++
+Realiza reparaciones automáticas de metadatos de objetos. El servicio Cassandra Reaper está presente en todos los nodos de almacenamiento.
+
+* *Servicio de Chunk*
++
+Gestiona datos codificados de borrado y fragmentos de paridad. El servicio Chunk está presente en los nodos de almacenamiento.
+
+* *Servicio CMN (nodo de administración de configuración)*
++
+Gestiona las configuraciones de todo el sistema y las tareas de grid. Cada cuadrícula tiene un servicio CMN, que está presente en el nodo de administración principal.
+
+* *Servicio DDS (almacén de datos distribuido)*
++
+Interactúa con la base de datos de Cassandra para gestionar los metadatos de objetos. El servicio DDS está presente en los nodos de almacenamiento.
+
+* *Servicio DMV (Data Mover)*
++
+Mueve los datos a extremos de cloud. El servicio DMV está presente en los nodos de almacenamiento.
+
+* *Servicio IP dinámico*
++
+Supervisa la cuadrícula para los cambios dinámicos de IP y actualiza las configuraciones locales. El servicio IP dinámica (dynip) está presente en todos los nodos.
+
+* *Servicio Grafana*
++
+Se utiliza para la visualización de métricas en Grid Manager. El servicio Grafana se encuentra en los nodos de administración.
+
+* *Servicio de alta disponibilidad*
++
+Administra IP virtuales de alta disponibilidad en nodos configurados en la página grupos de alta disponibilidad. El servicio de alta disponibilidad está presente en los nodos de administración y de puerta de enlace. Este servicio también se conoce como servicio de keepalived.
+
+* *Servicio de identidad (idnt)*
++
+Federe las identidades de usuario de LDAP y Active Directory. El servicio de identidades (idnt) está presente en tres nodos de almacenamiento en cada sitio.
+
+* *Servicio de Árbitros Lambda*
++
+Gestiona solicitudes S3 Select ObjectContent.
+
+* *Servicio de equilibrador de carga*
++
+Proporciona el equilibrio de carga del tráfico de S3 y Swift desde los clientes a los nodos de almacenamiento. El servicio Load Balancer se puede configurar a través de la página de configuración Load Balancer Endpoints. El servicio Load Balancer está presente en los nodos de administración y de puerta de enlace. Este servicio también se conoce como servicio nginx-gw.
+
+* *Servicio LDR (router de distribución local)*
++
+Gestiona el almacenamiento y la transferencia de contenido dentro de la cuadrícula. El servicio LDR está presente en los nodos de almacenamiento.
+
+* *Servicio de MDaemon de control de servicio de información MISCd*
++
+Proporciona una interfaz para consultar y gestionar servicios en otros nodos y para gestionar configuraciones de entorno en el nodo, como consultar el estado de los servicios que se ejecutan en otros nodos. El servicio MISCd está presente en todos los nodos.
+
+* *servicio nginx*
++
+Actúa como mecanismo de autenticación y comunicación segura para que varios servicios de grid (como Prometheus y Dynamic IP) puedan comunicarse con servicios de otros nodos a través de las API HTTPS. El servicio nginx está presente en todos los nodos.
+
+* *servicio nginx-gw*
++
+Activa el servicio Load Balancer. El servicio nginx-gw está presente en los nodos Admin y Gateway.
+
+* *Servicio NMS (sistema de administración de redes)*
++
+Activa las opciones de supervisión, generación de informes y configuración que se muestran a través de Grid Manager. El servicio NMS está presente en los nodos Admin.
+
+* *Servicio de persistencia*
++
+Administra los archivos del disco raíz que deben persistir durante un reinicio. El servicio de persistencia está presente en todos los nodos.
+
+* *Servicio Prometheus*
++
+Recopila métricas de series temporales de los servicios en todos los nodos. El servicio Prometheus está presente en los nodos de administración.
+
+* *Servicio RSM (Servicio de máquina de estado replicado)*
++
+Garantiza que las solicitudes de servicio de la plataforma se envíen a sus respectivos extremos. El servicio RSM está presente en los nodos de almacenamiento que utilizan el servicio ADC.
+
+* *Servicio SSM (Monitor de estado del servidor)*
++
+Supervisa las condiciones del hardware e informa al servicio NMS. En todos los nodos de cuadrícula hay una instancia del servicio SSM.
+
+* *Servicio de colector de traza*
++
+Realiza la recogida de seguimiento para recopilar información que el soporte técnico utiliza. El servicio de colector de traza utiliza el software de código abierto Jäger y está presente en los nodos de administración.
+
+

@@ -1,0 +1,74 @@
+---
+permalink: installconfig/optional-enabling-node-encryption.html 
+sidebar: sidebar 
+keywords: node encryption, encryption, kms, key management server 
+summary: 'Si habilita el cifrado de nodos, los discos del dispositivo pueden protegerse mediante el cifrado del servidor de gestión de claves seguro \(KMS\) contra la pérdida física o la retirada del sitio. Debe seleccionar y habilitar el cifrado de nodos durante la instalación del dispositivo. No puede desactivar el cifrado de nodo después de que se inicie el proceso de cifrado de KMS.' 
+---
+= Opcional: Habilite el cifrado de nodos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Si habilita el cifrado de nodos, los discos del dispositivo pueden protegerse mediante el cifrado del servidor de gestión de claves seguro (KMS) contra la pérdida física o la eliminación del sitio. Debe seleccionar y habilitar el cifrado de nodos durante la instalación del dispositivo. No puede desactivar el cifrado de nodo después de que se inicie el proceso de cifrado de KMS.
+
+Si utiliza ConfigBuilder para generar un archivo JSON, puede habilitar el cifrado de nodos automáticamente. Consulte link:automating-appliance-installation-and-configuration.html["Automatice la instalación y configuración de los dispositivos"].
+
+.Antes de empezar
+Revise la información acerca de link:../admin/kms-configuring.html["Configurando KMS"].
+
+.Acerca de esta tarea
+Un dispositivo con el cifrado de nodos habilitado se conecta al servidor de gestión de claves (KMS) externo que está configurado para el sitio StorageGRID. Cada KMS (o clúster KMS) administra las claves de cifrado de todos los nodos de dispositivos del sitio. Estas claves cifran y descifran los datos de cada disco de un dispositivo que tiene habilitado el cifrado de nodos.
+
+Se puede configurar un KMS en Grid Manager antes o después de instalar el dispositivo en StorageGRID. Consulte la información sobre la configuración de KMS y del dispositivo en las instrucciones para administrar StorageGRID para obtener más detalles.
+
+* Si se configura un KMS antes de instalar el dispositivo, el cifrado controlado por KMS comienza cuando se habilita el cifrado de nodos en el dispositivo y se lo agrega a un sitio StorageGRID donde se configura KMS.
+* Si no se configura un KMS antes de instalar el dispositivo, el cifrado controlado por KMS se lleva a cabo en cada dispositivo que tenga activado el cifrado de nodos en cuanto se configure un KMS y esté disponible para el sitio que contiene el nodo del dispositivo.
+
+
+
+IMPORTANT: Los datos que existen en un dispositivo que tiene el cifrado de nodo habilitado antes de conectarse al KMS se cifran con una clave temporal que no es segura. El dispositivo no está protegido de la retirada o robo hasta que la clave se configure en un valor proporcionado por el KMS.
+
+Sin la clave KMS necesaria para descifrar el disco, los datos del dispositivo no se pueden recuperar y se pierden efectivamente. Este es el caso cuando la clave de descifrado no se puede recuperar del KMS. La clave se vuelve inaccesible si un cliente borra la configuración de KMS, caduca una clave KMS, se pierde la conexión con el KMS o se elimina el dispositivo del sistema StorageGRID donde se instalan sus claves KMS.
+
+.Pasos
+. Abra un explorador e introduzca una de las direcciones IP para la controladora de computación del dispositivo.
++
+`*https://_Controller_IP_:8443*`
+
++
+`_Controller_IP_` Es la dirección IP de la controladora de computación (no la controladora de almacenamiento) en cualquiera de las tres redes StorageGRID.
+
++
+Aparece la página de inicio del instalador de dispositivos de StorageGRID.
+
++
+
+IMPORTANT: Después de que el dispositivo se haya cifrado con una clave KMS, los discos del dispositivo no se pueden descifrar sin usar la misma clave KMS.
+
+. Seleccione *Configurar hardware* > *cifrado de nodos*.
++
+image::../media/kms_fde_enabled.png[KMS FDE habilitado]
+
+. Seleccione *Activar cifrado de nodo*.
++
+Antes de la instalación del aparato, puede borrar *Habilitar cifrado de nodo* sin riesgo de pérdida de datos. Cuando comienza la instalación, el nodo del dispositivo accede a las claves de cifrado KMS en su sistema StorageGRID e inicia el cifrado del disco. Después de instalar el dispositivo, no se puede deshabilitar el cifrado de nodo.
+
++
+
+IMPORTANT: Después de agregar un dispositivo que tiene activado el cifrado de nodos a un sitio de StorageGRID que tiene un KMS, no puede dejar de usar el cifrado KMS para el nodo.
+
+. Seleccione *Guardar*.
+. Ponga en marcha el dispositivo como nodo en su sistema StorageGRID.
++
+El cifrado controlado POR KMS se inicia cuando el dispositivo accede a las claves KMS configuradas para el sitio StorageGRID. El instalador muestra mensajes de progreso durante el proceso de cifrado KMS, que puede tardar unos minutos en función del número de volúmenes de disco del dispositivo.
+
++
+
+NOTE: Los dispositivos se configuran inicialmente con una clave de cifrado no KMS aleatoria asignada a cada volumen de disco. Los discos se cifran con esta clave de cifrado temporal, que no es segura, hasta que el dispositivo con cifrado de nodos habilitado acceda a las claves KMS configuradas para el sitio StorageGRID.
+
+
+
+.Después de terminar
+Puede ver el estado de cifrado de nodo, los detalles de KMS y los certificados en uso cuando el nodo del dispositivo está en modo de mantenimiento. Consulte link:../commonhardware/monitoring-node-encryption-in-maintenance-mode.html["Supervise el cifrado del nodo en modo de mantenimiento"] para obtener más información.

@@ -1,0 +1,442 @@
+---
+permalink: installconfig/gathering-installation-information-sg6000.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance StorageGRID, install, information, site, pre-install, preparing, prepare, preinstall, info, preparation 
+summary: En las tablas, registre la información necesaria para cada red que conecte al dispositivo. Estos valores son necesarios para instalar y configurar el hardware. 
+---
+= Recopilar información de instalación (SG6000)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+En las tablas, registre la información necesaria para cada red que conecte al dispositivo. Estos valores son necesarios para instalar y configurar el hardware.
+
+
+TIP: En lugar de utilizar las tablas, utilice el libro de trabajo proporcionado con ConfigBuilder. El uso del libro de trabajo de ConfigBuilder permite cargar información del sistema y generar un archivo JSON para completar automáticamente algunos pasos de configuración en el instalador de dispositivos de StorageGRID. Consulte link:automating-appliance-installation-and-configuration.html["Automatice la instalación y configuración de los dispositivos"].
+
+
+
+== La información necesaria para conectarse con System Manager de SANtricity en controladoras de almacenamiento
+
+Conecte las dos controladoras de almacenamiento del dispositivo (ya sea las controladoras de la serie E2800 o las controladoras EF570) a la red de gestión que utilizará para System Manager de SANtricity. Los controladores se encuentran en cada dispositivo de la siguiente manera:
+
+* SG6060 y SG606060X: El controlador A está en la parte superior y el controlador B en la parte inferior.
+* SGF6024: El controlador A está a la izquierda y el controlador B a la derecha.
+
+
+[cols="2a,1a,1a"]
+|===
+| Información necesaria | Su valor para la controladora A | Su valor para la controladora B. 
+
+
+ a| 
+Puerto del switch Ethernet que se conectará al puerto de gestión 1 (con la etiqueta P1 en la controladora)
+ a| 
+ a| 
+
+
+
+ a| 
+Dirección MAC del puerto de gestión 1 (impreso en una etiqueta cerca del puerto P1)
+ a| 
+ a| 
+
+
+
+ a| 
+Dirección IP asignada por DHCP para el puerto de gestión 1, si está disponible después de encenderse
+
+*Nota:* Si la red que va a conectar al controlador de almacenamiento incluye un servidor DHCP, el administrador de red puede utilizar la dirección MAC para determinar la dirección IP asignada por el servidor DHCP.
+ a| 
+ a| 
+
+
+
+ a| 
+Dirección IP estática que planea usar para el dispositivo en la red de gestión
+ a| 
+Para IPv4:
+
+* Dirección IPv4:
+* Máscara de subred:
+* Puerta de enlace:
+
+
+Para IPv6:
+
+* Dirección IPv6:
+* Dirección IP enrutable:
+* Dirección IP del enrutador de la controladora de almacenamiento:
+
+ a| 
+Para IPv4:
+
+* Dirección IPv4:
+* Máscara de subred:
+* Puerta de enlace:
+
+
+Para IPv6:
+
+* Dirección IPv6:
+* Dirección IP enrutable:
+* Dirección IP del enrutador de la controladora de almacenamiento:
+
+
+
+
+ a| 
+Formato de dirección IP
+ a| 
+Elija una opción:
+
+* IPv4
+* IPv6
+
+ a| 
+Elija una opción:
+
+* IPv4
+* IPv6
+
+
+
+
+ a| 
+Velocidad y modo doble
+
+*Nota:* debe asegurarse de que el conmutador Ethernet de la red de administración de SANtricity System Manager está establecido en Negotiate automático.
+ a| 
+Debe ser:
+
+* Autonegociar (predeterminado)
+
+ a| 
+Debe ser:
+
+* Autonegociar (predeterminado)
+
+
+|===
+
+
+== Información necesaria para conectar el controlador SG6000-CN a la red Admin
+
+La red de administración de StorageGRID es una red opcional que se utiliza para la administración y el mantenimiento del sistema. El dispositivo se conecta a la red Admin mediante los siguientes puertos de gestión de 1 GbE en el controlador SG6000-CN.
+
+image::../media/rj_45_ports_circled.png[Puertos RJ-45]
+
+[cols="2a,1a"]
+|===
+| Información necesaria | Su valor 
+
+
+ a| 
+Red de administrador habilitada
+ a| 
+Elija una opción:
+
+* No
+* Sí (predeterminado)
+
+
+
+
+ a| 
+Modo de enlace de red
+ a| 
+Elija una opción:
+
+* Independiente (predeterminado)
+* Copia de seguridad activa
+
+
+
+
+ a| 
+Puerto de switch para el puerto izquierdo en el círculo rojo del diagrama (puerto activo predeterminado para el modo de enlace de red independiente)
+ a| 
+
+
+
+ a| 
+Puerto de switch para el puerto derecho en el círculo rojo del diagrama (sólo modo de enlace de red Active-Backup)
+ a| 
+
+
+
+ a| 
+Dirección MAC del puerto de red de administración
+
+*Nota:* la etiqueta de dirección MAC situada en la parte frontal del controlador SG6000-CN enumera la dirección MAC del puerto de administración del BMC. Para determinar la dirección MAC del puerto de red de administración, debe agregar *2* al número hexadecimal de la etiqueta. Por ejemplo, si la dirección MAC de la etiqueta termina en *09*, la dirección MAC del puerto de administración finalizará en *0B*. Si la dirección MAC de la etiqueta termina en *(_y_)FF*, la dirección MAC del puerto de administración finalizará en *(_y_+1)01*. Puede realizar este cálculo fácilmente abriendo Calculadora en Windows, establecerlo en modo Programador, seleccionando hex, escribiendo la dirección MAC y, a continuación, escribiendo *+ 2 =*.
+ a| 
+
+
+
+ a| 
+Dirección IP asignada por DHCP para el puerto de red de administración, si está disponible después del encendido
+
+*Nota:* puede determinar la dirección IP asignada por DHCP utilizando la dirección MAC para buscar la dirección IP asignada.
+ a| 
+* Dirección IPv4 (CIDR):
+* Puerta de enlace:
+
+
+
+
+ a| 
+Dirección IP estática que piensa usar para el nodo de almacenamiento del dispositivo en la red de administración
+
+*Nota:* Si su red no tiene una puerta de enlace, especifique la misma dirección IPv4 estática para la puerta de enlace.
+ a| 
+* Dirección IPv4 (CIDR):
+* Puerta de enlace:
+
+
+
+
+ a| 
+Subredes de red de administración (CIDR)
+ a| 
+
+|===
+
+
+== Información necesaria para conectar y configurar puertos 10/25-GbE en el controlador SG6000-CN
+
+Los cuatro puertos 10/25-GbE del controlador SG6000-CN se conectan a la red de red StorageGRID y a la red de cliente opcional.
+
+[cols="2a,1a"]
+|===
+| Información necesaria | Su valor 
+
+
+ a| 
+Velocidad de enlace
+ a| 
+Elija una opción:
+
+* Automático (predeterminado)
+* 10 GbE
+* 25 GbE
+
+
+
+
+ a| 
+Modo de enlace de puerto
+ a| 
+Elija una opción:
+
+* Fijo (predeterminado)
+* Agregado
+
+
+
+
+ a| 
+Puerto de conmutador para el puerto 1 (red cliente para modo fijo)
+ a| 
+
+
+
+ a| 
+Puerto de conmutador para el puerto 2 (red de cuadrícula para modo fijo)
+ a| 
+
+
+
+ a| 
+Puerto de conmutador para el puerto 3 (red cliente para modo fijo)
+ a| 
+
+
+
+ a| 
+Puerto de conmutador para el puerto 4 (red de cuadrícula para modo fijo)
+ a| 
+
+|===
+
+
+== Información necesaria para conectar el controlador SG6000-CN a la red Grid
+
+Grid Network para StorageGRID es una red necesaria que se utiliza para todo el tráfico interno de StorageGRID. El dispositivo se conecta a la red Grid mediante los puertos 10/25-GbE del controlador SG6000-CN.
+
+[cols="2a,1a"]
+|===
+| Información necesaria | Su valor 
+
+
+ a| 
+Modo de enlace de red
+ a| 
+Elija una opción:
+
+* Active-Backup (predeterminado)
+* LACP (802.3ad)
+
+
+
+
+ a| 
+Etiquetado VLAN habilitado
+ a| 
+Elija una opción:
+
+* No (predeterminado)
+* Sí
+
+
+
+
+ a| 
+Etiqueta de VLAN (si el etiquetado de VLAN está habilitado)
+ a| 
+Introduzca un valor entre 0 y 4095:
+
+
+
+ a| 
+Dirección IP asignada por DHCP para la red de cuadrícula, si está disponible después del encendido
+ a| 
+* Dirección IPv4 (CIDR):
+* Puerta de enlace:
+
+
+
+
+ a| 
+Dirección IP estática que tiene previsto usar para el nodo de almacenamiento del dispositivo en la red de grid
+
+*Nota:* Si su red no tiene una puerta de enlace, especifique la misma dirección IPv4 estática para la puerta de enlace.
+ a| 
+* Dirección IPv4 (CIDR):
+* Puerta de enlace:
+
+
+
+
+ a| 
+Subredes de red de cuadrícula (CIDR)
+ a| 
+
+|===
+
+
+== Información necesaria para conectar el controlador SG6000-CN a la red cliente
+
+La red de cliente para StorageGRID es una red opcional que se suele utilizar para proporcionar acceso al protocolo de cliente al grid. El dispositivo se conecta a la red cliente mediante los puertos 10/25-GbE del controlador SG6000-CN.
+
+[cols="2a,1a"]
+|===
+| Información necesaria | Su valor 
+
+
+ a| 
+Red de cliente habilitada
+ a| 
+Elija una opción:
+
+* No (predeterminado)
+* Sí
+
+
+
+
+ a| 
+Modo de enlace de red
+ a| 
+Elija una opción:
+
+* Active-Backup (predeterminado)
+* LACP (802.3ad)
+
+
+
+
+ a| 
+Etiquetado VLAN habilitado
+ a| 
+Elija una opción:
+
+* No (predeterminado)
+* Sí
+
+
+
+
+ a| 
+Etiqueta de VLAN (si el etiquetado de VLAN está habilitado)
+ a| 
+Introduzca un valor entre 0 y 4095:
+
+
+
+ a| 
+Dirección IP asignada por DHCP para la red cliente, si está disponible después del encendido
+ a| 
+* Dirección IPv4 (CIDR):
+* Puerta de enlace:
+
+
+
+
+ a| 
+Dirección IP estática que tiene previsto usar para el nodo de almacenamiento del dispositivo en la red cliente
+
+*Nota:* Si la red de cliente está activada, la ruta predeterminada del controlador utilizará la puerta de enlace especificada aquí.
+ a| 
+* Dirección IPv4 (CIDR):
+* Puerta de enlace:
+
+
+|===
+
+
+== Información necesaria para conectar el controlador SG6000-CN a la red de gestión BMC
+
+Puede acceder a la interfaz del BMC en el controlador SG6000-CN utilizando el siguiente puerto de gestión de 1 GbE. Este puerto admite la gestión remota del hardware de la controladora a través de Ethernet mediante el estándar de interfaz de gestión de plataforma inteligente (IPMI).
+
+image::../media/bmc_management_port.gif[Puerto de gestión de BMC]
+
+
+NOTE: Puede habilitar o deshabilitar el acceso IPMI remoto para todos los dispositivos que contienen un BMC mediante el extremo privado de la API de gestión, PUT /private/bmc.
+
+[cols="2a,1a"]
+|===
+| Información necesaria | Su valor 
+
+
+ a| 
+Puerto del switch Ethernet se conectará al puerto de administración del BMC (con un círculo en el diagrama)
+ a| 
+
+
+
+ a| 
+Dirección IP asignada por DHCP para la red de gestión de BMC, si está disponible después del encendido
+ a| 
+* Dirección IPv4 (CIDR):
+* Puerta de enlace:
+
+
+
+
+ a| 
+La dirección IP estática que planea usar para el puerto de gestión de BMC
+ a| 
+* Dirección IPv4 (CIDR):
+* Puerta de enlace:
+
+
+|===
+.Información relacionada
+* link:../installconfig/controllers-in-sg6000-appliances.html["SG6000 controladores"]
+* link:../installconfig/reviewing-appliance-network-connections.html["Revise las conexiones de red del dispositivo"]
+* link:../installconfig/port-bond-modes-for-sg6000-cn-controller.html["Modos de enlace de puertos (controladora SG6000-CN)"]
+* link:cabling-appliance-sg6000.html["Aparato de cable (SG6000)"]
+* link:../installconfig/setting-ip-configuration.html["Configure las direcciones IP de StorageGRID"]
+

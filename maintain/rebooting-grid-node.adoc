@@ -1,0 +1,22 @@
+---
+permalink: maintain/rebooting-grid-node.html 
+sidebar: sidebar 
+keywords: reboot grid node 
+summary: Puede reiniciar un nodo de cuadrícula desde Grid Manager o desde el shell de comandos del nodo. 
+---
+= Reiniciar nodo de cuadrícula: Descripción general
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede reiniciar un nodo de cuadrícula desde Grid Manager o desde el shell de comandos del nodo.
+
+Cuando reinicia un nodo de cuadrícula, el nodo se apaga y se reinicia. Todos los servicios se reinician automáticamente.
+
+Si planea reiniciar nodos de almacenamiento, tenga en cuenta lo siguiente:
+
+* Si una regla de ILM especifica un comportamiento de procesamiento de Confirmación doble o Equilibrado y no es posible crear inmediatamente todas las copias necesarias, StorageGRID confirmará de inmediato los objetos recién ingeridos en dos nodos de almacenamiento en el mismo sitio y evaluará ILM más adelante. Si desea reiniciar dos o más nodos de almacenamiento en un sitio determinado, es posible que no pueda acceder a estos objetos durante el reinicio.
+* Para garantizar que puede acceder a todos los objetos mientras se reinicia un nodo de almacenamiento, deje de procesar objetos en un sitio durante aproximadamente una hora antes de reiniciar el nodo.
+

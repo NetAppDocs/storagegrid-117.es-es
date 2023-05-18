@@ -1,0 +1,37 @@
+---
+permalink: upgrade/changes-to-grid-management-api.html 
+sidebar: sidebar 
+keywords: grid management api, api, api version, swagger, rest api 
+summary: StorageGRID 11,7 utiliza la versión 3 de la API de administración de grid. La versión 3 deja obsoleto la versión 2; sin embargo, la versión 1 y la versión 2 siguen siendo compatibles. 
+---
+= Cambios en la API de gestión de grid
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID 11,7 utiliza la versión 3 de la API de administración de grid. La versión 3 deja obsoleto la versión 2; sin embargo, la versión 1 y la versión 2 siguen siendo compatibles.
+
+
+IMPORTANT: Puede seguir utilizando la versión 1 y la versión 2 de la API de gestión con StorageGRID 11,7; no obstante, la compatibilidad con estas versiones de la API se quitará en una futura versión de StorageGRID. Después de actualizar a StorageGRID 11,7, las API v1 y v2 obsoletas se pueden desactivar con el `PUT /grid/config/management` API.
+
+Para obtener más información, visite link:../admin/using-grid-management-api.html["Utilice la API de gestión de grid"].
+
+
+
+== Los nombres mostrados ahora se incluyen en las respuestas a las solicitudes de estado del nodo
+
+Relacionado con el nuevo link:../maintain/rename-grid-site-node-overview.html["Procedimiento Rename grid, sites y nodes"], Después de cambiar el nombre de un sitio o nodo, el nombre del elemento (su nombre de sistema) y su nombre mostrado son devueltos por la API *node-health*.
+
+
+
+== Puede crear un bloque y claves de acceso para un nuevo inquilino de S3
+
+Nuevo `s3Bucket` y.. `s3AccessKey` Las opciones se agregaron a la API de *cuentas*. Cuando crea una cuenta de inquilino S3 con la API de gestión de grid, puede crear, de manera opcional, un bloque para ese inquilino, así como el ID de clave de acceso y la clave secreta del usuario raíz del inquilino.
+
+
+
+== Puede cambiar el estado de almacenamiento del nodo de almacenamiento
+
+Puede utilizar los nuevos puntos finales de API *node-storage-state* para determinar y cambiar el estado del almacenamiento en un nodo de almacenamiento (online, offline, read-only).

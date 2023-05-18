@@ -1,0 +1,103 @@
+---
+permalink: admin/kms-viewing-encrypted-nodes.html 
+sidebar: sidebar 
+keywords: view encrypted nodes, kms nodes, appliances with kms 
+summary: Puede ver información acerca de los nodos del dispositivo en el sistema StorageGRID que tienen habilitada la configuración de cifrado de nodos. 
+---
+= Vea los nodos cifrados
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede ver información acerca de los nodos del dispositivo en el sistema StorageGRID que tienen activada la configuración * cifrado de nodos*.
+
+.Pasos
+. Seleccione *CONFIGURACIÓN* > *Seguridad* > *servidor de administración de claves*.
++
+Se muestra la página servidor de gestión de claves. En la pestaña Configuration Details, se muestra todos los servidores de gestión de claves que se configuraron.
+
+. En la parte superior de la página, seleccione la pestaña *Nodos encriptados*.
++
+La pestaña Nodos cifrados muestra los nodos del dispositivo en su sistema StorageGRID que tienen habilitada la configuración *Encriptación de nodos*.
+
+. Revise la información de la tabla de cada nodo del dispositivo.
++
+[cols="1a,2a"]
+|===
+| Columna | Descripción 
+
+
+ a| 
+Nombre del nodo
+ a| 
+El nombre del nodo del dispositivo.
+
+
+
+ a| 
+Tipo de nodo
+ a| 
+El tipo de nodo: Almacenamiento, administrador o puerta de enlace.
+
+
+
+ a| 
+Sitio
+ a| 
+El nombre del sitio StorageGRID donde se instala el nodo.
+
+
+
+ a| 
+Nombre de KM
+ a| 
+Nombre descriptivo del KMS utilizado para el nodo.
+
+Si no aparece ningún KMS, seleccione la pestaña Detalles de configuración para agregar un KMS.
+
+link:kms-adding.html["Añadir un servidor de gestión de claves (KMS)"]
+
+
+
+ a| 
+UID de clave
+ a| 
+El ID único de la clave de cifrado utilizada para cifrar y descifrar datos en el nodo del dispositivo. Para ver una UID de clave completa, coloque el cursor sobre la celda.
+
+Un guión (--) indica que el UID de la clave es desconocido, posiblemente debido a un problema de conexión entre el nodo del dispositivo y el KMS.
+
+
+
+ a| 
+Estado
+ a| 
+El estado de la conexión entre el KMS y el nodo del dispositivo. Si el nodo está conectado, la Marca de tiempo se actualiza cada 30 minutos. El estado de la conexión puede tardar varios minutos en actualizarse después de que cambie la configuración de KMS.
+
+*Nota:* debe actualizar el explorador Web para ver los nuevos valores.
+
+|===
+. Si la columna Estado indica un problema de KMS, resuelva el problema inmediatamente.
++
+Durante las operaciones normales de KMS, el estado será *conectado a KMS*. Si un nodo está desconectado de la cuadrícula, se muestra el estado de conexión del nodo (administrativamente abajo o Desconocido).
+
++
+Otros mensajes de estado corresponden a las alertas StorageGRID con los mismos nombres:
+
++
+** No se ha podido cargar la configuración DE KMS
+** Error de conectividad DE KMS
+** No se ha encontrado el nombre de la clave de cifrado DE KMS
+** Error en la rotación de la clave de cifrado DE KMS
+** LA clave KMS no pudo descifrar el volumen de un dispositivo
+** KMS no está configurado
+
+
++
+Realice las acciones recomendadas para estas alertas.
+
+
+
+
+CAUTION: Debe solucionar cualquier problema inmediatamente para garantizar que los datos están totalmente protegidos.

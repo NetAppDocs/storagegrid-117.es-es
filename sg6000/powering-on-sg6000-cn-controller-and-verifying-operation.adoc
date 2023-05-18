@@ -1,0 +1,112 @@
+---
+permalink: sg6000/powering-on-sg6000-cn-controller-and-verifying-operation.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, power on, turn on, start, sg6000-cn, controller 
+summary: Encienda la controladora después de completar el mantenimiento. 
+---
+= Encienda el controlador SG6000-CN y compruebe el funcionamiento
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Encienda la controladora después de completar el mantenimiento.
+
+.Antes de empezar
+* Instaló la controladora en un armario o rack y conecta los cables de datos y alimentación.
++
+link:reinstalling-sg6000-cn-controller-into-cabinet-or-rack.html["Vuelva a instalar el controlador SG6000-CN en el armario o bastidor"]
+
+* Localizó físicamente la controladora en el centro de datos.
++
+link:locating-controller-in-data-center.html["Ubique la controladora en el centro de datos"]
+
+
+
+.Pasos
+. Encienda el controlador SG6000-CN y supervise los LED del controlador y los códigos de inicio mediante uno de los siguientes métodos:
++
+** Pulse el interruptor de alimentación de la parte frontal del controlador.
++
+image::../media/sg6060_front_panel_power_led_off.jpg[LED de alimentación del panel frontal SG6060 - desactivado]
+
+** Use la interfaz del BMC del controlador:
++
+... Acceda a la interfaz del BMC del controlador.
++
+link:../installconfig/accessing-bmc-interface.html["Acceda a la interfaz de BMC"]
+
+... Seleccione *Control de alimentación*.
+... Seleccione *encendido del servidor* y, a continuación, seleccione *realizar acción*.
++
+image::../media/sg6060_power_on_from_bmc.png[Encienda la controladora de BMC]
+
++
+Utilice la interfaz de BMC para supervisar el estado de inicio.
+
+
+
+
+
+. Confirme que el controlador del dispositivo se muestra en Grid Manager y sin alertas.
++
+La controladora puede tardar hasta 20 minutos en mostrarse en Grid Manager.
+
+. Confirme que el nuevo controlador SG6000-CN está completamente operativo:
++
+.. Inicie sesión en el nodo de la cuadrícula mediante PuTTY u otro cliente ssh:
++
+... Introduzca el siguiente comando: `ssh admin@_grid_node_IP_`
+... Introduzca la contraseña que aparece en `Passwords.txt` archivo.
+... Introduzca el siguiente comando para cambiar a la raíz: `su -`
+... Introduzca la contraseña que aparece en `Passwords.txt` archivo.
++
+Cuando ha iniciado sesión como root, el símbolo del sistema cambia de `$` para `#`.
+
+
+
+.. Introduzca el siguiente comando y compruebe que devuelve el resultado esperado: +
+`cat /sys/class/fc_host/*/port_state`
++
+Resultado esperado:
+
++
+[listing]
+----
+Online
+Online
+Online
+Online
+----
++
+Si no se devuelve el resultado esperado, póngase en contacto con el soporte técnico.
+
+.. Introduzca el siguiente comando y compruebe que devuelve el resultado esperado: +
+`cat /sys/class/fc_host/*/speed`
++
+Resultado esperado:
+
++
+[listing]
+----
+16 Gbit
+16 Gbit
+16 Gbit
+16 Gbit
+----
++
+Si no se devuelve el resultado esperado, póngase en contacto con el soporte técnico.
+
+.. En la página Nodes de Grid Manager, asegúrese de que el nodo del dispositivo esté conectado a la cuadrícula y no tenga ninguna alerta.
++
+
+CAUTION: No desconecte otro nodo del dispositivo a menos que este tenga un icono verde.
+
+
+
+. Opcional: Instale el panel frontal, si se ha quitado uno.
+
+
+.Información relacionada
+link:../installconfig/viewing-status-indicators.html["Ver indicadores de estado"]

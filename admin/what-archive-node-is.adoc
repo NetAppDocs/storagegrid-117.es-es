@@ -1,0 +1,46 @@
+---
+permalink: admin/what-archive-node-is.html 
+sidebar: sidebar 
+keywords: archive node 
+summary: 'Opcionalmente, cada sitio del centro de datos StorageGRID se puede poner en marcha con un nodo de archivado, que permite conectarse a un sistema de almacenamiento de archivado externo específico, como Tivoli Storage Manager (TSM).' 
+---
+= ¿Qué es un nodo de archivado?
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Opcionalmente, cada sitio del centro de datos StorageGRID se puede poner en marcha con un nodo de archivado, que permite conectarse a un sistema de almacenamiento de archivado externo específico, como Tivoli Storage Manager (TSM).
+
+[CAUTION]
+====
+La compatibilidad con los nodos de archivo (tanto para archivar en la nube mediante la API S3 como para archivar en cinta mediante el middleware TSM) está obsoleta y se eliminará en una versión futura. Mover objetos de un nodo de archivado a un sistema de almacenamiento de archivado externo ha sido reemplazado por ILM Cloud Storage Pools, que ofrecen más funcionalidad.
+
+Consulte:
+
+* link:../admin/migrating-objects-from-cloud-tiering-s3-to-cloud-storage-pool.html["Migrar objetos a un pool de almacenamiento en la nube"]
+* link:../ilm/what-cloud-storage-pool-is.html["Utilice Cloud Storage Pools"]
+
+
+Además, debe quitar Nodos de archivo de la política de gestión de la vida útil de la información activa en StorageGRID 11,7 o anterior. La eliminación de datos de objetos almacenados en nodos de archivado simplificará las actualizaciones futuras. Consulte link:../ilm/working-with-ilm-rules-and-ilm-policies.html["Trabajar con reglas de ILM y políticas de ILM"].
+
+====
+El nodo de archivado proporciona una interfaz a través de la cual se puede dirigir un sistema de almacenamiento de archivado externo para el almacenamiento a largo plazo de datos de objetos. El nodo de archivado también supervisa esta conexión y la transferencia de datos de objeto entre el sistema StorageGRID y el sistema de almacenamiento de archivado externo objetivo.
+
+Después de configurar las conexiones con el destino externo, puede configurar el nodo de archivado para optimizar el rendimiento de TSM, desconectar un nodo de archivado cuando un servidor TSM se acerca a la capacidad o no está disponible y configurar la configuración de replicación y recuperación. También puede establecer alarmas personalizadas para el nodo de archivado.
+
+Los datos de objetos que no se pueden eliminar, pero no se accede con frecuencia, pueden moverse en cualquier momento de los discos giratorios de un nodo de almacenamiento a un almacenamiento de archivado externo, como el cloud o la cinta. Este archivado de los datos de objetos se realiza mediante la configuración del nodo de archivado del sitio del centro de datos y, a continuación, con la configuración de las reglas de ILM donde este nodo de archivado se selecciona como el "destino" para obtener instrucciones de colocación de contenido. El nodo de archivado no gestiona los propios datos de objetos archivados, lo consigue el dispositivo de archivado externo.
+
+
+NOTE: Los metadatos de objetos no se archivan, pero siguen en los nodos de almacenamiento.
+
+
+
+== Qué es el servicio ARC
+
+El servicio de archivado (ARC) en nodos de archivado ofrece la interfaz de gestión que se puede utilizar para configurar conexiones a almacenamiento de archivado externo, como la cinta, a través de middleware TSM.
+
+Se trata del servicio de ARC que interactúa con un sistema de almacenamiento de archivado externo, por lo que envía datos de objetos para almacenamiento near-line y realiza recuperaciones cuando una aplicación cliente solicita un objeto archivado. Cuando una aplicación cliente solicita un objeto archivado, un nodo de almacenamiento solicita los datos del objeto del servicio ARC. El servicio ARC realiza una solicitud al sistema de almacenamiento de archivos externo, que recupera los datos de objeto solicitados y los envía al servicio ARC. El servicio ARC verifica los datos del objeto y los reenvía al nodo de almacenamiento, que a su vez devuelve el objeto a la aplicación cliente solicitante.
+
+Las solicitudes de datos de objetos archivados a cinta mediante TSM Middleware se gestionan por la eficiencia de las recuperaciones. Las solicitudes se pueden solicitar para que los objetos almacenados en orden secuencial en la cinta se soliciten en el mismo orden secuencial. A continuación, las solicitudes se colocan en la cola de espera para su envío al dispositivo de almacenamiento. En función del dispositivo de archivado, se pueden procesar simultáneamente varias solicitudes de objetos en diferentes volúmenes.

@@ -1,0 +1,207 @@
+---
+permalink: maintain/decommissioning-disconnected-grid-nodes.html 
+sidebar: sidebar 
+keywords: storagegrid, disconnected nodes, decommission node 
+summary: 'Es posible que deba retirar un nodo que no esté conectado actualmente a la cuadrícula \(uno cuyo estado sea desconocido o administrativamente inactivo\).' 
+---
+= Retirada de nodos de red desconectados
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible que deba retirar un nodo que no esté conectado actualmente a la cuadrícula (uno cuyo estado sea desconocido o administrativamente inactivo).
+
+.Antes de empezar
+* Usted entiende los requisitos y. link:considerations-for-decommissioning-grid-nodes.html["consideraciones sobre el decomisionado de los nodos de cuadrícula"].
+* Ha obtenido todos los requisitos previos.
+* Se ha asegurado de que no hay ningún trabajo de reparación de datos activo. Consulte link:checking-data-repair-jobs.html["Compruebe los trabajos de reparación de datos"].
+* Ha confirmado que la recuperación del nodo de almacenamiento no está en curso en ningún lugar de la cuadrícula. Si es así, debe esperar a que se complete cualquier recompilación de Cassandra como parte de la recuperación. A continuación, podrá continuar con el desmantelamiento.
+* Se ha asegurado de que no se ejecutarán otros procedimientos de mantenimiento mientras el procedimiento de retirada del nodo se esté ejecutando, a menos que el procedimiento de retirada del nodo se detenga.
+* La columna *DECOMmission possible* para el nodo desconectado o los nodos que desea retirar incluye una Marca de verificación verde.
+* Tiene la clave de acceso de aprovisionamiento.
+
+
+.Acerca de esta tarea
+Puede identificar los nodos desconectados buscando iconos desconocidos (azules) o administrativamente abajo (gris) en la columna *Estado*. En el ejemplo, el nodo de almacenamiento denominado DC1-S4 está desconectado; todos los demás nodos están conectados.
+
+image::../media/decommission_nodes_page_one_disconnected.png[Retire la página nodos con un nodo desconectado]
+
+Antes de retirar el servicio de un nodo desconectado, tenga en cuenta lo siguiente:
+
+* Este procedimiento está pensado principalmente para quitar un solo nodo desconectado. Si la cuadrícula contiene varios nodos desconectados, el software requiere que los retire todos al mismo tiempo, lo que aumenta la posibilidad de obtener resultados inesperados.
++
+
+IMPORTANT: Tenga cuidado al retirar más de un nodo de grid desconectado a la vez, especialmente si selecciona varios nodos de almacenamiento desconectados.
+
+* Si no se puede quitar un nodo desconectado (por ejemplo, un nodo de almacenamiento necesario para el quórum ADC), no se puede quitar ningún otro nodo desconectado.
+
+
+Antes de retirar un *nodo de almacenamiento* desconectado, tenga en cuenta lo siguiente
+
+* Nunca debe decomisionar un nodo de almacenamiento desconectado a menos que esté seguro de que no se puede conectar o recuperar.
++
+
+IMPORTANT: Si cree que los datos de objeto todavía se pueden recuperar del nodo, no realice este procedimiento. En su lugar, póngase en contacto con el soporte técnico para determinar si es posible la recuperación del nodo.
+
+* Si decomisiona más de un nodo de almacenamiento desconectado, se podrían perder datos. Es posible que el sistema no pueda reconstruir los datos si no hay suficientes copias de objetos, fragmentos codificados con borrado o metadatos de objetos disponibles.
++
+
+IMPORTANT: Si tiene más de un nodo de almacenamiento desconectado que no puede recuperar, póngase en contacto con el soporte técnico para determinar el mejor curso de acción.
+
+* Al retirar un nodo de almacenamiento desconectado, StorageGRID inicia trabajos de reparación de datos al final del proceso de decomisionado. Estos trabajos intentan reconstruir los datos de objeto y los metadatos que se almacenaron en el nodo desconectado.
+* Al retirar un nodo de almacenamiento desconectado, el procedimiento de retirada se completa con relativa rapidez. Sin embargo, los trabajos de reparación de datos pueden tardar días o semanas en ejecutarse y no son supervisados por el procedimiento de decomiso. Debe supervisar manualmente estos trabajos y reiniciarlos según sea necesario. Consulte link:checking-data-repair-jobs.html["Compruebe los trabajos de reparación de datos"].
+* Si decomisiona un nodo de almacenamiento desconectado que contiene la única copia de un objeto, se perderá el objeto. Las tareas de reparación de datos solo pueden reconstruir y recuperar objetos si al menos una copia replicada o hay suficientes fragmentos codificados de borrado en los nodos de almacenamiento conectados actualmente.
+
+
+Antes de retirar un nodo *Admin* o *Gateway Node* desconectado, tenga en cuenta lo siguiente:
+
+* Cuando retire un nodo de administrador desconectado, perderá los registros de auditoría de ese nodo; sin embargo, estos registros también deben existir en el nodo de administración principal.
+* Puede retirar un nodo de puerta de enlace de forma segura mientras está desconectado.
+
+
+.Pasos
+. Intente volver a conectar los nodos de grid desconectados o para recuperarlos.
++
+Consulte los procedimientos de recuperación para obtener instrucciones.
+
+. Si no puede recuperar un nodo de grid desconectado y desea decomisionar mientras está desconectado, seleccione la casilla de verificación de ese nodo.
++
+
+NOTE: Si la cuadrícula contiene varios nodos desconectados, el software requiere que los retire todos al mismo tiempo, lo que aumenta la posibilidad de obtener resultados inesperados.
+
++
+
+IMPORTANT: Tenga cuidado al elegir retirar más de un nodo de grid desconectado a la vez, especialmente si selecciona varios nodos de almacenamiento desconectados. Si tiene más de un nodo de almacenamiento desconectado que no puede recuperar, póngase en contacto con el soporte técnico para determinar el mejor curso de acción.
+
+. Introduzca la clave de acceso de aprovisionamiento.
++
+El botón *Iniciar misión* está activado.
+
+. Haga clic en *Iniciar misión*.
++
+Aparece una advertencia que indica que ha seleccionado un nodo desconectado y que los datos del objeto se perderán si el nodo tiene la única copia de un objeto.
+
++
+image::../media/decommission_warning.gif[captura de pantalla del mensaje de advertencia de retirada]
+
+. Revise la lista de nodos y haga clic en *Aceptar*.
++
+Se inicia el procedimiento de retirada y se muestra el progreso de cada nodo. Durante el procedimiento, se genera un nuevo paquete de recuperación que contiene el cambio de configuración de la cuadrícula.
+
++
+image::../media/decommission_nodes_procedure_in_progress_disconnected.png[captura de pantalla de decomisionado de nodos en curso]
+
+. En cuanto el nuevo paquete de recuperación esté disponible, haga clic en el enlace o seleccione *MANTENIMIENTO* > *Sistema* > *Paquete de recuperación* para acceder a la página Paquete de recuperación. A continuación, descargue la `.zip` archivo.
++
+Consulte las instrucciones para link:downloading-recovery-package.html["Descarga del paquete de recuperación"].
+
++
+
+NOTE: Descargue el Lo antes posible. del paquete de recuperación para asegurarse de que puede recuperar la red si hay algún problema durante el procedimiento de retirada de servicio.
+
++
+
+IMPORTANT: El archivo del paquete de recuperación debe estar protegido porque contiene claves de cifrado y contraseñas que se pueden usar para obtener datos del sistema StorageGRID.
+
+. Supervise periódicamente la página de retirada para garantizar que todos los nodos seleccionados se han retirado correctamente.
++
+La retirada de los nodos de almacenamiento puede llevar días o semanas. Una vez completadas todas las tareas, la lista de selección de nodos se volverá a mostrar con un mensaje de éxito. Si se da de baja un nodo de almacenamiento desconectado, se muestra un mensaje de información que indica que se han iniciado los trabajos de reparación.
+
++
+image::../media/decommission_nodes_data_repair.png[captura de pantalla que muestra que se han iniciado los trabajos de reparación]
+
+. Una vez que los nodos se han apagado automáticamente como parte del procedimiento de retirada, quite las máquinas virtuales restantes u otros recursos asociados al nodo retirada del servicio.
++
+
+IMPORTANT: No realice este paso hasta que los nodos se hayan apagado automáticamente.
+
+. Si va a retirar un nodo de almacenamiento, supervise el estado de los trabajos de reparación de *datos replicados* y *datos codificados por borrado (EC)* que se inician automáticamente durante el proceso de retirada del servicio.
+
+
+[role="tabbed-block"]
+====
+.Datos replicados
+--
+* Para obtener un porcentaje de finalización estimado para la reparación replicada, agregue el `show-replicated-repair-status` opción del comando repair-data.
++
+`repair-data show-replicated-repair-status`
+
+* Para determinar si las reparaciones están completas:
++
+.. Seleccione *NODES* > *_Storage Node que se está reparando_* > *ILM*.
+.. Revise los atributos en la sección Evaluación. Una vez completadas las reparaciones, el atributo *esperando - todo* indica 0 objetos.
+
+
+* Para supervisar la reparación con más detalle:
++
+.. Seleccione *SUPPORT* > *Tools* > *Topología de cuadrícula*.
+.. Seleccione *_grid_* > *_nodo de almacenamiento que se está reparando_* > *LDR* > *almacén de datos*.
+.. Utilice una combinación de los siguientes atributos para determinar, como sea posible, si las reparaciones replicadas se han completado.
++
+
+NOTE: Puede haber incoherencias en Cassandra y no se realiza un seguimiento de las reparaciones fallidas.
+
++
+*** *Reparaciones intentadas (XRPA)*: Utilice este atributo para realizar un seguimiento del progreso de las reparaciones replicadas. Este atributo aumenta cada vez que un nodo de almacenamiento intenta reparar un objeto de alto riesgo. Cuando este atributo no aumenta durante un período más largo que el período de exploración actual (proporcionado por el atributo *período de exploración -- estimado*), significa que el análisis de ILM no encontró objetos de alto riesgo que necesitan ser reparados en ningún nodo.
++
+
+NOTE: Los objetos de alto riesgo son objetos que corren el riesgo de perderse por completo. Esto no incluye objetos que no cumplen con la configuración de ILM.
+
+*** *Período de exploración -- estimado (XSCM)*: Utilice este atributo para estimar cuándo se aplicará un cambio de directiva a objetos ingeridos previamente. Si el atributo *reparos intentados* no aumenta durante un período más largo que el período de adquisición actual, es probable que se realicen reparaciones replicadas. Tenga en cuenta que el período de adquisición puede cambiar. El atributo *período de exploración -- estimado (XSCM)* se aplica a toda la cuadrícula y es el máximo de todos los periodos de exploración de nodos. Puede consultar el historial de atributos *período de exploración -- Estimated* de la cuadrícula para determinar un intervalo de tiempo adecuado.
+
+
+
+
+
+
+--
+.Datos con código de borrado (EC)
+--
+Para supervisar la reparación de datos codificados mediante borrado y vuelva a intentar cualquier solicitud que pudiera haber fallado:
+
+. Determine el estado de las reparaciones de datos codificadas por borrado:
++
+** Seleccione *SUPPORT* > *Tools* > *Metrics* para ver el tiempo estimado hasta la finalización y el porcentaje de finalización del trabajo actual. A continuación, seleccione *EC Overview* en la sección Grafana. Consulte los paneles *tiempo estimado de trabajo de Grid EC hasta finalización* y *Porcentaje de trabajo de Grid EC completado*.
+** Utilice este comando para ver el estado de un elemento específico `repair-data` operación:
++
+`repair-data show-ec-repair-status --repair-id repair ID`
+
+** Utilice este comando para enumerar todas las reparaciones:
++
+`repair-data show-ec-repair-status`
+
++
+El resultado muestra información, como `repair ID`, para todas las reparaciones que se estén ejecutando anteriormente y actualmente.
+
+
+
+. Si el resultado muestra que la operación de reparación ha dado error, utilice el `--repair-id` opción de volver a intentar la reparación.
++
+Este comando vuelve a intentar una reparación de nodo con fallos mediante el ID de reparación 6949309319275667690:
+
++
+`repair-data start-ec-node-repair --repair-id 6949309319275667690`
+
++
+Este comando reintenta realizar una reparación de volumen con fallos mediante el ID de reparación 6949309319275667690:
+
++
+`repair-data start-ec-volume-repair --repair-id 6949309319275667690`
+
+
+
+--
+====
+.Después de terminar
+Tan pronto como se hayan retirado los nodos desconectados y se hayan completado todos los trabajos de reparación de datos, puede retirar todos los nodos de red conectados según sea necesario.
+
+A continuación, complete estos pasos una vez completado el procedimiento de retirada:
+
+* Asegúrese de que las unidades del nodo de cuadrícula que se decomisionan se limpian. Utilice una herramienta o servicio de limpieza de datos disponible en el mercado para eliminar los datos de las unidades de forma permanente y segura.
+* Si decomisionó un nodo del dispositivo y los datos del dispositivo estaban protegidos mediante el cifrado de nodos, utilice el instalador del dispositivo StorageGRID para borrar la configuración del servidor de gestión de claves (Clear KMS). Debe borrar la configuración de KMS si desea agregar el dispositivo a otra cuadrícula. Para ver instrucciones, consulte link:../commonhardware/monitoring-node-encryption-in-maintenance-mode.html["Supervise el cifrado del nodo en modo de mantenimiento"].
+
+
+.Información relacionada
+link:grid-node-recovery-procedures.html["Procedimientos de recuperación de nodos de grid"]

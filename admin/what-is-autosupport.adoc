@@ -1,0 +1,101 @@
+---
+permalink: admin/what-is-autosupport.html 
+sidebar: sidebar 
+keywords: autosupport, technical support, storagegrid health, system status, Active IQ 
+summary: La función AutoSupport permite que el sistema StorageGRID envíe mensajes de estado y estado al soporte técnico. 
+---
+= Utilice AutoSupport: Descripción general
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La función AutoSupport permite que el sistema StorageGRID envíe mensajes de estado y estado al soporte técnico.
+
+El uso de AutoSupport puede acelerar significativamente la detección y resolución de problemas. El soporte técnico también puede supervisar las necesidades de almacenamiento del sistema y ayudarle a determinar si necesita añadir nodos o sitios nuevos. De manera opcional, puede configurar los mensajes de AutoSupport para que se envíen a un destino adicional.
+
+Debe configurar StorageGRID AutoSupport solo en el nodo de administración principal. Sin embargo, debe configurar <<hardware_autosupport,AutoSupport de hardware>> en cada aparato.
+
+
+
+== Información incluida en los mensajes de AutoSupport
+
+Los mensajes de AutoSupport incluyen información como la siguiente:
+
+* Versión del software StorageGRID
+* Versión del sistema operativo
+* Información de atributos a nivel de sistema y ubicación
+* Alertas y alarmas recientes (sistema heredado)
+* Estado actual de todas las tareas de cuadrícula, incluidos los datos históricos
+* Uso de la base de datos del nodo de administrador
+* Número de objetos perdidos o faltantes
+* Ajustes de configuración de cuadrícula
+* Entidades NMS
+* Política de ILM activa
+* Archivo de especificación de grid aprovisionado
+* Métricas de diagnóstico
+
+
+Puede habilitar la función AutoSupport y las opciones individuales de AutoSupport cuando instale StorageGRID por primera vez, o bien puede habilitarlas más adelante. Si AutoSupport no está activado, aparece un mensaje en el panel de control de Grid Manager. El mensaje incluye un enlace a la página de configuración de AutoSupport.
+
+image::../media/autosupport_disabled_message.png[Mensaje AutoSupport deshabilitado]
+
+Si cierra el mensaje, no volverá a aparecer hasta que se borre la caché del explorador, aunque AutoSupport permanezca deshabilitado.
+
+
+
+== ¿Qué es Active IQ?
+
+Active IQ es un asesor digital basado en cloud que aprovecha el análisis predictivo y los conocimientos de la comunidad de la base instalada de NetApp. Sus evaluaciones de riesgos continuas, las alertas predictivas, las directrices prescriptivas y las acciones automatizadas le ayudan a evitar problemas antes de que se produzcan, lo que mejora el estado del sistema y aumenta la disponibilidad del sistema.
+
+Debe habilitar AutoSupport si desea usar la funcionalidad y las consolas de Active IQ en el sitio de soporte de NetApp.
+
+https://["Documentación del asesor digital de Active IQ"^]
+
+
+
+== Protocolos para enviar mensajes AutoSupport
+
+Puede elegir uno de los tres protocolos para enviar mensajes de AutoSupport:
+
+* HTTPS
+* HTTP
+* SMTP
+
+
+Si utiliza SMTP como protocolo para mensajes de AutoSupport, debe configurar un servidor de correo SMTP.
+
+
+
+== Opciones de AutoSupport
+
+Puede utilizar cualquier combinación de las siguientes opciones para enviar mensajes de AutoSupport al soporte técnico:
+
+* *Semanal*: Envía automáticamente mensajes de AutoSupport una vez por semana. Valor predeterminado: Activado.
+* *Desencadenada por eventos*: Envía automáticamente mensajes AutoSupport cada hora o cuando se producen eventos significativos del sistema. Valor predeterminado: Activado.
+* *A petición*: Permita que el servicio de asistencia técnica solicite que el sistema StorageGRID envíe mensajes AutoSupport automáticamente, lo que resulta útil cuando está trabajando activamente en un problema (requiere el protocolo de transmisión HTTPS AutoSupport). Ajuste predeterminado: Desactivado.
+* *Desencadenado por el usuario*: Envía manualmente mensajes AutoSupport en cualquier momento.
+
+
+
+
+== [[HARDWARE_autosupport]] AutoSupport para dispositivos
+
+AutoSupport para dispositivos informa de problemas de hardware de StorageGRID, mientras que StorageGRID AutoSupport informa de problemas de software de StorageGRID (excepto SGF6112, donde StorageGRID AutoSupport informa de problemas de hardware y software). Debe configurar AutoSupport en cada dispositivo, excepto para el SGF6112 que no requiera una configuración adicional. AutoSupport se ha implantado de forma diferente para los servicios y las aplicaciones de almacenamiento.
+
+Debe habilitar AutoSupport en SANtricity para cada dispositivo de almacenamiento. Es posible configurar SANtricity AutoSupport durante la configuración inicial del dispositivo o después de haber instalado un dispositivo:
+
+* Para dispositivos SG6000 y SG5700, link:../installconfig/accessing-and-configuring-santricity-system-manager.html["Configure AutoSupport en SANtricity System Manager"]
+
+
+Los mensajes de AutoSupport de los dispositivos E-Series se pueden incluir en StorageGRID AutoSupport si se configura la entrega de AutoSupport mediante proxy en link:../admin/sending-eseries-autosupport-messages-through-storagegrid.html["System Manager de SANtricity"].
+
+StorageGRID AutoSupport no informa de problemas de hardware, como fallos de DIMM o de tarjeta de interfaz del host (HIC). Sin embargo, algunos fallos de componentes pueden desencadenarse link:../monitor/alerts-reference.html["alertas de hardware"]. En el caso de dispositivos StorageGRID con un controlador de administración de placa base (BMC), como SG100, SG1000, SG6060 o SGF6024, puede configurar capturas de correo electrónico y SNMP para informar de fallos de hardware:
+
+* link:../installconfig/setting-up-email-notifications-for-alerts.html["Configure notificaciones por correo electrónico para las alertas"]
+* link:../installconfig/configuring-snmp-settings-for-bmc.html["Configure los ajustes de SNMP"] Para la controladora SG6000-CN o los dispositivos de servicios SG100 y SG1000
+
+
+.Información relacionada
+https://["Soporte de NetApp"^]

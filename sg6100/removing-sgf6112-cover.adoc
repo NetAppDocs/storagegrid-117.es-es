@@ -1,0 +1,36 @@
+---
+permalink: sg6100/removing-sgf6112-cover.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6100, sgf6112, storage node, storage appliance, cover, remove, removing, removal 
+summary: Retire la cubierta del aparato para acceder a los componentes internos para realizar tareas de mantenimiento. 
+---
+= Retire la cubierta SGF6112
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Retire la cubierta del aparato para acceder a los componentes internos para realizar tareas de mantenimiento.
+
+.Antes de empezar
+Retire el aparato del armario o rack para acceder a la cubierta superior.
+
+link:reinstalling-sgf6112-into-cabinet-or-rack.html#remove-from-rack["Quite SGF6112 del armario o rack"]
+
+.Pasos
+. Asegúrese de que el pestillo de la cubierta SGF6112 no esté bloqueado. Si es necesario, gire un cuarto de vuelta el cierre de plástico azul en la dirección de desbloqueo, como se muestra en el bloqueo del pestillo.
+. Gire el pestillo hacia arriba y hacia atrás hacia la parte trasera del chasis SGF6112 hasta que se detenga; a continuación, levante con cuidado la cubierta del chasis y déjela a un lado.
++
+image::../media/sg6060_cover_latch_open.jpg[SGF6112 Cierre de la cubierta abierto]
+
++
+
+IMPORTANT: Envuelva el extremo de la correa de una pulsera ESD alrededor de su muñeca y fije el extremo del clip a un suelo de metal para evitar la descarga estática cuando trabaje dentro del SGF6112.
+
+
+
+Tras sustituir la pieza, devuelva la pieza que ha fallado a NetApp, tal y como se describe en las instrucciones de RMA incluidas con el kit. Consulte https://["Retorno de artículo  sustituciones"^] para obtener más información.
+
+.Información relacionada
+link:replace-nic-in-sgf6112.html["Sustituya la NIC"]

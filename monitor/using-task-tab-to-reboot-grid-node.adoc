@@ -1,0 +1,67 @@
+---
+permalink: monitor/using-task-tab-to-reboot-grid-node.html 
+sidebar: sidebar 
+keywords: task tab 
+summary: La ficha tarea le permite reiniciar el nodo seleccionado. La ficha tarea se muestra para todos los nodos. 
+---
+= Utilice la ficha tarea para reiniciar un nodo de cuadrícula
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La ficha tarea le permite reiniciar el nodo seleccionado. La ficha tarea se muestra para todos los nodos.
+
+.Antes de empezar
+* Ha iniciado sesión en Grid Manager mediante un link:../admin/web-browser-requirements.html["navegador web compatible"].
+* Tiene el permiso de mantenimiento o acceso raíz.
+* Tiene la clave de acceso de aprovisionamiento.
+
+
+.Acerca de esta tarea
+Puede utilizar la ficha tarea para reiniciar un nodo. En el caso de los nodos del dispositivo, también puede utilizar la ficha tarea para colocar el dispositivo en modo de mantenimiento.
+
+* Al reiniciar un nodo de cuadrícula desde la pestaña tarea se emite el comando de reinicio en el nodo de destino. Cuando reinicia un nodo, el nodo se apaga y se reinicia. Todos los servicios se reinician automáticamente.
++
+Si planea reiniciar un nodo de almacenamiento, tenga en cuenta lo siguiente:
+
++
+** Si una regla de ILM especifica un comportamiento de procesamiento del COMMIT doble o la regla especifica un equilibrio y no es posible crear de inmediato todas las copias necesarias, StorageGRID confirma de inmediato cualquier objeto recién ingerido en dos nodos de almacenamiento en el mismo sitio y evalúa ILM más adelante. Si desea reiniciar dos o más nodos de almacenamiento en un sitio determinado, es posible que no pueda acceder a estos objetos durante el reinicio.
+** Para garantizar que puede acceder a todos los objetos mientras se reinicia un nodo de almacenamiento, deje de procesar objetos en un sitio durante aproximadamente una hora antes de reiniciar el nodo.
+
+
+* Es posible que deba colocar un dispositivo StorageGRID en modo de mantenimiento para realizar determinados procedimientos, como cambiar la configuración del enlace o sustituir una controladora de almacenamiento. Para ver instrucciones, consulte link:../commonhardware/placing-appliance-into-maintenance-mode.html["Coloque el dispositivo en modo de mantenimiento"].
++
+
+NOTE: En raras ocasiones, una vez que se coloca un dispositivo StorageGRID en modo de mantenimiento puede hacer que el dispositivo no esté disponible para el acceso remoto.
+
+
+
+.Pasos
+. Seleccione *NODES*.
+. Seleccione el nodo de cuadrícula que desea reiniciar.
+. Seleccione la ficha *tareas*.
++
+image::../media/maintenance_mode.png[Nodos > tareas > botón Reiniciar]
+
+. Seleccione *Reiniciar*.
++
+Se muestra un cuadro de diálogo de confirmación.
+
++
+image::../media/nodes_tasks_reboot.png[Nodos > tareas > botón Reiniciar]
+
++
+
+NOTE: Si va a reiniciar el nodo de administración principal, el cuadro de diálogo de confirmación le recuerda que la conexión del explorador con el Administrador de grid se perderá temporalmente cuando se detengan los servicios.
+
+. Introduzca la contraseña de aprovisionamiento y seleccione *Aceptar*.
+. Espere a que se reinicie el nodo.
++
+El apagado de los servicios puede llevar cierto tiempo.
+
++
+Cuando el nodo se está reiniciando, el icono gris (administrativamente abajo) aparece en el lado izquierdo de la página *Nodes*. Una vez que todos los servicios se han iniciado de nuevo y el nodo se ha conectado correctamente a la cuadrícula, la página * Nodes* debe mostrar un estado normal (no hay iconos a la izquierda del nombre del nodo), lo que indica que no hay alertas activas y que el nodo está conectado a la cuadrícula.
+
+

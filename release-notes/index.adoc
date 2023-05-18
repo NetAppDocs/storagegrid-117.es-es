@@ -1,0 +1,16 @@
+---
+permalink: release-notes/index.html 
+sidebar: sidebar 
+keywords: release notes 
+summary: Obtener información específica de la versión sobre funciones nuevas, funciones eliminadas o obsoletas, problemas solucionados y problemas conocidos. 
+---
+= Notas de la versión
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Obtener información específica de la versión sobre funciones nuevas, funciones eliminadas o obsoletas, problemas solucionados y problemas conocidos.
+
+Inicie sesión en el sitio de soporte de NetApp en https://["Vea o descargue un archivo PDF"^] Que contiene las notas de la versión de StorageGRID 11,7.

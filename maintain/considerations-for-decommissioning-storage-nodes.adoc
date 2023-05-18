@@ -1,0 +1,37 @@
+---
+permalink: maintain/considerations-for-decommissioning-storage-nodes.html 
+sidebar: sidebar 
+keywords: storagegrid, decommission 
+summary: Si va a retirar un nodo de almacenamiento, debe comprender cómo StorageGRID gestiona los datos de objeto y los metadatos de ese nodo. 
+---
+= Consideraciones para la retirada del nodo de almacenamiento
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Si va a retirar un nodo de almacenamiento, debe comprender cómo StorageGRID gestiona los datos de objeto y los metadatos de ese nodo.
+
+Se aplican las siguientes consideraciones y restricciones al decomisionar nodos de almacenamiento:
+
+* El sistema debe, en todo momento, incluir suficientes nodos de almacenamiento para satisfacer los requisitos operativos, incluidos el quórum de ADC y la normativa de ILM activa. Para satisfacer esta restricción, es posible que deba añadir un nodo de almacenamiento nuevo en una operación de ampliación antes de retirar un nodo de almacenamiento existente.
+* Si el nodo de almacenamiento se desconecta durante su retirada, el sistema debe reconstruir los datos mediante datos de los nodos de almacenamiento conectados, lo que puede producir la pérdida de datos.
+* Cuando se quita un nodo de almacenamiento, se deben transferir grandes volúmenes de datos de objeto a través de la red. Si bien estas transferencias no deben afectar a las operaciones normales del sistema, pueden afectar a la cantidad total de ancho de banda de red que consume el sistema StorageGRID.
+* Las tareas asociadas con el decomisionado de nodos de almacenamiento tienen una prioridad inferior a las tareas asociadas con las operaciones normales del sistema. Esto significa que el decomisionado no interfiere con las operaciones normales del sistema StorageGRID y no necesita programarse desde un punto de inactividad del sistema. Debido a que el desmantelamiento se realiza en segundo plano, es difícil estimar cuánto tiempo tardará el proceso en completarse. En general, la retirada del servicio finaliza con mayor rapidez cuando el sistema está en silencio o si solo se elimina un nodo de almacenamiento al mismo tiempo.
+* Es posible que demore días o semanas en retirar un nodo de almacenamiento. Planifique este procedimiento en consecuencia. Aunque el proceso de retirada del servicio está diseñado para no afectar a las operaciones del sistema, puede limitar otros procedimientos. En general, se deben realizar las actualizaciones o expansiones planificadas del sistema antes de quitar nodos de grid.
+* Los procedimientos de retirada que implican a los nodos de almacenamiento se pueden pausar durante ciertas fases para permitir que se ejecuten otros procedimientos de mantenimiento en caso de que sean necesarios y luego se reanuden una vez completadas.
+* No es posible ejecutar operaciones de reparación de datos en ningún nodo de grid cuando se está ejecutando una tarea de decomiso.
+* No debe realizar ningún cambio en la política de ILM mientras se decomisione un nodo de almacenamiento.
+* Cuando quita un nodo de almacenamiento, los datos del nodo se migran a otros nodos de grid; sin embargo, estos datos no se eliminan completamente del nodo de cuadrícula dado de servicio. Para eliminar datos de forma permanente y segura, debe borrar las unidades del nodo de cuadrícula dado de baja una vez completado el procedimiento de retirada.
+* Al decomisionar un nodo de almacenamiento, es posible que se eliminen las siguientes alertas y alarmas y que se puedan recibir las notificaciones SNMP y por correo electrónico relacionadas:
++
+** *No se puede comunicar con la alerta de nodo*. Esta alerta se activa al retirar un nodo de almacenamiento que incluye el servicio ADC. La alerta se resuelve cuando finaliza la operación de retirada del servicio.
+** Alarma VSTU (Estado de verificación de objetos). Esta alarma de nivel de aviso indica que el nodo de almacenamiento entra en modo de mantenimiento durante el proceso de retirada de servicio.
+** Alarma DE CASA (estado del almacén de datos). Esta alarma de nivel principal indica que la base de datos de Cassandra está disminuyendo debido a que los servicios se han detenido.
+
+
+
+
+.Información relacionada
+link:restoring-object-data-to-storage-volume.html["Restaure los datos de objeto al volumen de almacenamiento"]

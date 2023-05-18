@@ -1,0 +1,24 @@
+---
+permalink: installconfig/gathering-installation-information-overview.html 
+sidebar: sidebar 
+keywords: install, information, site, pre-install, preparing, prepare, preinstall, info, preparation 
+summary: A medida que instala y configura un dispositivo StorageGRID, toma decisiones y recopila información sobre los puertos de switch Ethernet, las direcciones IP y los modos de enlace de red y puertos. 
+---
+= Recopilar información de instalación: Descripción general
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A medida que instala y configura un dispositivo StorageGRID, toma decisiones y recopila información sobre los puertos de switch Ethernet, las direcciones IP y los modos de enlace de red y puertos.
+
+Consulte las instrucciones de su aparato para determinar la información que necesita:
+
+* link:gathering-installation-information-sg6100.html["SGF6112"]
+* link:gathering-installation-information-sg6000.html["SG6000"]
+* link:gathering-installation-information-sg5700.html["SG5700"]
+* link:gathering-installation-information-sg100-and-sg1000.html["SG100 y SG1000"]
+
+
+También puede trabajar con su asesor de servicios profesionales de NetApp para utilizar la herramienta ConfigBuilder de NetApp para optimizar y automatizar los pasos de configuración. Consulte link:automating-appliance-installation-and-configuration.html["Automatice la instalación y configuración de los dispositivos"].

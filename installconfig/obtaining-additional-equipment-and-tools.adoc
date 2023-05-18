@@ -1,0 +1,237 @@
+---
+permalink: installconfig/obtaining-additional-equipment-and-tools.html 
+sidebar: sidebar 
+keywords: equipment to install appliance, tools for installation 
+summary: Antes de instalar un dispositivo StorageGRID, confirme que dispone de todos los equipos y herramientas adicionales que necesita. 
+---
+= Obtenga equipos y herramientas adicionales
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de instalar un dispositivo StorageGRID, confirme que dispone de todos los equipos y herramientas adicionales que necesita.
+
+
+
+== Todos los dispositivos
+
+Necesita el siguiente equipo para instalar y configurar todos los dispositivos.
+
+[cols="1a,4a"]
+|===
+| Elemento | Cómo se ven 
+
+
+ a| 
+Destornilladores
+ a| 
+image::../media/screwdrivers.gif[Dos destornilladores]
+
+* Phillips no 2 destornillador
+* Destornillador plano medio
+
+
+
+
+ a| 
+Muñequera ESD
+ a| 
+image::../media/appliance_wriststrap.gif[Muñequera ESD]
+
+
+
+ a| 
+Portátil de servicio
+ a| 
+image::../media/sam_management_client.gif[Portátil de servicio]
+
+* link:web-browser-requirements.html["Navegador web compatible"]
+* Cliente SSH, como PuTTY
+* Puerto 1-GbE (RJ-45)
+
+
+
+NOTE: Es posible que algunos puertos no admitan 10/100 velocidades Ethernet.
+
+
+
+ a| 
+Herramientas opcionales
+ a| 
+image::../media/optional_tools.gif[Taladro eléctrico y linterna]
+
+* Taladro eléctrico con punta Phillips
+* Linterna
+
+
+|===
+
+
+== SGF6112
+
+Necesita el siguiente equipo adicional para instalar y configurar el hardware de SGF6112.
+
+[cols="1a,4a"]
+|===
+| Elemento | Cómo se ven 
+
+
+ a| 
+Cables ópticos y transmisores
+ a| 
+image::../media/fc_cable_and_sfp.gif[Cable óptico y transceptor QSFP+]
+
+* Uno a cuatro de cualquiera de estos tipos de cables:
++
+** Twinax/Cobre
+** Fibra óptica
+
+
+* De uno a cuatro de cada uno de estos transceptores/adaptadores basados en la velocidad de enlace (no se admiten velocidades mixtas):
++
+** 10 GbE SFP+
+** 25 GbE SFP28
+
+
+
+
+
+
+ a| 
+Cables Ethernet RJ-45 (Cat5/Cat5e/Cat6/Cat6a)
+ a| 
+image::../media/ethernet_cables.png[Cable Ethernet]
+
+|===
+
+
+== SG6000
+
+Necesita el siguiente equipo adicional para instalar y configurar el hardware de SG6000.
+
+[cols="1a,4a"]
+|===
+| Elemento | Cómo se ven 
+
+
+ a| 
+Cables ópticos y transceptores SFP
+ a| 
+image::../media/fc_cable_and_sfp.gif[Cable óptico y transceptor SFP+]
+
+* Uno a cuatro de cualquiera de estos tipos de cables:
++
+** Twinax/Cobre
+** Fibra óptica
+
+
+* De uno a cuatro de cada uno de estos transceptores/adaptadores, en función de la velocidad de enlace (no se admiten velocidades mixtas):
++
+** 10 GbE SFP+
+** 25 GbE SFP28
+
+
+
+
+
+
+ a| 
+Cables Ethernet RJ-45 (Cat5/Cat5e/Cat6)
+ a| 
+image::../media/ethernet_cables.png[Cables Ethernet]
+
+
+
+ a| 
+Herramientas opcionales
+ a| 
+Elevación mecanizada para estantes de 60 unidades
+
+|===
+
+
+== SG5700
+
+Necesita el siguiente equipo adicional para instalar y configurar el hardware de SG5700.
+
+[cols="1a,4a"]
+|===
+| Elemento | Cómo se ven 
+
+
+ a| 
+Cables ópticos y transceptores SFP
+ a| 
+image::../media/fc_cable_and_sfp.gif[Cable óptico y transceptor SFP+]
+
+* Cables ópticos para los puertos 10/25-GbE que tiene previsto utilizar
+* Opcional: Transceptores SFP28 si desea utilizar velocidad de enlace 25-GbE
+
+
+
+
+ a| 
+Cables Ethernet
+ a| 
+image::../media/ethernet_cables.png[Cables Ethernet]
+
+
+
+ a| 
+Herramientas opcionales
+ a| 
+Elevación mecanizada para SG5760
+
+|===
+
+
+== SG100 y SG1000
+
+Necesita el siguiente equipo adicional para instalar y configurar el hardware de SG100 y SG1000.
+
+[cols="1a,4a"]
+|===
+| Elemento | Cómo se ven 
+
+
+ a| 
+Cables ópticos y transmisores
+ a| 
+image::../media/fc_cable_and_sfp.gif[Cable óptico y transceptor QSFP+]
+
+* Uno a cuatro de cualquiera de estos tipos de cable:
++
+** Twinax/Cobre
+** Fibra óptica
+
+
+* De uno a cuatro de cada uno de estos transceptores/adaptadores basados en la velocidad de enlace (no se admiten velocidades mixtas):
++
+** SG100:
++
+*** 10 GbE SFP+
+*** 25 GbE SFP28
+
+
+** SG1000:
++
+*** Adaptador 10 GbE QSFP-a-SFP (QSA) y SFP+
+*** Adaptador 25 GbE QSFP a SFP (QSA) y SFP28
+*** QSFP+ de 40 GbE
+*** 100 GbE QFSP28
+
+
+
+
+
+
+
+
+ a| 
+Cables Ethernet RJ-45 (Cat5/Cat5e/Cat6/Cat6a)
+ a| 
+image::../media/ethernet_cables.png[Cable Ethernet]
+
+|===

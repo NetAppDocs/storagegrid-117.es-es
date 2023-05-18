@@ -1,0 +1,39 @@
+---
+permalink: rhel/installing-linux.html 
+sidebar: sidebar 
+keywords: how to install on red hat linux, how to install on centos 
+summary: Debe instalar Red Hat Enterprise Linux o CentOS Linux en todos los hosts de grid. Utilice la herramienta matriz de interoperabilidad de NetApp para obtener una lista de las versiones compatibles. 
+---
+= Instale Linux
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe instalar Linux en todos los hosts Grid. Utilice la https://["Herramienta de matriz de interoperabilidad de NetApp"^] para obtener una lista de las versiones compatibles.
+
+
+IMPORTANT: Asegúrese de que su sistema operativo esté actualizado al kernel 4,15 de Linux o superior.
+
+.Pasos
+. Instalar Linux en todos los hosts de grid físicos o virtuales de acuerdo con las instrucciones del mayorista o del procedimiento estándar.
++
+
+NOTE: En el caso de que utilice el instalador Linux estándar, NetApp recomienda seleccionar la configuración del software «nodo informático», si está disponible, o el entorno base «instalación decimal». No instale ningún entorno de escritorio gráfico.
+
+. Asegúrese de que todos los hosts tengan acceso a repositorios de paquetes, incluido el canal Extras.
++
+Es posible que necesite estos paquetes adicionales más adelante en este procedimiento de instalación.
+
+. Si el intercambio está activado:
++
+.. Ejecute el siguiente comando: `$ sudo swapoff --all`
+.. Eliminar todas las entradas de intercambio de `/etc/fstab` para mantener los ajustes.
+
+
++
+
+IMPORTANT: Si no se deshabilita por completo el intercambio, el rendimiento se puede reducir considerablemente.
+
+

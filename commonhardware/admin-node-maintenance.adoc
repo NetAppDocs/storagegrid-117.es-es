@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+permalink: commonhardware/admin-node-maintenance.html 
+keywords: admin Node maintenance 
+summary: Mantenimiento del nodo de administración. 
+---
+= Mantenimiento del nodo de administración
+:allow-uri-read: 
+
+
+[role="lead"]
+¿Hay algún tema de mantenimiento específico para todos los nodos de administración?

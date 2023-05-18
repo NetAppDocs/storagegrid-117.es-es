@@ -1,0 +1,49 @@
+---
+permalink: monitor/applying-hotfixes-or-upgrading-software-if-necessary.html 
+sidebar: sidebar 
+keywords: how to apply software upgrade, how to apply hotfix 
+summary: Si hay una revisión o una nueva versión del software StorageGRID disponible, debe evaluar si la actualización es apropiada para su sistema e instalarla si es necesario. 
+---
+= Aplique correcciones urgentes o actualice el software si es necesario
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Si hay una revisión o una nueva versión del software StorageGRID disponible, debe evaluar si la actualización es apropiada para su sistema e instalarla si es necesario.
+
+.Acerca de esta tarea
+Las correcciones urgentes de StorageGRID contienen cambios de software que se pueden hacer disponibles fuera de una función o una versión de revisión. Los mismos cambios se incluyen en una versión futura.
+
+.Pasos
+. Vaya a.https://["Descargas de NetApp: StorageGRID"^].
+. Seleccione la flecha hacia abajo para el campo *Tipo/Seleccionar versión* para ver una lista de las actualizaciones disponibles para descargar:
++
+** *Versiones de software de StorageGRID*: 11._x.y_
+** * StorageGRID hotfix*: 11._x. y.z_
+
+
+. Revise los cambios que se incluyen en la actualización:
++
+.. Seleccione la versión en el menú y seleccione *Ir*.
+.. Inicie sesión con el nombre de usuario y la contraseña de su cuenta de NetApp.
+.. Lea y acepte el contrato de licencia para usuario final.
++
+Aparece la página de descargas de la versión seleccionada.
+
+
+
+. Obtenga información acerca de los cambios incluidos en la versión de software o la revisión.
++
+** Para ver una nueva versión de software, consulte link:../upgrade/whats-new.html["Novedades"] para la versión seleccionada.
+** Para una revisión, descargue el archivo README para obtener un resumen de los cambios incluidos en la revisión.
+
+
+. Si decide que se requiere una actualización de software, busque las instrucciones antes de continuar.
++
+** Para una nueva versión de software, siga cuidadosamente las instrucciones de link:../upgrade/index.html["actualizando software"].
+** Para ver una corrección urgente, consulte link:../maintain/storagegrid-hotfix-procedure.html["Procedimiento de revisión de StorageGRID"].
+
+
+

@@ -1,0 +1,37 @@
+---
+permalink: expand/index.html 
+sidebar: sidebar 
+keywords: expand grid 
+summary: Siga estas instrucciones para ampliar la capacidad o las funcionalidades de su sistema StorageGRID sin interrumpir las operaciones del sistema. 
+---
+= Amplíe su grid: Descripción general
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Siga estas instrucciones para ampliar la capacidad o las funcionalidades de su sistema StorageGRID sin interrumpir las operaciones del sistema.
+
+
+
+== Acerca de estas instrucciones
+
+Estas instrucciones describen cómo realizar una ampliación StorageGRID para añadir volúmenes de almacenamiento a los nodos de almacenamiento, nuevos nodos grid a un sitio existente o un sitio nuevo completo.
+
+Estas instrucciones son para el personal técnico responsable de la configuración y el soporte del sistema StorageGRID después de su instalación.
+
+
+
+== Flujo de trabajo de expansión
+
+El motivo por el que se realiza la expansión determina cuántos nodos nuevos de cada tipo se deben añadir y la ubicación de esos nuevos nodos. Por ejemplo, existen requisitos de nodos diferentes si realiza una ampliación para aumentar la capacidad de almacenamiento, añadir capacidad de metadatos o añadir redundancia o funcionalidades nuevas.
+
+Como se muestra en el flujo de trabajo, los pasos para realizar una ampliación dependen de si desea añadir volúmenes de almacenamiento a un nodo de almacenamiento, añadir nodos nuevos a un sitio existente o añadir un sitio nuevo. En todos los casos, puede realizar la expansión sin interrumpir el funcionamiento del sistema actual.
+
+Los pasos para añadir nodos también dependen de si va a añadir dispositivos StorageGRID o hosts que ejecuten VMware o Linux.
+
+
+NOTE: "'Linux'" se refiere a una implementación de Red Hat® Enterprise Linux®, Ubuntu®, CentOS o Debian®. Utilice la https://["Herramienta de matriz de interoperabilidad de NetApp (IMT)"^] para obtener una lista de las versiones compatibles.
+
+image::../media/expansion_workflow.png[diagrama de flujo que muestra una descripción general del proceso de expansión]

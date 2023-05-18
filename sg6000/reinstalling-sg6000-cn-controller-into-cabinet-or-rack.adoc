@@ -1,0 +1,55 @@
+---
+permalink: sg6000/reinstalling-sg6000-cn-controller-into-cabinet-or-rack.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, install, installing, installation, cabinet, rack, controller, sg6000-cn 
+summary: Vuelva a instalar la controladora en un armario o rack cuando finalice el mantenimiento del hardware. 
+---
+= Vuelva a instalar el controlador SG6000-CN en el armario o bastidor
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vuelva a instalar la controladora en un armario o rack cuando finalice el mantenimiento del hardware.
+
+.Antes de empezar
+Ha vuelto a instalar la cubierta del controlador.
+
+link:reinstalling-sg6000-cn-controller-cover.html["Vuelva a instalar la cubierta del controlador SG6000-CN"]
+
+.Pasos
+. Presione el riel azul para liberar ambos rieles de bastidor al mismo tiempo y deslice el controlador SG6000-CN en el rack hasta que esté completamente asentado.
++
+Cuando ya no pueda mover la controladora, tire de los pestillos azules de ambos lados del chasis para deslizar la controladora completamente hacia dentro.
+
++
+image::../media/sg6000_cn_rails_blue_button.gif[SG6000 deslizamiento sobre rieles]
+
++
+
+NOTE: No conecte el panel frontal hasta que haya encendido la controladora.
+
+. Apriete los tornillos cautivos del panel frontal del controlador para fijar el controlador en el rack.
++
+image::../media/sg6060_rack_retaining_screws.png[Tornillos de sujeción del bastidor SG6060]
+
+. Envuelva el extremo de la correa de la muñequera ESD alrededor de su muñeca y fije el extremo de la pinza a una masa metálica para evitar descargas estáticas.
+. Vuelva a conectar los cables de datos de la controladora y cualquier transceptor SFP+ o SFP28.
++
+
+IMPORTANT: Para evitar un rendimiento degradado, no tuerza, pliegue, pellizque ni pise los cables.
+
++
+link:../installconfig/cabling-appliance-sg6000.html["Aparato de cable (SG6000)"]
+
+. Vuelva a conectar los cables de alimentación de la controladora.
++
+link:../installconfig/connecting-power-cords-and-applying-power-sg6000.html["Conexión de los cables de alimentación y alimentación (SG6000)"]
+
+
+
+.Después de terminar
+Es posible reiniciar el controlador.
+
+link:powering-on-sg6000-cn-controller-and-verifying-operation.html["Encienda el controlador SG6000-CN y compruebe el funcionamiento"]

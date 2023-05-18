@@ -1,0 +1,60 @@
+---
+permalink: installconfig/web-browser-requirements.html 
+sidebar: sidebar 
+keywords: web browser requirements, supported browser, chrome, edge, firefox 
+summary: Debe utilizar un navegador web compatible. 
+---
+= Requisitos del navegador web
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe utilizar un navegador web compatible.
+
+[cols="1a,1a"]
+|===
+| Navegador Web | Versión mínima admitida 
+
+
+ a| 
+Google Chrome
+ a| 
+107
+
+
+
+ a| 
+Microsoft Edge
+ a| 
+107
+
+
+
+ a| 
+Mozilla Firefox
+ a| 
+106
+
+|===
+Debe establecer la ventana del navegador en un ancho recomendado.
+
+[cols="1a,1a"]
+|===
+| Ancho del navegador | Píxeles 
+
+
+ a| 
+Mínimo
+ a| 
+1024
+
+
+
+ a| 
+Óptimo
+ a| 
+1280
+
+|===

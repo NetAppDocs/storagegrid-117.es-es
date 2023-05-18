@@ -1,0 +1,388 @@
+---
+permalink: installconfig/gathering-installation-information-sg100-and-sg1000.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node, install, information, site, pre-install, preparing, prepare, preinstall, info, preparation 
+summary: En las tablas, registre la información necesaria para cada red que conecte al dispositivo. Estos valores son necesarios para instalar y configurar el hardware. 
+---
+= Recopilar información de instalación (SG100 y SG1000)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+En las tablas, registre la información necesaria para cada red que conecte al dispositivo. Estos valores son necesarios para instalar y configurar el hardware.
+
+
+TIP: En lugar de utilizar las tablas, utilice el libro de trabajo proporcionado con ConfigBuilder. El uso del libro de trabajo de ConfigBuilder permite cargar información del sistema y generar un archivo JSON para completar automáticamente algunos pasos de configuración en el instalador de dispositivos de StorageGRID. Consulte link:automating-appliance-installation-and-configuration.html["Automatice la instalación y configuración de los dispositivos"].
+
+
+
+== Compruebe la versión de StorageGRID
+
+Antes de instalar un dispositivo de servicios SG100 o SG1000, confirme que el sistema StorageGRID está usando una versión necesaria del software StorageGRID.
+
+[cols="1a,2a"]
+|===
+| Dispositivo | Versión de StorageGRID requerida 
+
+
+ a| 
+SG1000
+ a| 
+11.3 o posterior (se recomienda la revisión más reciente)
+
+
+
+ a| 
+SG100
+ a| 
+11.4 o posterior (se recomienda la revisión más reciente)
+
+|===
+
+
+== Puertos de administración y mantenimiento
+
+La red de administración de StorageGRID es una red opcional que se utiliza para la administración y el mantenimiento del sistema. El dispositivo se conecta a la red de administración mediante los siguientes puertos de gestión de 1 GbE del dispositivo.
+
+SG100 puertos RJ-45:
+
+image::../media/sg100_rj_45_ports_circled.png[SG100 puertos RJ-45]
+
+SG1000 puertos RJ-45:
+
+image::../media/sg1000_rj_45_ports_circled.png[Puertos RJ-45 de SG1000]
+
+[cols="2a,1a"]
+|===
+| Información necesaria | Su valor 
+
+
+ a| 
+Red de administrador habilitada
+ a| 
+Elija una opción:
+
+* No
+* Sí (predeterminado)
+
+
+
+
+ a| 
+Modo de enlace de red
+ a| 
+Elija una opción:
+
+* Independiente (predeterminado)
+* Copia de seguridad activa
+
+
+
+
+ a| 
+Puerto de conmutador para el puerto izquierdo con un círculo en el diagrama (puerto activo predeterminado para el modo de enlace de red independiente)
+ a| 
+
+
+
+ a| 
+Puerto de conmutador para el puerto derecho con un círculo en el diagrama (sólo modo de enlace de red Active-Backup)
+ a| 
+
+
+
+ a| 
+Dirección MAC del puerto de red de administración
+
+*Nota:* la etiqueta de dirección MAC de la parte frontal del dispositivo enumera la dirección MAC del puerto de administración del BMC. Para determinar la dirección MAC del puerto de la red de administración, agregue *2* al número hexadecimal de la etiqueta. Por ejemplo, si la dirección MAC de la etiqueta termina en *09*, la dirección MAC del puerto de administración finalizará en *0B*. Si la dirección MAC de la etiqueta termina en *(_y_)FF*, la dirección MAC del puerto de administración finalizará en *(_y_+1)01*. Puede realizar este cálculo fácilmente abriendo Calculadora en Windows, establecerlo en modo Programador, seleccionando hex, escribiendo la dirección MAC y, a continuación, escribiendo *+ 2 =*.
+ a| 
+
+
+
+ a| 
+Dirección IP asignada por DHCP para el puerto de red de administración, si está disponible después del encendido
+
+*Nota:* puede determinar la dirección IP asignada por DHCP utilizando la dirección MAC para buscar la dirección IP asignada.
+ a| 
+* Dirección IPv4 (CIDR):
+* Puerta de enlace:
+
+
+
+
+ a| 
+Dirección IP estática que piensa usar para el nodo del dispositivo en la red de administración
+
+*Nota:* Si su red no tiene una puerta de enlace, especifique la misma dirección IPv4 estática para la puerta de enlace.
+ a| 
+* Dirección IPv4 (CIDR):
+* Puerta de enlace:
+
+
+
+
+ a| 
+Subredes de red de administración (CIDR)
+ a| 
+
+|===
+
+
+== Puertos de red
+
+Los cuatro puertos de red del dispositivo se conectan a la red Grid de StorageGRID y a la red de cliente opcional.
+
+[cols="2a,1a"]
+|===
+| Información necesaria | Su valor 
+
+
+ a| 
+Velocidad de enlace
+ a| 
+Para SG100, seleccione una de las opciones siguientes:
+
+* Automático (predeterminado)
+* 10 GbE
+* 25 GbE
+
+
+Para SG1000, seleccione una de las siguientes opciones:
+
+* Automático (predeterminado)
+* 10 GbE
+* 25 GbE
+* 40 GbE
+* 100 GbE
+
+
+*Nota:* para las velocidades SG1000, 10 y 25 GbE se necesitan adaptadores QSA.
+
+
+
+ a| 
+Modo de enlace de puerto
+ a| 
+Elija una opción:
+
+* Fijo (predeterminado)
+* Agregado
+
+
+
+
+ a| 
+Puerto de conmutador para el puerto 1 (red cliente para modo fijo)
+ a| 
+
+
+
+ a| 
+Puerto de conmutador para el puerto 2 (red de cuadrícula para modo fijo)
+ a| 
+
+
+
+ a| 
+Puerto de conmutador para el puerto 3 (red cliente para modo fijo)
+ a| 
+
+
+
+ a| 
+Puerto de conmutador para el puerto 4 (red de cuadrícula para modo fijo)
+ a| 
+
+|===
+
+
+== Puertos de red de grid
+
+Grid Network para StorageGRID es una red necesaria que se utiliza para todo el tráfico interno de StorageGRID. El dispositivo se conecta a la red de cuadrícula mediante los cuatro puertos de red.
+
+[cols="2a,1a"]
+|===
+| Información necesaria | Su valor 
+
+
+ a| 
+Modo de enlace de red
+ a| 
+Elija una opción:
+
+* Active-Backup (predeterminado)
+* LACP (802.3ad)
+
+
+
+
+ a| 
+Etiquetado VLAN habilitado
+ a| 
+Elija una opción:
+
+* No (predeterminado)
+* Sí
+
+
+
+
+ a| 
+Etiqueta de VLAN (si el etiquetado de VLAN está habilitado)
+ a| 
+Introduzca un valor entre 0 y 4095:
+
+
+
+ a| 
+Dirección IP asignada por DHCP para la red de cuadrícula, si está disponible después del encendido
+ a| 
+* Dirección IPv4 (CIDR):
+* Puerta de enlace:
+
+
+
+
+ a| 
+Dirección IP estática que se va a utilizar para el nodo del dispositivo en la red de cuadrícula
+
+*Nota:* Si su red no tiene una puerta de enlace, especifique la misma dirección IPv4 estática para la puerta de enlace.
+ a| 
+* Dirección IPv4 (CIDR):
+* Puerta de enlace:
+
+
+
+
+ a| 
+Subredes de red de cuadrícula (CIDR)
+ a| 
+
+
+
+ a| 
+Configuración de unidad de transmisión máxima (MTU) (opcional)puede utilizar el valor predeterminado de 1500 o establecer el MTU en un valor adecuado para tramas gigantes, como 9000.
+ a| 
+
+|===
+
+
+== Puertos de red del cliente
+
+La red de cliente para StorageGRID es una red opcional que se suele utilizar para proporcionar acceso al protocolo de cliente al grid. El dispositivo se conecta a la red cliente mediante los cuatro puertos de red.
+
+[cols="2a,1a"]
+|===
+| Información necesaria | Su valor 
+
+
+ a| 
+Red de cliente habilitada
+ a| 
+Elija una opción:
+
+* No (predeterminado)
+* Sí
+
+
+
+
+ a| 
+Modo de enlace de red
+ a| 
+Elija una opción:
+
+* Active-Backup (predeterminado)
+* LACP (802.3ad)
+
+
+
+
+ a| 
+Etiquetado VLAN habilitado
+ a| 
+Elija una opción:
+
+* No (predeterminado)
+* Sí
+
+
+
+
+ a| 
+Etiqueta de VLAN (si el etiquetado de VLAN está habilitado)
+ a| 
+Introduzca un valor entre 0 y 4095:
+
+
+
+ a| 
+Dirección IP asignada por DHCP para la red cliente, si está disponible después del encendido
+ a| 
+* Dirección IPv4 (CIDR):
+* Puerta de enlace:
+
+
+
+
+ a| 
+Dirección IP estática que se va a usar para el nodo del dispositivo en la red cliente
+
+*Nota:* Si la red de cliente está activada, la ruta predeterminada del dispositivo utilizará la puerta de enlace especificada aquí.
+ a| 
+* Dirección IPv4 (CIDR):
+* Puerta de enlace:
+
+
+|===
+
+
+== Puertos de red de gestión de BMC
+
+Puede acceder a la interfaz del BMC en el dispositivo de servicios mediante el puerto de gestión de 1-GbE rodeado por un círculo en el diagrama. Este puerto admite la gestión remota del hardware de la controladora a través de Ethernet mediante el estándar de interfaz de gestión de plataforma inteligente (IPMI).
+
+
+NOTE: Puede habilitar o deshabilitar el acceso IPMI remoto para todos los dispositivos que contienen un BMC mediante el extremo privado de la API de gestión, PUT /private/bmc.
+
+SG100 puerto de gestión BMC:
+
+image::../media/sg100_bmc_management_port.png[Puerto de gestión SG100]
+
+SG1000 puerto de gestión BMC:
+
+image::../media/sg1000_bmc_management_port.png[Puerto de gestión de SG1000 BMC]
+
+[cols="2a,1a"]
+|===
+| Información necesaria | Su valor 
+
+
+ a| 
+Puerto del switch Ethernet se conectará al puerto de administración del BMC (con un círculo en el diagrama)
+ a| 
+
+
+
+ a| 
+Dirección IP asignada por DHCP para la red de gestión de BMC, si está disponible después del encendido
+ a| 
+* Dirección IPv4 (CIDR):
+* Puerta de enlace:
+
+
+
+
+ a| 
+La dirección IP estática que planea usar para el puerto de gestión de BMC
+ a| 
+* Dirección IPv4 (CIDR):
+* Puerta de enlace:
+
+
+|===
+.Información relacionada
+* link:cabling-appliance-sg100-and-sg1000.html["Cable (SG100 y SG1000)"]
+* link:setting-ip-configuration.html["Configure las direcciones IP de StorageGRID"]
+

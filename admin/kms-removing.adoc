@@ -1,0 +1,48 @@
+---
+permalink: admin/kms-removing.html 
+sidebar: sidebar 
+keywords: remove kms, remove key management server 
+summary: En algunos casos, es posible quitar un servidor de gestión de claves. Por ejemplo, puede que desee quitar un KMS específico de un sitio si ha retirado del servicio el sitio. 
+---
+= Quitar un servidor de gestión de claves (KMS)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+En algunos casos, es posible quitar un servidor de gestión de claves. Por ejemplo, puede que desee quitar un KMS específico de un sitio si ha retirado del servicio el sitio.
+
+.Antes de empezar
+* Ha revisado el link:kms-considerations-and-requirements.html["consideraciones y requisitos para usar un servidor de gestión de claves"].
+* Ha iniciado sesión en Grid Manager mediante un link:../admin/web-browser-requirements.html["navegador web compatible"].
+* Tiene el permiso acceso raíz.
+
+
+.Acerca de esta tarea
+Puede eliminar un KMS en los siguientes casos:
+
+* Puede eliminar un KMS específico de un sitio si se ha dado de baja o si el sitio incluye ningún nodo de dispositivo con cifrado de nodo activado.
+* Puede eliminar el KMS predeterminado si ya existe un KMS específico del sitio para cada sitio que tiene nodos de dispositivo con cifrado de nodo activado.
+
+
+.Pasos
+. Seleccione *CONFIGURACIÓN* > *Seguridad* > *servidor de administración de claves*.
++
+Se muestra la página Servidor de gestión de claves donde se muestran todos los servidores de gestión de claves que se configuraron.
+
+. Selecciona el KMS que deseas eliminar y selecciona *Acciones* > *Eliminar*.
++
+También puede eliminar un KMS seleccionando el nombre del KMS en la tabla y seleccionando *Eliminar* en la página de detalles del KMS.
+
+. Confirme que lo siguiente es verdadero:
++
+** Está eliminando un KMS específico del sitio para un sitio que no tiene ningún nodo de dispositivo con cifrado de nodo activado.
+** Está eliminando el KMS predeterminado, pero ya existe un KMS específico para cada sitio con cifrado de nodo.
+
+
+. Seleccione *Sí*.
++
+La configuración de KMS se elimina.
+
+

@@ -1,0 +1,33 @@
+---
+permalink: installconfig/connecting-power-cords-and-applying-power-sg5700.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5700, storage node, storage appliance, wire, wiring, cabling, cable, Connecting, connect, power cords, power, applying power, apply power, turn on, power up, ac, ac power 
+summary: Cuando encienda el dispositivo, ambos controladores se iniciarán. 
+---
+= Conectar los cables de alimentación y aplicar alimentación (SG5700)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Cuando encienda el dispositivo, ambos controladores se iniciarán.
+
+.Antes de empezar
+Ambos interruptores de alimentación del aparato deben estar apagados antes de conectar la alimentación.
+
+
+CAUTION: *Riesgo de descarga eléctrica* -- antes de conectar los cables de alimentación, asegúrese de que los dos interruptores de alimentación del aparato están apagados.
+
+.Pasos
+. Confirme que los dos interruptores de alimentación del aparato están apagados.
+. Conecte los dos cables de alimentación al aparato.
+. Conecte los dos cables de alimentación a diferentes unidades de distribución de alimentación (PDU) en el armario o rack.
+. Encienda los dos interruptores de alimentación del aparato.
++
+** No apague los interruptores de alimentación durante el proceso de encendido.
+** Los ventiladores son muy ruidosos cuando se ponen en marcha por primera vez. El ruido fuerte durante el arranque es normal.
+
+
+. Una vez arrancados las controladoras, compruebe sus pantallas de siete segmentos.
+

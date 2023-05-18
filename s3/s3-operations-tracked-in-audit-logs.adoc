@@ -1,0 +1,51 @@
+---
+permalink: s3/s3-operations-tracked-in-audit-logs.html 
+sidebar: sidebar 
+keywords: audit log actions tracked 
+summary: Se realiza un seguimiento de varias operaciones de bloques y de objetos en los registros de auditoría de StorageGRID. 
+---
+= Se realizó un seguimiento de las operaciones de S3 en los registros de auditoría
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se realiza un seguimiento de varias operaciones de bloques y de objetos en los registros de auditoría de StorageGRID.
+
+
+
+== Se realizó un seguimiento de las operaciones de bloque en los registros de auditoría
+
+* ELIMINAR bloque
+* DELETE Bucket tagging
+* ELIMINAR varios objetos
+* GET Bucket (objetos de lista)
+* OBTENGA las versiones DE objeto Bucket
+* GET Bucket tagging
+* Cubo DE CABEZA
+* COLOQUE el cucharón
+* CUMPLIR con la normativa de los bloques
+* PUT Bucket etiquetaje
+* PONER creación de versiones de bloques
+
+
+
+
+== Se realizó un seguimiento de las operaciones de objetos en los registros de auditoría
+
+* Completar carga de varias partes
+* Cargar parte (cuando la regla ILM utiliza los comportamientos de ingesta equilibrada o estricta)
+* Cargar parte - Copiar (cuando la regla ILM utiliza los comportamientos de ingesta equilibrada o estricta)
+* ELIMINAR objeto
+* OBTENER objeto
+* OBJETO HEAD
+* Restauración DE objetos posterior
+* OBJETO PUT
+* PONER objeto: Copiar
+
+
+.Información relacionada
+link:operations-on-buckets.html["Operaciones en bloques"]
+
+link:operations-on-objects.html["Operaciones en objetos"]

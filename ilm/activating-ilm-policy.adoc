@@ -1,0 +1,54 @@
+---
+permalink: ilm/activating-ilm-policy.html 
+sidebar: sidebar 
+keywords: activate ilm policy, information lifecycle policy 
+summary: Después de añadir reglas de ILM a una política de ILM propuesta, simular la política y confirmar que se comporta como esperaba, está listo para activar la política propuesta. 
+---
+= Active la política de ILM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Después de añadir reglas de ILM a una política de ILM propuesta, simular la política y confirmar que se comporta como esperaba, está listo para activar la política propuesta.
+
+.Antes de empezar
+* Ha iniciado sesión en Grid Manager mediante un link:../admin/web-browser-requirements.html["navegador web compatible"].
+* Ya tienes link:../admin/admin-group-permissions.html["permisos de acceso específicos"].
+* Ha guardado y simulado la política de ILM propuesta.
+
+
+
+CAUTION: Los errores de un política de ILM pueden provocar la pérdida de datos irrecuperable. Revise y simule cuidadosamente la directiva antes de activarla para confirmar que funcionará según lo previsto. + Al activar una nueva política de ILM, StorageGRID la utiliza para gestionar todos los objetos, incluidos los objetos existentes y los objetos recién procesados. Antes de activar una nueva política de ILM, revise los cambios que se produzcan en la ubicación de los objetos replicados y los códigos de borrado existentes. El cambio de la ubicación de un objeto existente podría dar lugar a problemas temporales de recursos cuando se evalúan e implementan las nuevas colocaciones.
+
+.Acerca de esta tarea
+Cuando activa una política de ILM, el sistema distribuye la nueva política a todos los nodos. Sin embargo, es posible que la nueva directiva activa no surta efecto hasta que todos los nodos de grid estén disponibles para recibir la nueva directiva. En algunos casos, el sistema espera implementar una nueva política activa para garantizar que los objetos de cuadrícula no se eliminen accidentalmente.
+
+* Si realiza cambios en las políticas que aumentan la redundancia o la durabilidad de los datos, estos cambios se implementan de inmediato. Por ejemplo, si activa una nueva política que incluye una regla de tres copias en lugar de una regla de dos copias, dicha política se implementará de forma inmediata porque aumenta la redundancia de datos.
+* Si realiza cambios en las políticas que podrían reducir la redundancia o la durabilidad de los datos, dichos cambios no se implementarán hasta que todos los nodos de grid estén disponibles. Por ejemplo, si activa una nueva política que utiliza una regla de dos copias en lugar de una regla de tres copias, la nueva política aparecerá en la pestaña Política activa, pero no surtirá efecto hasta que todos los nodos estén en línea y disponibles.
+
+
+.Pasos
+. Cuando esté listo para activar una política propuesta, seleccione *Políticas de ILM* > *Política propuesta* y, a continuación, seleccione *Activar*.
++
+Aparecerá un mensaje de advertencia en el que se le pedirá que confirme que desea activar la directiva propuesta.
+
++
+Aparece un mensaje de advertencia si la regla por defecto no retiene los objetos para siempre. En este ejemplo, el diagrama de retención muestra que la regla predeterminada eliminará objetos después de 730 días (2 años). Debe escribir *730* en el cuadro de texto para reconocer que cualquier objeto que no coincida con otra regla de la política se eliminará de StorageGRID después de 730 días.
+
++
+image::../media/ilm_policy_default_rule_not_forever_prompt.png[Regla predeterminada de la política de ILM no siempre preguntar]
+
+. Seleccione *OK*.
+
+
+.Resultado
+Cuando se activa una nueva política de ILM:
+
+* La política se muestra en la pestaña Active policy. La entrada Fecha de inicio indica la fecha y la hora en que se activó la política.
+* La política activa anteriormente aparece en la pestaña Historial de políticas. Las entradas Fecha de inicio y Fecha de finalización indican cuándo se activó la política y cuándo ya no estaba en vigor.
+
+
+.Información relacionada
+link:example-6-changing-ilm-policy.html["Ejemplo 6: Cambiar una política de ILM"]

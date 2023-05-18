@@ -1,0 +1,27 @@
+---
+permalink: admin/grid-federation-workflow.html 
+sidebar: sidebar 
+keywords: grid federation workflow, cross-grid replication, account clone, cgr, disaster recovery 
+summary: Como administrador de grid, debe coordinar estrechamente con los usuarios inquilinos para establecer y utilizar una conexión de federación de grid entre dos sistemas StorageGRID para la clonación de cuentas y la replicación entre grid. 
+---
+= Flujo de trabajo de federación de grid
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Como administrador de grid, debe coordinar estrechamente con los usuarios inquilinos para establecer y utilizar una conexión de federación de grid entre dos sistemas StorageGRID para la clonación de cuentas y la replicación entre grid.
+
+El diagrama de flujo de trabajo muestra los pasos de alto nivel que realizarán los administradores de grid y los usuarios inquilinos para establecer una conexión de federación de grid entre dos grids y para configurar la clonación de cuentas y la replicación entre grid.
+
+Después de crear una conexión de federación de grid entre dos grids, el administrador de grid crea una o más cuentas de tenant nuevas y asigna un permiso para determinar quién puede usar la conexión. Cuando se guarda el nuevo inquilino, StorageGRID crea automáticamente un inquilino idéntico en el otro grid.
+
+Una vez que el nuevo inquilino esté disponible en ambas cuadrículas, los usuarios inquilinos pueden realizar estas operaciones:
+
+* A partir de la cuadrícula de origen del inquilino, cree nuevos grupos y usuarios inquilinos que se clonan automáticamente en el grid de destino del inquilino.
+* A partir de la cuadrícula de origen del inquilino, cree nuevas claves de acceso de S3 que se pueden clonar opcionalmente en el grid de destino del inquilino.
+* Crea nuevos buckets en ambos grids y, opcionalmente, permite la replicación entre grid en una dirección o en ambas direcciones.
+
+
+image:../media/grid-federation-workflow.png["Flujo de trabajo de federación de grid"]

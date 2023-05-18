@@ -1,0 +1,25 @@
+= 
+:allow-uri-read: 
+
+
+Los mensajes de AutoSupport incluyen información como la siguiente:
+
+* Versión del software StorageGRID
+* Versión del sistema operativo
+* Información de atributos a nivel de sistema y ubicación
+* Alertas y alarmas recientes (sistema heredado)
+* Estado actual de todas las tareas de cuadrícula, incluidos los datos históricos
+* Uso de la base de datos del nodo de administrador
+* Número de objetos perdidos o faltantes
+* Ajustes de configuración de cuadrícula
+* Entidades NMS
+* Política de ILM activa
+* Archivo de especificación de grid aprovisionado
+* Métricas de diagnóstico
+
+
+Puede habilitar la función AutoSupport y las opciones individuales de AutoSupport cuando instale StorageGRID por primera vez, o bien puede habilitarlas más adelante. Si AutoSupport no está activado, aparece un mensaje en el panel de control de Grid Manager. El mensaje incluye un enlace a la página de configuración de AutoSupport.
+
+image::../media/autosupport_disabled_message.png[Mensaje AutoSupport deshabilitado]
+
+Si cierra el mensaje, no volverá a aparecer hasta que se borre la caché del explorador, aunque AutoSupport permanezca deshabilitado.

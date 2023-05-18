@@ -1,0 +1,49 @@
+---
+permalink: vmware/index.html 
+sidebar: sidebar 
+keywords: vmware 
+summary: La instalación de un sistema StorageGRID en un entorno de VMware incluye tres pasos principales. 
+---
+= Instalar VMware: Descripción general
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La instalación de un sistema StorageGRID en un entorno de VMware incluye tres pasos principales.
+
+. *Preparación*: Durante la planificación y preparación, realiza las siguientes tareas:
++
+** Obtenga información acerca de los requisitos de hardware, software, equipos virtuales, almacenamiento y rendimiento de StorageGRID.
+** Conozca los aspectos específicos de link:../network/index.html["Redes StorageGRID"] de este modo, puede configurar la red de forma adecuada.
+** Identifique y prepare los servidores físicos que planea utilizar para alojar los nodos de grid StorageGRID.
+** En los servidores que ha preparado:
++
+*** Instale VMware vSphere Hypervisor
+*** Configure los hosts ESX
+*** Instale y configure VMware vSphere y vCenter
+
+
+
+
+. *Implementación*: Implemente nodos Grid mediante VMware vSphere Web Client. Cuando se implementan nodos de grid, se crean como parte del sistema StorageGRID y se conectan a una o varias redes.
++
+.. Utilice VMware vSphere Web Client, un archivo .vmdk y un conjunto de plantillas de archivos .ovf para poner en marcha los nodos basados en software como máquinas virtuales en los servidores que preparó en el paso 1.
+.. Use el instalador de dispositivos StorageGRID para poner en marcha los nodos del dispositivo StorageGRID.
++
+
+NOTE: Las instrucciones de instalación e integración específicas del hardware no se incluyen en el procedimiento de instalación de StorageGRID. Para saber cómo instalar dispositivos StorageGRID, consulte link:../installconfig/index.html["Inicio rápido para la instalación de hardware"] para localizar las instrucciones del aparato.
+
+
+
+. *Configuración*: Cuando se han implementado todos los nodos, utilice el administrador de grid para configurar la cuadrícula y completar la instalación.
+
+
+Estas instrucciones recomiendan un enfoque estándar para implementar y configurar un sistema StorageGRID en un entorno de VMware. Consulte también la información acerca de los siguientes enfoques alternativos:
+
+* Use el script deploy-vsphere-ovftool.sh Bash (disponible en el archivo de instalación) para implementar nodos de grid en VMware vSphere.
+* Automatice la puesta en marcha y configuración del sistema StorageGRID mediante un script de configuración Python (incluido en el archivo de instalación).
+* Automatice la puesta en marcha y configuración de los nodos del grid de los dispositivos con un script de configuración Python (disponible desde el archivo de instalación o desde el instalador de dispositivos de StorageGRID).
+* Si es un desarrollador avanzado de implementaciones de StorageGRID, use las API DE REST de instalación para automatizar la instalación de los nodos de grid de StorageGRID.
+

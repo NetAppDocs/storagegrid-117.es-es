@@ -1,0 +1,197 @@
+---
+section: installconfig
+title: Instale el hardware del dispositivo
+entries:
+- title: Inicio rápido
+  pdf-filename: Instale el hardware del dispositivo StorageGRID
+  url: "/installconfig/index.html"
+- title: Descripciones generales de hardware
+  entries:
+  - title: SGF6112
+    url: "/installconfig/hardware-description-sg6100.html"
+  - title: SG6000
+    url: "/installconfig/hardware-description-sg6000.html"
+  - title: SG6000 controladores
+    url: "/installconfig/controllers-in-sg6000-appliances.html"
+  - title: SG5700
+    url: "/installconfig/hardware-description-sg5700.html"
+  - title: SG5700 controladores
+    url: "/installconfig/controllers-in-sg5700-appliances.html"
+  - title: SG100 y SG1000
+    url: "/installconfig/hardware-description-sg100-and-1000.html"
+- title: Preparación de la instalación
+  entries:
+  - title: Prepare el sitio
+    url: "/installconfig/preparing-site.html"
+  - title: Desempaquetar cajas
+    url: "/installconfig/unpacking-boxes.html"
+  - title: Obtenga equipos y herramientas adicionales
+    url: "/installconfig/obtaining-additional-equipment-and-tools.html"
+  - title: Requisitos del navegador web
+    url: "/installconfig/web-browser-requirements.html"
+  - title: Revise las conexiones de red del dispositivo
+    entries:
+    - title: Descripción general
+      url: "/installconfig/reviewing-appliance-network-connections.html"
+    - title: Conexiones de red (SG5700)
+      url: "/installconfig/sg5700-appliance-connections.html"
+    - title: Modos de enlace de puertos (SGF6112)
+      url: "/installconfig/port-bond-modes-for-sgf6112.html"
+    - title: Modos de enlace de puertos (controladora SG6000-CN)
+      url: "/installconfig/port-bond-modes-for-sg6000-cn-controller.html"
+    - title: Modos de enlace de puertos (controladora E5700SG)
+      url: "/installconfig/port-bond-modes-for-e5700sg-controller-ports.html"
+    - title: Modos de enlace de puertos (SG100 y SG1000)
+      url: "/installconfig/port-bond-modes-for-sg100-and-sg1000.html"
+  - title: Recopile la información de instalación
+    entries:
+    - title: Descripción general
+      url: "/installconfig/gathering-installation-information-overview.html"
+    - title: SGF6112
+      url: "/installconfig/gathering-installation-information-sg6100.html"
+    - title: SG6000
+      url: "/installconfig/gathering-installation-information-sg6000.html"
+    - title: SG5700
+      url: "/installconfig/gathering-installation-information-sg5700.html"
+    - title: SG100 y SG1000
+      url: "/installconfig/gathering-installation-information-sg100-and-sg1000.html"
+- title: Automatice la instalación y configuración de los dispositivos
+  url: "/installconfig/automating-appliance-installation-and-configuration.html"
+- title: Automatice la configuración de StorageGRID
+  url: "/installconfig/automating-configuration-of-storagegrid.html"
+- title: Información general sobre la instalación de API de REST
+  url: "/installconfig/overview-of-installation-rest-apis.html"
+- title: Instale el hardware
+  entries:
+  - title: Registre el hardware
+    url: "/installconfig/registering-hardware.html"
+  - title: Instale en el armario o rack
+    entries:
+    - title: SGF6112
+      url: "/installconfig/installing-appliance-in-cabinet-or-rack-sgf6112.html"
+    - title: SG6000
+      entries:
+      - title: Descripción general
+        pdf-filename: Instale SG6000 en el armario o rack
+        url: "/installconfig/installing-hardware-sg6000.html"
+      - title: Instalación de las bandejas de 60 unidades (SG6060)
+        url: "/installconfig/sg6060-installing-60-drive-shelves-into-cabinet-or-rack.html"
+      - title: Instalar las unidades (SG6060)
+        url: "/installconfig/sg6060-installing-drives.html"
+      - title: Instalación de las bandejas de 24 unidades (SGF6024)
+        url: "/installconfig/sgf6024-installing-24-drive-shelves-into-cabinet-or-rack.html"
+      - title: Instalación del controlador SG6000-CN (SG6060 y SG6024)
+        url: "/installconfig/sg6000-cn-installing-into-cabinet-or-rack.html"
+    - title: SG5700
+      url: "/installconfig/installing-appliance-in-cabinet-or-rack-sg5700.html"
+    - title: SG100 y SG1000
+      url: "/installconfig/installing-appliance-in-cabinet-or-rack-sg100-and-sg1000.html"
+  - title: Aparato por cable
+    entries:
+    - title: SGF6112
+      url: "/installconfig/cabling-appliance-sgf6112.html"
+    - title: SG6000
+      url: "/installconfig/cabling-appliance-sg6000.html"
+    - title: SG5700
+      url: "/installconfig/cabling-appliance-sg5700.html"
+    - title: SG100 y SG1000
+      url: "/installconfig/cabling-appliance-sg100-and-sg1000.html"
+  - title: Conecte los cables de alimentación y aplique alimentación
+    entries:
+    - title: SGF6112
+      url: "/installconfig/connecting-power-cords-and-applying-power-sgf6112.html"
+    - title: SG6000
+      url: "/installconfig/connecting-power-cords-and-applying-power-sg6000.html"
+    - title: SG5700
+      url: "/installconfig/connecting-power-cords-and-applying-power-sg5700.html"
+    - title: SG100 y SG1000
+      url: "/installconfig/connecting-power-cords-and-applying-power-sg100-and-sg1000.html"
+  - title: Ver códigos e indicadores de estado
+    url: "/installconfig/viewing-status-indicators.html"
+- title: Configure el hardware
+  entries:
+  - title: Descripción general
+    url: "/installconfig/configuring-hardware.html"
+  - title: Configure las conexiones StorageGRID
+    entries:
+    - title: Acceda al instalador de dispositivos de StorageGRID
+      url: "/installconfig/accessing-storagegrid-appliance-installer.html"
+    - title: Comprobar y actualizar la versión de StorageGRID Appliance Installer
+      url: "/installconfig/verifying-and-upgrading-storagegrid-appliance-installer-version.html"
+    - title: Configure los enlaces de red
+      url: "/installconfig/configuring-network-links.html"
+    - title: Configure las direcciones IP de StorageGRID
+      url: "/installconfig/setting-ip-configuration.html"
+    - title: Compruebe las conexiones de red
+      url: "/installconfig/verifying-network-connections.html"
+    - title: Verifique las conexiones de red a nivel de puerto
+      url: "/installconfig/verifying-port-level-network-connections.html"
+    - title: Configuración de SANtricity System Manager (SG6000 y SG5700)
+      url: "/installconfig/accessing-and-configuring-santricity-system-manager.html"
+  - title: Configuración de la interfaz BMC (SGF6112, SG6000, SG100 y SG1000)
+    entries:
+    - title: Descripción general
+      url: "/installconfig/configuring-bmc-interface.html"
+    - title: Cambie la contraseña root
+      url: "/installconfig/changing-root-password-for-bmc-interface.html"
+    - title: Establezca la dirección IP para el puerto de administración de BMC
+      url: "/installconfig/setting-ip-address-for-bmc-management-port.html"
+    - title: Acceda a la interfaz de BMC
+      url: "/installconfig/accessing-bmc-interface.html"
+    - title: Configure los ajustes de SNMP
+      url: "/installconfig/configuring-snmp-settings-for-bmc.html"
+    - title: Configure las notificaciones por correo electrónico
+      url: "/installconfig/setting-up-email-notifications-for-alerts.html"
+  - title: 'Opcional: Habilite el cifrado de nodos'
+    url: "/installconfig/optional-enabling-node-encryption.html"
+  - title: 'Opcional: Cambio del modo RAID (SG5760 y SG6000)'
+    url: "/installconfig/optional-changing-raid-mode.html"
+  - title: 'Opcional: Vuelva a asignar los puertos de red'
+    url: "/installconfig/optional-remapping-network-ports-for-appliance.html"
+- title: Ponga en marcha el nodo del dispositivo
+  entries:
+  - title: Ponga en marcha el nodo de almacenamiento del dispositivo
+    url: "/installconfig/deploying-appliance-storage-node.html"
+  - title: Implemente el nodo del dispositivo de servicios
+    url: "/installconfig/deploying-services-appliance-node.html"
+  - title: Supervise la instalación del dispositivo
+    url: "/installconfig/monitoring-appliance-installation.html"
+  - title: Reinicie el dispositivo mientras el instalador del dispositivo StorageGRID
+      esté en ejecución
+    url: "/installconfig/rebooting-appliance-while-sg-appliance-installer-is-running.html"
+  - title: Solución de problemas de instalación (SGF6112)
+    url: "/installconfig/troubleshooting-hardware-installation-sg6100.html"
+    entries:
+    - title: Códigos de arranque (SGF6112)
+      url: "/installconfig/viewing-boot-up-codes-for-sgf6112.html"
+    - title: Códigos de error (SGF6112)
+      url: "/installconfig/viewing-error-codes-for-sgf6112.html"
+    - title: La configuración de hardware parece bloquearse (SGF6112)
+      url: "/installconfig/hardware-setup-appears-to-hang-sgf6112.html"
+    - title: Problemas de conexión (SGF6112)
+      url: "/installconfig/troubleshooting-connection-issues-sgf6112.html"
+  - title: Solución de problemas de instalación (SG6000 o SG5700)
+    url: "/installconfig/troubleshooting-hardware-installation.html"
+    entries:
+    - title: Códigos de arranque (controlador SG6000-CN)
+      url: "/installconfig/viewing-boot-up-codes-for-sg6000-cn-controller.html"
+    - title: Códigos de error (controlador SG6000-CN)
+      url: "/installconfig/viewing-error-codes-for-sg6000-cn-controller.html"
+    - title: La configuración de hardware parece bloquearse (SG6000 o SG5700)
+      url: "/installconfig/hardware-setup-appears-to-hang.html"
+    - title: Problemas de conexión (SG6000 o SG5700)
+      url: "/installconfig/troubleshooting-connection-issues.html"
+    - title: 'ERROR HE: Error al sincronizar con el software de sistema operativo
+        SANtricity (SG5700)'
+      url: "/installconfig/he-error-error-synchronizing-with-santricity-os-software.html"
+  - title: Solución de problemas de instalación (SG100 y SG1000)
+    url: "/installconfig/troubleshooting-hardware-installation-sg100-and-sg1000.html"
+    entries:
+    - title: Códigos de arranque (SG100 y SG1000)
+      url: "/installconfig/viewing-boot-up-codes-for-appliance-sg100-and-sg1000.html"
+    - title: Códigos de error (SG100 y SG1000)
+      url: "/installconfig/viewing-error-codes-for-sg1000-controller-sg100-and-sg1000.html"
+    - title: La configuración del hardware parece bloquearse (SG100 y SG1000)
+      url: "/installconfig/hardware-setup-appears-to-hang-sg100-and-sg1000.html"
+    - title: Problemas de conexión (SG100 y SG1000)
+      url: "/installconfig/troubleshooting-connection-issues-sg100-and-sg1000.html"

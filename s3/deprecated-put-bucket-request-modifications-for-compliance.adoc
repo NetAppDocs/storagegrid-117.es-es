@@ -1,0 +1,31 @@
+---
+permalink: s3/deprecated-put-bucket-request-modifications-for-compliance.html 
+sidebar: sidebar 
+keywords: S3 REST API, S3 operations, deprecated bucket requests for compliance 
+summary: El elemento XML de SGCompliance está obsoleto. Anteriormente, podría incluir este elemento personalizado de StorageGRID en el cuerpo de solicitud XML opcional de SOLICITUDES PUT Bucket para crear un bloque compatible. 
+---
+= Obsoleto: PONGA modificaciones de solicitud de cucharón para el cumplimiento
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+El elemento XML de SGCompliance está obsoleto. Anteriormente, podría incluir este elemento personalizado de StorageGRID en el cuerpo de solicitud XML opcional de SOLICITUDES PUT Bucket para crear un bloque compatible.
+
+
+IMPORTANT: La función de cumplimiento de StorageGRID que estaba disponible en versiones anteriores de StorageGRID quedó obsoleta y se reemplazó por el bloqueo de objetos de S3.
+
+link:../s3/use-s3-api-for-s3-object-lock.html["Use la API REST DE S3 para configurar el bloqueo de objetos de S3"]
+
+link:../ilm/index.html["Gestión de objetos con ILM"]
+
+https://["Base de conocimientos de NetApp: Cómo gestionar bloques heredados que cumplen con la normativa StorageGRID 11.5"^]
+
+Ya no se pueden crear bloques nuevos con el cumplimiento de normativas habilitado. Se devuelve el siguiente mensaje de error si intenta utilizar las modificaciones DE la solicitud PUT Bucket para cumplir con las normativas a fin de crear un nuevo bloque compatible:
+
+[listing]
+----
+The Compliance feature is deprecated.
+Contact your StorageGRID administrator if you need to create new Compliant buckets.
+----

@@ -1,0 +1,93 @@
+---
+permalink: s3/operations-for-multipart-uploads.html 
+sidebar: sidebar 
+keywords: operations, multipart uploads, uploads, rest API 
+summary: En esta sección se describe cómo StorageGRID admite las operaciones para cargas de varias partes. 
+---
+= Operaciones para cargas de varias partes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+En esta sección se describe cómo StorageGRID admite las operaciones para cargas de varias partes.
+
+Las siguientes condiciones y notas se aplican a todas las operaciones de carga de varias partes:
+
+* No debe exceder 1,000 cargas simultáneas de varias partes en un solo bloque, ya que los resultados de List Multipart cargan consultas para ese bloque pueden devolver resultados incompletos.
+* StorageGRID aplica los límites de tamaño de AWS para piezas multiparte. Los clientes de S3 deben seguir estas directrices:
++
+** Cada parte de una carga de varias partes debe estar entre 5 MIB (5,242,880 bytes) y 5 GIB (5,368,709,120 bytes).
+** La última parte puede ser más pequeña que 5 MIB (5,242,880 bytes).
+** En general, los tamaños de las piezas deben ser lo más grandes posible. Por ejemplo, utilice tamaños de parte de 5 GIB para un objeto de 100 GIB. Debido a que cada parte se considera un objeto único, el uso de piezas de gran tamaño reduce la sobrecarga de metadatos de StorageGRID.
+** En el caso de objetos de menor tamaño de 5 GIB, considere usar la carga sin varias partes.
+
+
+* ILM se evalúa para cada parte de un objeto de varias partes a medida que se procesa, y para el objeto como un todo cuando se completa la carga de varias partes, si la regla de ILM utiliza el comportamiento de ingesta equilibrado o estricto. Debe saber cómo afecta esto a la ubicación de objetos y piezas:
++
+** Si ILM cambia mientras se carga varias partes de S3, es posible que cuando la carga de varias partes completa algunas partes del objeto no cumplan los requisitos actuales de ILM. Cualquier pieza que no se haya colocado correctamente se coloca en la cola de reevaluación de ILM y se mueve posteriormente a la ubicación correcta.
+** Al evaluar ILM para una pieza, StorageGRID filtra el tamaño de la pieza, no el tamaño del objeto. Esto significa que las partes de un objeto se pueden almacenar en ubicaciones que no cumplan con los requisitos de ILM para el objeto como un todo. Por ejemplo, si una regla especifica que todos los objetos de 10 GB o más se almacenan en DC1 mientras que todos los objetos más pequeños se almacenan en DC2, al ingerir cada parte de 1 GB de una carga multiparte de 10 partes se almacena en DC2. Cuando se evalúa ILM para el objeto como un todo, todas las partes del objeto se mueven a DC1.
+
+
+* Todas las operaciones de carga de varias partes admiten controles de coherencia de StorageGRID.
+* Según sea necesario, puede utilizar el cifrado del servidor con cargas en varias partes. Para usar SSE (cifrado en el servidor con claves gestionadas por StorageGRID), incluye el `x-amz-server-side-encryption` Solicite el encabezado sólo en la solicitud Iniciar carga de varias partes. Para utilizar SSE-C (cifrado del servidor con claves proporcionadas por el cliente), debe especificar los mismos tres encabezados de solicitud de clave de cifrado en la solicitud de carga de varias partes iniciada y en cada solicitud de artículo de carga posterior.
+
+
+[cols="2a,3a"]
+|===
+| Funcionamiento | Implementación 
+
+
+ a| 
+Enumerar cargas de varias partes
+ a| 
+Consulte link:list-multipart-uploads.html["Enumerar cargas de varias partes"]
+
+
+
+ a| 
+Inicie la carga de varias partes
+ a| 
+Consulte link:initiate-multipart-upload.html["Inicie la carga de varias partes"]
+
+
+
+ a| 
+Cargar artículo
+ a| 
+Consulte link:upload-part.html["Cargar artículo"]
+
+
+
+ a| 
+Cargar pieza: Copiar
+ a| 
+Consulte link:upload-part-copy.html["Cargar pieza: Copiar"]
+
+
+
+ a| 
+Completar carga de varias partes
+ a| 
+Consulte link:complete-multipart-upload.html["Completar carga de varias partes"]
+
+
+
+ a| 
+Cancelar carga de varias partes
+ a| 
+Se implementa con todo el comportamiento de la API DE REST de Amazon S3. Reservado el derecho a realizar modificaciones.
+
+
+
+ a| 
+Enumerar piezas
+ a| 
+Se implementa con todo el comportamiento de la API DE REST de Amazon S3. Reservado el derecho a realizar modificaciones.
+
+|===
+.Información relacionada
+* link:consistency-controls.html["Controles de consistencia"]
+* link:using-server-side-encryption.html["Usar cifrado del servidor"]
+

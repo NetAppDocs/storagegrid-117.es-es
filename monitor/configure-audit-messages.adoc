@@ -1,0 +1,229 @@
+---
+permalink: monitor/configure-audit-messages.html 
+sidebar: sidebar 
+keywords: audit messages, configure syslog server, configure external syslog server. log destinations 
+summary: Todos los nodos StorageGRID generan mensajes de auditoría para realizar un seguimiento de la actividad y los eventos del sistema. Puede ajustar los niveles de auditoría para aumentar o disminuir el tipo y el número de mensajes de auditoría registrados. 
+---
+= Configurar los mensajes de auditoría y los destinos de registro
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Los mensajes de auditoría y los registros registran las actividades del sistema y los eventos de seguridad, y son herramientas esenciales para la supervisión y solución de problemas. Puede ajustar los niveles de auditoría para aumentar o disminuir el tipo y el número de mensajes de auditoría registrados. Opcionalmente, puede definir los encabezados de solicitud HTTP que desee incluir en los mensajes de auditoría de lectura y escritura del cliente. También es posible configurar un servidor de syslog externo y modificar el destino de la información de auditoría.
+
+Para obtener más información sobre los mensajes de auditoría, consulte link:../audit/index.html["Revisar los registros de auditoría"].
+
+.Antes de empezar
+* Ha iniciado sesión en Grid Manager mediante un link:../admin/web-browser-requirements.html["navegador web compatible"].
+* Tiene permisos de acceso raíz o de mantenimiento.
+
+
+.Acerca de esta tarea
+Todos los nodos de StorageGRID generan mensajes y registros de auditoría para realizar un seguimiento de la actividad y los eventos del sistema. De manera predeterminada, se envía la información de auditoría al registro de auditoría en los nodos admin. Se pueden ajustar los niveles de auditoría para aumentar o disminuir el tipo y el número de mensajes de auditoría registrados en el registro de auditoría. Opcionalmente, puede configurar la información de auditoría para que se almacene temporalmente en los nodos de origen para la recopilación manual.
+
+
+IMPORTANT: Si tiene un grid grande, utilice varios tipos de aplicaciones S3 o desea conservar todos los datos de auditoría, configure un servidor syslog externo y guarde la información de auditoría de forma remota. El uso de un servidor externo minimiza el impacto en el rendimiento del registro de mensajes de auditoría sin reducir la integridad de los datos de auditoría. Consulte link:../monitor/considerations-for-external-syslog-server.html["Consideraciones sobre el servidor de syslog externo"] para obtener más detalles.
+
+
+
+== Cambiar los niveles de mensajes de auditoría en el registro de auditoría
+
+Se puede establecer un nivel de auditoría diferente para cada una de las siguientes categorías de mensajes en el registro de auditoría:
+
+[cols="1a,3a"]
+|===
+| Categoría de auditoría | Descripción 
+
+
+ a| 
+Sistema
+ a| 
+De forma predeterminada, este nivel se establece en normal. Consulte link:../audit/system-audit-messages.html["Mensajes de auditoría del sistema"].
+
+
+
+ a| 
+Reducida
+ a| 
+De forma predeterminada, este nivel se establece en error. Consulte link:../audit/object-storage-audit-messages.html["Mensajes de auditoría del almacenamiento de objetos"].
+
+
+
+ a| 
+Gestión
+ a| 
+De forma predeterminada, este nivel se establece en normal. Consulte link:../audit/management-audit-message.html["Mensaje de auditoría de gestión"].
+
+
+
+ a| 
+El cliente lee
+ a| 
+De forma predeterminada, este nivel se establece en normal. Consulte link:../audit/client-read-audit-messages.html["El cliente lee los mensajes de auditoría"].
+
+
+
+ a| 
+Escrituras del cliente
+ a| 
+De forma predeterminada, este nivel se establece en normal. Consulte link:../audit/client-write-audit-messages.html["El cliente escribe mensajes de auditoría"].
+
+
+
+ a| 
+Operaciones de ILM
+ a| 
+De forma predeterminada, este nivel se establece en normal. Consulte link:../audit/ilm-audit-messages.html["Mensajes de auditoría de operaciones de ILM"].
+
+|===
+
+NOTE: Estos valores predeterminados se aplican si instaló inicialmente StorageGRID con la versión 10.3 o posterior. Si ha actualizado desde una versión anterior de StorageGRID, la opción predeterminada para todas las categorías se establece en normal.
+
+
+NOTE: Durante las actualizaciones, las configuraciones a nivel de auditoría no serán efectivas inmediatamente.
+
+.Pasos
+. Seleccione *CONFIGURACIÓN* > *Supervisión* > *servidor de auditoría y syslog*.
+. Para cada categoría de mensaje de auditoría, seleccione un nivel de auditoría de la lista desplegable:
++
+[cols="1a,3a"]
+|===
+| Nivel de auditoría | Descripción 
+
+
+ a| 
+Apagado
+ a| 
+No se registran mensajes de auditoría de la categoría.
+
+
+
+ a| 
+Error
+ a| 
+Sólo se registran los mensajes de error: Los mensajes de auditoría para los que el código de resultado no fue "correcto" (SUCS).
+
+
+
+ a| 
+Normal
+ a| 
+Se registran los mensajes transaccionales estándar: Los mensajes que aparecen en estas instrucciones para la categoría.
+
+
+
+ a| 
+Depurar
+ a| 
+Obsoleto. Este nivel se comporta como el nivel de auditoría normal.
+
+|===
++
+Los mensajes incluidos para cualquier nivel particular incluyen los que se registrarán en los niveles superiores. Por ejemplo, el nivel normal incluye todos los mensajes de error.
+
++
+
+NOTE: Si no necesita un registro detallado de las operaciones de lectura del cliente para sus aplicaciones S3, cambie opcionalmente la configuración *Lecturas del cliente* a *Error* para disminuir el número de mensajes de auditoría registrados en el registro de auditoría.
+
+. Opcionalmente, en *encabezados de protocolo de auditoría*, defina los encabezados de solicitud HTTP que desee incluir en los mensajes de auditoría de lectura y escritura del cliente. Utilice un asterisco (\*) como comodín para que coincida con cero o más caracteres. Utilice la secuencia de escape (\*) para que coincida con un asterisco literal.
++
+
+NOTE: Los encabezados de protocolo de auditoría se aplican solo a solicitudes S3 y Swift.
+
+. Seleccione *Agregar otro encabezado* para crear encabezados adicionales, si es necesario.
++
+Cuando se encuentran encabezados HTTP en una solicitud, se incluyen en el mensaje de auditoría en el campo HTRH.
+
++
+
+NOTE: Los encabezados de la solicitud del protocolo de auditoría sólo se registran si el nivel de auditoría para *Lecturas de cliente* o *Escrituras de cliente* no es *Desactivada*.
+
+. Seleccione *Guardar*
++
+Aparece un banner verde que indica que la configuración se ha guardado correctamente.
+
+
+
+
+
+== Use un servidor de syslog externo
+
+Es posible configurar un servidor de syslog externo para guardar información de auditoría de manera remota.
+
+* Si desea guardar información de auditoría en un servidor de syslog externo, vaya a. link:../monitor/configuring-syslog-server.html["Configure un servidor de syslog externo"].
+* Si no está utilizando un servidor de syslog externo, vaya a. <<Select-audit-information-destinations,Seleccione destinos de información de auditoría>>.
+
+
+
+
+== Seleccione destinos de información de auditoría
+
+Es posible especificar dónde se envían los registros de auditoría, los registros de eventos de seguridad y los registros de aplicaciones.
+
+
+NOTE: Algunos destinos solo están disponibles si se utiliza un servidor de syslog externo. Consulte link:../monitor/configuring-syslog-server.html["Configure un servidor de syslog externo"] para configurar un servidor de syslog externo.
+
+
+NOTE: Para obtener más información sobre los registros de software de StorageGRID, consulte link:../monitor/storagegrid-software-logs.html#["Registros del software StorageGRID"].
+
+. En la página Audit and syslog Server, seleccione el destino para la información de auditoría de las opciones que aparecen:
++
+[cols="1a,2a"]
+|===
+| Opción | Descripción 
+
+
+ a| 
+Predeterminado (nodos de administrador/nodos locales)
+ a| 
+Se envían mensajes de auditoría al registro de auditoría (`audit.log`) En el nodo Admin, y los registros de eventos de seguridad y de aplicaciones se almacenan en los nodos en los que se generaron (también denominado "nodo local").
+
+
+
+ a| 
+Servidor de syslog externo
+ a| 
+La información de auditoría se envía a un servidor de syslog externo y se guarda en el nodo local. El tipo de información enviada depende de la forma en que se configure el servidor de syslog externo. Esta opción solo se habilita después de configurar un servidor de syslog externo.
+
+
+
+ a| 
+Nodo de administrador y servidor de syslog externo
+ a| 
+Se envían mensajes de auditoría al registro de auditoría (`audit.log`) En el nodo Admin, y la información de auditoría se envía al servidor syslog externo y se guarda en el nodo local. El tipo de información enviada depende de la forma en que se configure el servidor de syslog externo. Esta opción solo se habilita después de configurar un servidor de syslog externo.
+
+
+
+ a| 
+Solo nodos locales
+ a| 
+No se envía información de auditoría a un nodo de administrador ni al servidor de syslog remoto. La información de auditoría solo se guarda en los nodos que la generaron.
+
+*Nota*: StorageGRID elimina periódicamente estos registros locales en rotación para liberar espacio. Cuando el archivo de registro de un nodo alcanza 1 GB, se guarda el archivo existente y se inicia un nuevo archivo de registro. El límite de rotación para el registro es de 21 archivos. Cuando se crea la versión 22ª del archivo de registro, se elimina el archivo de registro más antiguo. De media, se almacenan unos 20 GB de datos de registro en cada nodo.
+
+|===
++
+
+NOTE: La información de auditoría generada en cada nodo local se almacena en `/var/local/log/localaudit.log`
+
+. Seleccione *Guardar*.
++
+Aparecerá un mensaje de advertencia.
+
+. Seleccione *OK* para confirmar que desea cambiar el destino para la información de auditoría.
++
+Aparecerá un banner verde que le notificará que se ha guardado la configuración de auditoría.
+
++
+Los nuevos registros se envían a los destinos seleccionados. Los registros existentes permanecen en su ubicación actual.
+
+
+
+.Información relacionada
+link:../monitor/considerations-for-external-syslog-server.html["Consideraciones sobre el servidor de syslog externo"]
+
+link:../admin/index.html["Administre StorageGRID"]
+
+link:../troubleshoot/troubleshooting-syslog-server.html["Solucione problemas en el servidor de syslog externo"]

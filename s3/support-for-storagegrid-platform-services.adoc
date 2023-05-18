@@ -1,0 +1,63 @@
+---
+permalink: s3/support-for-storagegrid-platform-services.html 
+sidebar: sidebar 
+keywords: platform services, cloudmirror replication, notifications, search integration 
+summary: 'Los servicios de plataforma StorageGRID permiten que las cuentas de inquilinos StorageGRID aprovechen servicios externos, como un bloque de S3 remoto, un extremo de servicio de notificación simple \(SNS\) o un clúster de Elasticsearch para ampliar los servicios que ofrece un grid.' 
+---
+= Soporte para servicios de plataforma StorageGRID
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Los servicios de plataforma StorageGRID permiten que las cuentas de inquilinos StorageGRID aprovechen servicios externos, como un bloque de S3 remoto, un extremo de servicio de notificación simple (SNS) o un clúster de Elasticsearch para ampliar los servicios que ofrece un grid.
+
+La tabla siguiente resume los servicios de plataforma disponibles y las API S3 que se utilizan para configurarlos.
+
+[cols="1a,2a,1a"]
+|===
+| Servicio de plataforma | Específico | API de S3 que se utiliza para configurar el servicio 
+
+
+ a| 
+Replicación de CloudMirror
+ a| 
+Replica objetos de un bloque StorageGRID de origen en el bloque S3 remoto configurado.
+ a| 
+PUT Bucket Replication (consulte link:operations-on-buckets.html["Operaciones en bloques"])
+
+
+
+ a| 
+Notificaciones
+ a| 
+Envía notificaciones acerca de eventos en un bloque de StorageGRID de origen a un extremo de servicio simple de notificación (SNS) configurado.
+ a| 
+Notificación PUT Bucket (consulte link:operations-on-buckets.html["Operaciones en bloques"])
+
+
+
+ a| 
+Integración de búsqueda
+ a| 
+Envía metadatos de objetos para los objetos almacenados en un bloque de StorageGRID a un índice de Elasticsearch configurado.
+ a| 
+link:put-bucket-metadata-notification-configuration-request.html["PUT bucket metadata notification Configuration"]
+
+*Nota:* se trata de una API StorageGRID S3 personalizada.
+
+|===
+Un administrador de grid debe habilitar el uso de los servicios de plataforma para una cuenta de inquilino antes de poder utilizarlos. Consulte link:../admin/index.html["Administre StorageGRID"]. A continuación, un administrador de arrendatarios debe crear un extremo que represente el servicio remoto en la cuenta de arrendatario. Este paso es necesario para poder configurar un servicio. Consulte link:../tenant/index.html["Usar una cuenta de inquilino"].
+
+
+
+== Recomendaciones para el uso de servicios de plataformas
+
+Antes de utilizar los servicios de plataforma, debe tener en cuenta las siguientes recomendaciones:
+
+* NetApp recomienda que no permita más de 100 inquilinos activos con solicitudes S3 que requieran la replicación, las notificaciones y la integración de búsqueda de CloudMirror. Tener más de 100 inquilinos activos puede dar como resultado un rendimiento del cliente S3 más lento.
+* Si un bucket de S3 del sistema StorageGRID tiene habilitadas las versiones y la replicación de CloudMirror, NetApp recomienda que el extremo de destino también tenga habilitado el control de versiones de bucket de S3. Esto permite que la replicación de CloudMirror genere versiones de objetos similares en el extremo.
+* La replicación de CloudMirror no es compatible si el bloque de origen tiene la función S3 Object Lock habilitada.
+* La replicación de CloudMirror generará un error ACCESSDENIED si el bloque de destino tiene activada la conformidad heredada.
+

@@ -1,0 +1,25 @@
+---
+permalink: upgrade/changes-to-tenant-management-api.html 
+sidebar: sidebar 
+keywords: tenant management api, api, api version, swagger, rest api 
+summary: StorageGRID 11,7 utiliza la versión 3 de la API de gestión de inquilinos. La versión 3 deja obsoleto la versión 2; sin embargo, la versión 1 y la versión 2 siguen siendo compatibles. 
+---
+= Cambios en la API de gestión de inquilinos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID 11,7 utiliza la versión 3 de la API de gestión de inquilinos. La versión 3 deja obsoleto la versión 2; sin embargo, la versión 1 y la versión 2 siguen siendo compatibles.
+
+
+IMPORTANT: Puede seguir utilizando la versión 1 y la versión 2 de la API de gestión con StorageGRID 11,7; no obstante, la compatibilidad con estas versiones de la API se quitará en una futura versión de StorageGRID. Después de actualizar a StorageGRID 11,7, las API v1 y v2 obsoletas se pueden desactivar con el `PUT /grid/config/management` API.
+
+
+
+== Nuevos extremos para la federación de grid
+
+Puede utilizar los puntos finales de la API *grid-federation-connections* para listar las conexiones de federación de grid para el inquilino actual y borrar el último error de replicación entre grid para el inquilino actual y la conexión de federación de grid seleccionada.
+
+Para obtener más información, visite link:../tenant/understanding-tenant-management-api.html["Conozca la API de gestión de inquilinos"].

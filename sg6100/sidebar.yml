@@ -1,0 +1,41 @@
+---
+section: sg6100
+title: Mantener el hardware de SGF6112
+entries:
+- title: Descripción general
+  pdf-filename: sg6100 mantenimiento de hardware
+  url: "/sg6100/index.html"
+- title: Procedimientos de mantenimiento de la configuración
+  pdf-filename: Procedimientos de mantenimiento de la configuración - SGF6112
+  entries:
+  - title: Encienda y apague el LED del aparato
+    url: "/sg6100/turning-sgf6112-identify-led-on-and-off.html"
+  - title: Localice el dispositivo en el centro de datos
+    url: "/sg6100/locating-sgf6112-in-data-center.html"
+  - title: Apague el aparato
+    url: "/sg6100/shut-down-sgf6112.html"
+  - title: Encienda el SGF6112 y verifique el funcionamiento
+    url: "/sg6100/powering-on-sgf6112-and-verifying-operation.html"
+  - title: Cambiar la configuración del enlace
+    url: "/sg6100/changing-link-configuration-of-sgf6112-appliance.html"
+- title: Procedimientos de mantenimiento de hardware
+  pdf-filename: Procedimientos de mantenimiento de hardware - SGF6112
+  entries:
+  - title: Verifique el componente que desea reemplazar
+    url: "/sg6100/verify-component-to-replace.html"
+  - title: Sustituya una o varias fuentes de alimentación
+    url: "/sg6100/replacing-one-or-more-power-supplies-in-sgf6112-appliance.html"
+  - title: Sustituya el ventilador
+    url: "/sg6100/replacing-fan-in-sgf6112.html"
+  - title: Sustituya la unidad
+    url: "/sg6100/replacing-drive-in-sgf6112.html"
+  - title: Sustituya la NIC
+    url: "/sg6100/replace-nic-in-sgf6112.html"
+  - title: Reemplace la batería CMOS
+    url: "/sg6100/replace-cmos-in-sgf6112.html"
+  - title: Sustituya el dispositivo SGF6112
+    url: "/sg6100/replacing-sgf6112-appliance.html"
+  - title: Reubique SGF6112 en rack
+    url: "/sg6100/reinstalling-sgf6112-into-cabinet-or-rack.html"
+  - title: Vuelva a colocar la cubierta
+    url: "/sg6100/reinstalling-sgf6112-cover.html"

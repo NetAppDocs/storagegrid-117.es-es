@@ -1,0 +1,46 @@
+---
+permalink: ilm/index.html 
+sidebar: sidebar 
+keywords: information lifecycle management overview, about information lifecycle management, ilm overview, about ilm 
+summary: 'Para administrar los objetos de un sistema StorageGRID, configure las reglas y políticas de gestión de ciclo de vida de la información (ILM). Las reglas y políticas de ILM indican a StorageGRID cómo crear y distribuir copias de datos de objetos y cómo gestionarlos a lo largo del tiempo.' 
+---
+= Gestión de objetos con ILM: Información general
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para gestionar los objetos de un sistema StorageGRID, configure una política de gestión de la vida útil de la información (ILM) compuesta por una o más reglas de ILM. Las reglas de ILM indican a la StorageGRID cómo crear y distribuir copias de datos de objetos y cómo gestionar esas copias con el tiempo.
+
+
+
+== Acerca de estas instrucciones
+
+El diseño e implementación de reglas de ILM y la política de ILM requiere una planificación cuidadosa. Debe comprender los requisitos operativos, la topología del sistema StorageGRID, las necesidades de protección de objetos y los tipos de almacenamiento disponibles. A continuación, debe determinar cómo desea copiar, distribuir y almacenar diferentes tipos de objetos.
+
+Utilice estas instrucciones para:
+
+* Conozca más detalles sobre gestión de la vida útil de la información de StorageGRID link:how-ilm-operates-throughout-objects-life.html["Funcionamiento de ILM a lo largo de la vida de un objeto"].
+* Aprenda a configurar link:what-storage-pool-is.html["pools de almacenamiento"], link:what-cloud-storage-pool-is.html["Pools de almacenamiento en cloud"], y. link:what-ilm-rule-is.html["Reglas de ILM"].
+* Aprenda cómo link:creating-proposed-ilm-policy.html["Cree, simule y active una política de ILM"] que protegerá los datos de objetos en uno o más sitios.
+* Aprenda cómo link:managing-objects-with-s3-object-lock.html["Gestionar objetos con S3 Object Lock"], Que ayuda a garantizar que los objetos en cubos específicos de S3 no se borren o sobrescriban durante un período de tiempo específico.
+
+
+
+
+== Leer más
+
+Para obtener más información, consulte estos vídeos:
+
+* https://["Vídeo: Reglas de gestión del ciclo de vida de la información en StorageGRID 11,7"^].
++
+[link=https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6baa2e69-95b7-4bcf-a0ff-afbd0092231c]
+image::../media/video-screenshot-ilm-rules-117.png[Vídeo: Reglas de gestión del ciclo de vida de la información en StorageGRID 11,7]
+
+* https://["Vídeo: Políticas de gestión del ciclo de vida de la información en StorageGRID 11,7"^]
++
+[link=https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=0009ebe1-3665-4cdc-a101-afbd009a0466]
+image::../media/video-screenshot-ilm-policies-117.png[Vídeo: Políticas de gestión del ciclo de vida de la información en StorageGRID 11,7]
+
+

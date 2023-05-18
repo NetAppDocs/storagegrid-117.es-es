@@ -1,0 +1,87 @@
+---
+permalink: admin/kms-viewing-details.html 
+sidebar: sidebar 
+keywords: view kms, view key management server 
+summary: 'Puede ver información sobre cada servidor de gestión de claves \(KMS\) del sistema StorageGRID, incluido el estado actual de los certificados de servidor y de cliente.' 
+---
+= Ver detalles de KMS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede ver información sobre cada servidor de gestión de claves (KMS) del sistema StorageGRID, incluidos el estado actual de los certificados de servidor y de cliente.
+
+.Pasos
+. Seleccione *CONFIGURACIÓN* > *Seguridad* > *servidor de administración de claves*.
++
+Aparece la página del servidor de gestión de claves. La pestaña Detalles de configuración muestra todos los servidores de gestión de claves configurados.
+
+. Revise la información de la tabla de cada KMS.
++
+[cols="1a,2a"]
+|===
+| Campo | Descripción 
+
+
+ a| 
+Nombre de KM
+ a| 
+Nombre descriptivo del KMS.
+
+
+
+ a| 
+Nombre de clave
+ a| 
+El alias clave del cliente StorageGRID en el KMS.
+
+
+
+ a| 
+Administra claves para
+ a| 
+El sitio StorageGRID asociado con el KMS.
+
+Este campo muestra el nombre de un sitio StorageGRID específico o *Sitios no administrados por otro KMS (KMS predeterminado).*
+
+
+
+ a| 
+Nombre del hostl
+ a| 
+El nombre de dominio completo o la dirección IP del KMS.
+
+Si existe un clúster de dos servidores de gestión de claves, se muestran el nombre de dominio completo o la dirección IP de ambos servidores. Si hay más de dos servidores de gestión de claves en un clúster, el nombre de dominio completo o la dirección IP del primer KMS se enumeran junto con la cantidad de servidores de gestión de claves adicionales en el clúster.
+
+Por ejemplo: `10.10.10.10 and 10.10.10.11` o. `10.10.10.10 and 2 others`.
+
+Para ver todos los nombres de host de un clúster, abra un KMS y seleccione *Editar* o *Acciones* > *Editar*.
+
+
+
+ a| 
+Caducidad del certificado
+ a| 
+Estado actual del certificado de servidor, del certificado de CA opcional y del certificado de cliente: Válido, caducado, casi espirado o desconocido.
+
+*Nota:* StorageGRID puede tardar hasta 30 minutos en recibir actualizaciones del vencimiento del certificado. Debe actualizar el navegador web para ver los valores actuales.
+
+|===
+. Si la caducidad del certificado es Desconocido, espere hasta 30 minutos y actualice el explorador web.
++
+
+NOTE: Inmediatamente después de agregar un KMS, el vencimiento del certificado en la página Servidor de gestión de claves aparece como Desconocido. StorageGRID puede tardar hasta 30 minutos en obtener el estado real de cada certificado. Debe actualizar el explorador web para ver el estado real.
+
+. Si la columna Caducidad del certificado indica que un certificado ha caducado o está a punto de caducar, solucione el problema lo antes posible.
++
+Cuando se activan las alertas *KMS CA CERTIFICATION*, *KMS client certificate expiration* y *KMS server certificate expiration*, anote la descripción de cada alerta y realice las acciones recomendadas.
+
++
+
+CAUTION: Debe solucionar cualquier problema con los certificados Lo antes posible. para mantener el acceso a los datos.
+
+. Para ver los detalles del certificado de este KMS, seleccione el nombre del KMS en la tabla.
+. En la página de resumen de KMS, revise los metadatos y el certificado PEM tanto para el certificado de servidor como para el certificado de cliente. Según sea necesario, seleccione *Editar certificado* para reemplazar un certificado por uno nuevo.
+

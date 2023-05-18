@@ -1,0 +1,29 @@
+---
+permalink: maintain/grid-node-decommissioning.html 
+sidebar: sidebar 
+keywords: storagegrid, decommission 
+summary: Puede usar el procedimiento de retirada de nodos para quitar uno o varios nodos de almacenamiento, nodos de puerta de enlace o nodos de administración no primarios en uno o más sitios. No puede retirar el nodo administrador principal ni un nodo de archivado. 
+---
+= Retirada de nodo de grid: Información general
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede usar el procedimiento de retirada de nodos para quitar uno o varios nodos de almacenamiento, nodos de puerta de enlace o nodos de administración no primarios en uno o más sitios. No puede anular el servicio del nodo de administración principal ni de un nodo de archivado.
+
+En general, debe retirar los nodos de red solo mientras están conectados al sistema StorageGRID y todos los nodos tienen un estado normal (tienen iconos verdes en las páginas *NODOS* y en la página *nodos de misión*). Sin embargo, si es necesario, puede retirar un nodo de grid desconectado. Antes de quitar un nodo desconectado, asegúrese de comprender las implicaciones y restricciones de ese proceso.
+
+Usar el procedimiento de retirada del nodo cuando se cumple alguna de las siguientes condiciones:
+
+* Añadió un nodo de almacenamiento de mayor tamaño al sistema y desea quitar uno o más nodos de almacenamiento más pequeños mientras conserva los objetos al mismo tiempo.
+* Necesita menos almacenamiento total.
+* Ya no se requiere un nodo de puerta de enlace.
+* Ya no se requiere un nodo administrador que no sea primario.
+* El grid incluye un nodo desconectado que no se puede recuperar ni volver a conectar.
+
+
+El diagrama de flujo muestra los pasos de alto nivel para retirar los nodos de la cuadrícula.
+
+image::../media/overview_decommission_nodes.png[diagrama de flujo de alto nivel de los pasos de desmantelamiento]

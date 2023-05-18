@@ -1,0 +1,18 @@
+---
+permalink: maintain/decommissioning-multiple-storage-nodes.html 
+sidebar: sidebar 
+keywords: storagegrid, decommission nodes, storage node, multiple storage nodes 
+summary: Si necesita quitar más de un nodo de almacenamiento, puede decomisionar secuencialmente o en paralelo 
+---
+= Retire nodos de almacenamiento múltiples
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Si necesita quitar más de un nodo de almacenamiento, puede decomisionar secuencialmente o en paralelo
+
+* Si decomisiona nodos de almacenamiento secuencialmente, debe esperar a que el primer nodo de almacenamiento finalice el decomisionado antes de iniciar la retirada del siguiente nodo de almacenamiento.
+* Si decomisiona nodos de almacenamiento en paralelo, los nodos de almacenamiento procesan de forma simultánea las tareas de retirada para todos los nodos de almacenamiento que se van a retirar del servicio. Esto puede resultar en una situación en la que todas las copias permanentes‐de un archivo se marquen como «sólo en términos de lectura», desactivando temporalmente la eliminación en cuadrículas en las que esta función está activada.
+

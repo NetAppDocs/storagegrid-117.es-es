@@ -1,0 +1,31 @@
+---
+permalink: admin/archiving-to-tape-through-tsm-middleware.html 
+sidebar: sidebar 
+keywords: tivoli storage manager, tsm server, archive node, tape 
+summary: 'Puede configurar un nodo de archivado para que se destine a un servidor de Tivoli Storage Manager \(TSM\) que proporcione una interfaz lógica para almacenar y recuperar datos de objetos en dispositivos de almacenamiento de acceso aleatorio o secuencial, incluidas bibliotecas de cintas.' 
+---
+= Archivado en cinta mediante TSM Middleware
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede configurar un nodo de archivado para que se destine a un servidor de Tivoli Storage Manager (TSM) que proporcione una interfaz lógica para almacenar y recuperar datos de objetos en dispositivos de almacenamiento de acceso aleatorio o secuencial, incluidas bibliotecas de cintas.
+
+El servicio ARC del nodo de archivado actúa como cliente al servidor TSM, usando Tivoli Storage Manager como middleware para comunicarse con el sistema de almacenamiento de archivado.
+
+[CAUTION]
+====
+La compatibilidad con los nodos de archivo (tanto para archivar en la nube mediante la API S3 como para archivar en cinta mediante el middleware TSM) está obsoleta y se eliminará en una versión futura. Mover objetos de un nodo de archivado a un sistema de almacenamiento de archivado externo ha sido reemplazado por ILM Cloud Storage Pools, que ofrecen más funcionalidad.
+
+Consulte link:../ilm/what-cloud-storage-pool-is.html["Utilice Cloud Storage Pools"].
+
+====
+
+
+== Clases de gestión de TSM
+
+Las clases de gestión definidas por el middleware TSM describen cómo funcionan las operaciones de copia de seguridad y archivado de TSMʹs y se pueden utilizar para especificar reglas para el contenido que aplica el servidor TSM. Estas reglas funcionan de manera independiente con la política de ILM del sistema StorageGRID, y deben ser coherentes con la necesidad del sistema StorageGRID de que los objetos se almacenen de forma permanente y que siempre estén disponibles para su recuperación en el nodo de archivado. Una vez que el nodo de archivado envía los datos de objeto a un servidor TSM, se aplican las reglas de ciclo de vida y retención de TSM mientras los datos del objeto se almacenan en cinta gestionada por el servidor TSM.
+
+El servidor TSM utiliza la clase de gestión TSM para aplicar reglas para la ubicación de los datos o la retención después de que el nodo de archivado envía los objetos al servidor TSM. Por ejemplo, los objetos identificados como backups de base de datos (contenido temporal que puede sobrescribirse con datos más nuevos) se pueden tratar de forma diferente a los datos de la aplicación (contenido fijo que debe conservarse indefinidamente).

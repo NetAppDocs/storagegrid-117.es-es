@@ -1,0 +1,51 @@
+---
+permalink: s3/monitoring-object-ingest-and-retrieval-rates.html 
+sidebar: sidebar 
+keywords: monitor object ingest rates, view object ingest rates, monitor object retrieval rates, view object retrieval rates 
+summary: Es posible supervisar las tasas de procesamiento y recuperación de objetos, así como las métricas para el número de objetos, consultas y verificación. Puede ver el número de intentos fallidos y correctos por las aplicaciones cliente para leer, escribir y modificar objetos en el sistema StorageGRID. 
+---
+= Supervise las tasas de procesamiento y recuperación de objetos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible supervisar las tasas de procesamiento y recuperación de objetos, así como las métricas para el número de objetos, consultas y verificación. Puede ver el número de intentos fallidos y correctos por las aplicaciones cliente para leer, escribir y modificar objetos en el sistema StorageGRID.
+
+.Pasos
+. Inicie sesión en Grid Manager mediante una link:../admin/web-browser-requirements.html["navegador web compatible"].
+. En el panel de control, seleccione *Rendimiento* > *S3 operaciones* o *Rendimiento* > *Operaciones Swift*.
++
+En esta sección se resume el número de operaciones de cliente que realiza su sistema StorageGRID. La media de las tasas de protocolo se hace durante los últimos dos minutos.
+
+. Seleccione *NODES*.
+. En la página de inicio de nodos (nivel de implementación), haga clic en la ficha *Load Balancer*.
++
+Los gráficos muestran tendencias para todo el tráfico de cliente dirigido a los extremos de equilibrador de carga dentro de la cuadrícula. Es posible seleccionar un intervalo de tiempo en horas, días, semanas, meses o años. también puede aplicar un intervalo personalizado.
+
+. En la página de inicio de nodos (nivel de implementación), haga clic en la ficha *objetos*.
++
+El gráfico muestra las tasas de procesamiento y recuperación de todo el sistema StorageGRID en bytes por segundo y bytes totales. Es posible seleccionar un intervalo de tiempo en horas, días, semanas, meses o años. también puede aplicar un intervalo personalizado.
+
+. Para ver información sobre un nodo de almacenamiento en particular, seleccione el nodo en la lista de la izquierda y haga clic en la ficha *objetos*.
++
+El gráfico muestra las tasas de procesamiento y recuperación de objetos de este nodo de almacenamiento. La pestaña también incluye métricas para el recuento de objetos, consultas y verificación. Puede hacer clic en las etiquetas para ver las definiciones de estas métricas.
+
++
+image::../media/nodes_storage_node_objects_help.png[Captura de pantalla de nodos > _Storage Node_ > objetos > Ayuda del atributo]
+
+. Si desea aún más detalles:
++
+.. Seleccione *SUPPORT* > *Tools* > *Topología de cuadrícula*.
+.. Seleccione *_site_* > *Descripción general* > *Principal*.
++
+La sección API Operations muestra información resumida de la cuadrícula completa.
+
+.. Seleccione *_Storage Node_* > *LDR* > *_Client Application_* > *Overview* > *Main*
++
+La sección Operaciones muestra información de resumen del nodo de almacenamiento seleccionado.
+
+
+
+

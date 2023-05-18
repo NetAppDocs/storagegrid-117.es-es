@@ -1,0 +1,47 @@
+---
+permalink: s3/upload-part.html 
+sidebar: sidebar 
+keywords: s3 upload part operation 
+summary: La operación cargar pieza carga una pieza en una carga de varias partes para un objeto. 
+---
+= Cargar artículo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La operación cargar pieza carga una pieza en una carga de varias partes para un objeto.
+
+
+
+== Encabezados de solicitud admitidos
+
+Se admiten los siguientes encabezados de solicitud:
+
+* `Content-Length`
+* `Content-MD5`
+
+
+
+
+== Solicitar encabezados para el cifrado del servidor
+
+Si ha especificado el cifrado SSE-C para la solicitud de carga de varias partes iniciada, también debe incluir los siguientes encabezados de solicitud en cada solicitud de artículo de carga:
+
+* `x-amz-server-side-encryption-customer-algorithm`: Especificar `AES256`.
+* `x-amz-server-side-encryption-customer-key`: Especifique la misma clave de cifrado que proporcionó en la solicitud Iniciar carga de varias partes.
+* `x-amz-server-side-encryption-customer-key-MD5`: Especifique el mismo resumen MD5 que ha proporcionado en la solicitud Iniciar carga de varias partes.
+
+
+
+IMPORTANT: Las claves de cifrado que proporcione no se almacenan nunca. Si pierde una clave de cifrado, perderá el objeto correspondiente. Antes de utilizar las claves proporcionadas por el cliente para proteger los datos de objetos, revise las consideraciones que se incluyen en el apartado «"usar cifrado en el servidor".
+
+
+
+== Creación de versiones
+
+La carga de varias partes consiste en operaciones independientes para iniciar la carga, enumerar cargas, cargar piezas, ensamblar las piezas cargadas y completar la carga. Los objetos se crean (y se crean versiones si corresponde) cuando se realiza la operación de carga de varias partes completa.
+
+.Información relacionada
+link:using-server-side-encryption.html["Usar cifrado del servidor"]

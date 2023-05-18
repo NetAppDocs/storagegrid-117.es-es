@@ -1,0 +1,56 @@
+---
+permalink: sg6000/removing-fibre-channel-hba.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, sg6000-cn, hba, host bus adapter, fibre channel, fiber channel, remove, removing, removal 
+summary: 'Es posible que deba sustituir el adaptador de bus de host de Fibre Channel \(HBA\) en el controlador SG6000-CN si no funciona de forma óptima o si ha fallado.' 
+---
+= Quite el HBA Fibre Channel
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible que deba sustituir el adaptador de bus de host (HBA) Fibre Channel en el controlador SG6000-CN si no funciona de forma óptima o si ha fallado.
+
+.Antes de empezar
+* Tiene el adaptador de bus de host de Fibre Channel de sustitución correcto.
+* Ya tienes link:verifying-fibre-channel-hba-to-replace.html["Se determina qué controladora SG6000-CN contiene el HBA Fibre Channel que debe reemplazar"].
+* Ya tienes link:locating-controller-in-data-center.html["Ubicado físicamente el controlador SG6000-CN"] en el centro de datos.
+* Ya tienes link:shutting-down-sg6000-cn-controller.html["Apague el controlador SG6000-CN"].
++
+
+CAUTION: Es necesario realizar un apagado controlado antes de retirar la controladora del rack.
+
+* Ya tienes link:removing-sg6000-cn-controller-from-cabinet-or-rack.html["ha quitado la controladora del armario o el rack"].
+* Ya tienes link:removing-sg6000-cn-controller-cover.html["ha quitado la cubierta del controlador"].
+
+
+.Acerca de esta tarea
+Para evitar interrupciones del servicio, confirme que todos los demás nodos de almacenamiento están conectados al grid antes de iniciar la sustitución de un HBA Fibre Channel o sustituya el adaptador durante un periodo de mantenimiento programado cuando normalmente se esperan periodos de interrupción del servicio. Consulte la información acerca de link:../monitor/monitoring-system-health.html#monitor-node-connection-states["supervisar los estados de conexión de los nodos"].
+
+
+IMPORTANT: Si alguna vez ha utilizado una regla de ILM que crea solamente una copia de un objeto, debe reemplazar el HBA de Fibre Channel durante una ventana de mantenimiento programada. De lo contrario, es posible que pierda temporalmente el acceso a esos objetos durante este procedimiento. + Ver información sobre link:../ilm/why-you-should-not-use-single-copy-replication.html["por qué no debe utilizar replicación de copia única"].
+
+.Pasos
+. Envuelva el extremo de la correa de la muñequera ESD alrededor de su muñeca y fije el extremo de la pinza a una masa metálica para evitar descargas estáticas.
+. Localice el conjunto de la tarjeta vertical situado en la parte posterior de la controladora que contiene el HBA Fibre Channel.
++
+image::../media/sg6060_riser_assembly_location.jpg[Ubicación del conjunto de la tarjeta vertical SG6060]
+
+. Sujete el conjunto del elevador a través de los orificios marcados en azul y levántelo con cuidado hacia arriba. Mueva el conjunto de la tarjeta vertical hacia la parte frontal del chasis a medida que lo levante para permitir que los conectores externos de sus adaptadores instalados se retiren del chasis.
+. Coloque la tarjeta vertical sobre una superficie antiestática plana con el lado del marco metálico hacia abajo para acceder a los adaptadores.
++
+image::../media/sg6060_fc_hba_location.jpg[SG6060 HBA Fibre Channel en el conjunto de tarjeta «riser»]
+
++
+El conjunto de tarjeta vertical tiene dos adaptadores: Un HBA Fibre Channel y un adaptador de red Ethernet. El adaptador de bus de host de Fibre Channel se indica en la ilustración.
+
+. Abra el pestillo azul del adaptador (en un círculo) y retire con cuidado el HBA Fibre Channel del conjunto de la tarjeta vertical. Rote ligeramente el adaptador para ayudar a extraer el adaptador de su conector. No use fuerza excesiva.
+. Coloque el adaptador sobre una superficie plana antiestática.
+
+
+.Después de terminar
+link:reinstalling-fibre-channel-hba.html["Instale el HBA Fibre Channel de repuesto"].
+
+Tras sustituir la pieza, devuelva la pieza que ha fallado a NetApp, tal y como se describe en las instrucciones de RMA incluidas con el kit. Consulte https://["Retorno de artículo  sustituciones"^] para obtener más información.

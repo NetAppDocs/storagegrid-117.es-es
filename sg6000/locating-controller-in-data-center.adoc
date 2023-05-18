@@ -1,0 +1,56 @@
+---
+permalink: sg6000/locating-controller-in-data-center.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, locate, find, locating, finding, identify, blue led, blue light 
+summary: Localice la controladora para que pueda realizar tareas de mantenimiento o actualizaciones del hardware. 
+---
+= Ubique la controladora en el centro de datos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Localice la controladora para que pueda realizar tareas de mantenimiento o actualizaciones del hardware.
+
+.Antes de empezar
+* Ha determinado qué controlador requiere mantenimiento.
++
+(Opcional) para ayudarle a localizar la controladora en el centro de datos, encienda el LED de identificación azul.
+
++
+link:turning-controller-identify-led-on-and-off.html["Encender y apagar el LED de identificación de la controladora"]
+
+
+
+.Pasos
+. Encuentre la controladora que requiere mantenimiento en el centro de datos.
++
+** Busque un LED de identificación azul iluminado en la parte frontal o posterior de la controladora.
++
+El LED de identificación frontal se encuentra detrás del panel frontal de la controladora y puede ser difícil ver si el panel frontal está instalado.
+
++
+image::../media/sg6060_front_panel_service_led_on.jpg[LED de identificación frontal: Encendido]
+
+** Compruebe si las etiquetas adjuntas a la parte frontal de cada controlador tienen un número de pieza coincidente.
+
+
+. Retire el embellecedor frontal del controlador, si se ha instalado, para acceder a los controles e indicadores del panel frontal.
+. Opcional: Apague el LED azul de identificación si lo ha utilizado para localizar el controlador.
++
+** Pulse el interruptor Identify LED del panel frontal del controlador.
+** Use la interfaz del BMC del controlador.
++
+link:turning-controller-identify-led-on-and-off.html["Encender y apagar el LED de identificación de la controladora"]
+
+
+
+
+
+.Información relacionada
+link:removing-fibre-channel-hba.html["Quite el HBA Fibre Channel"]
+
+link:removing-sg6000-cn-controller-from-cabinet-or-rack.html["Retire el controlador SG6000-CN del armario o bastidor"]
+
+link:shutting-down-sg6000-cn-controller.html["Apague el controlador SG6000-CN"]

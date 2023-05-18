@@ -1,0 +1,48 @@
+---
+permalink: maintain/rebooting-grid-node-from-grid-manager.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, reboot node, grid manager 
+summary: 'Reiniciar un nodo de cuadrícula desde Grid Manager emite el `reboot` en el nodo de destino.' 
+---
+= Reinicie el nodo de cuadrícula desde Grid Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Reiniciar un nodo de cuadrícula desde Grid Manager emite el `reboot` en el nodo de destino.
+
+.Antes de empezar
+* Ha iniciado sesión en Grid Manager mediante un link:../admin/web-browser-requirements.html["navegador web compatible"].
+* Tiene el permiso de mantenimiento o acceso raíz.
+* Tiene la clave de acceso de aprovisionamiento.
+
+
+.Pasos
+. Seleccione *NODES*.
+. Seleccione el nodo de cuadrícula que desea reiniciar.
+. Seleccione la ficha *tareas*.
++
+image::../media/maintenance_mode.png[Nodos > tareas > botón Reiniciar]
+
+. Seleccione *Reiniciar*.
++
+Se muestra un cuadro de diálogo de confirmación.
+
++
+image::../media/nodes_tasks_reboot.png[Nodos > tareas > botón Reiniciar]
+
++
+
+NOTE: Si va a reiniciar el nodo de administración principal, el cuadro de diálogo de confirmación le recuerda que la conexión del explorador con el Administrador de grid se perderá temporalmente cuando se detengan los servicios.
+
+. Introduzca la contraseña de aprovisionamiento y seleccione *Aceptar*.
+. Espere a que se reinicie el nodo.
++
+El apagado de los servicios puede llevar cierto tiempo.
+
++
+Cuando el nodo se está reiniciando, el icono gris (administrativamente abajo) aparece en el lado izquierdo de la página *Nodes*. Una vez que todos los servicios se han iniciado de nuevo y el nodo se ha conectado correctamente a la cuadrícula, la página * Nodes* debe mostrar un estado normal (no hay iconos a la izquierda del nombre del nodo), lo que indica que no hay alertas activas y que el nodo está conectado a la cuadrícula.
+
+

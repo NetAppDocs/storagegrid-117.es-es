@@ -1,0 +1,46 @@
+---
+permalink: sg6000/reinstalling-fibre-channel-hba.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, sg6000-cn, hba, host bus adapter, fibre channel, fiber channel, install, installing, installation, reinstall, reinstalling, reinstallation 
+summary: El adaptador de bus de host de Fibre Channel de repuesto se instala en la misma ubicación que el que se ha quitado. 
+---
+= Vuelva a instalar el HBA Fibre Channel
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+El adaptador de bus de host de Fibre Channel de repuesto se instala en la misma ubicación que el que se ha quitado.
+
+.Antes de empezar
+* Tiene el adaptador de bus de host de Fibre Channel de sustitución correcto.
+* Ha quitado el adaptador de bus de host de Fibre Channel existente.
++
+link:removing-fibre-channel-hba.html["Quite el HBA Fibre Channel"]
+
+
+
+.Pasos
+. Envuelva el extremo de la correa de la muñequera ESD alrededor de su muñeca y fije el extremo de la pinza a una masa metálica para evitar descargas estáticas.
+. Retire el HBA Fibre Channel de repuesto de su embalaje.
+. Con el pestillo azul del adaptador en la posición abierta, alinee el HBA Fibre Channel con su conector en el conjunto de la tarjeta vertical y, a continuación, presione con cuidado el adaptador en el conector hasta que esté completamente asentado.
++
+image::../media/sg6060_fc_hba_location.jpg[SG6060 HBA Fibre Channel en el conjunto de tarjeta «riser»]
+
++
+El conjunto de tarjeta vertical tiene dos adaptadores: Un HBA Fibre Channel y un adaptador de red Ethernet. El adaptador de bus de host de Fibre Channel se indica en la ilustración.
+
+. Localice el orificio de alineación en el conjunto de la tarjeta vertical (en un círculo) que se alinea con un pasador guía en la placa base para garantizar la correcta colocación del conjunto de la tarjeta vertical.
++
+image::../media/sg6060_riser_alignment_hole.jpg[Orificio de alineación en el conjunto de la tarjeta vertical SG6060]
+
+. Coloque el conjunto de la tarjeta vertical en el chasis, asegurándose de que está alineado con el conector y la clavija guía de la placa base; a continuación, inserte el conjunto de la tarjeta vertical.
+. Presione con cuidado el conjunto de la tarjeta vertical en su lugar a lo largo de su línea central, junto a los orificios marcados en azul, hasta que esté completamente asentado.
+. Retire las tapas protectoras de los puertos HBA Fibre Channel en los que volverá a instalar los cables.
+
+
+.Después de terminar
+Si no dispone de ningún otro procedimiento de mantenimiento que realizar en el controlador, vuelva a instalar la cubierta del controlador.
+
+link:reinstalling-sg6000-cn-controller-cover.html["Vuelva a instalar la cubierta del controlador SG6000-CN"]

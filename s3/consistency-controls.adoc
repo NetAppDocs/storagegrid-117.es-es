@@ -1,0 +1,120 @@
+---
+permalink: s3/consistency-controls.html 
+sidebar: sidebar 
+keywords: consistency controls 
+summary: Los controles de consistencia proporcionan un equilibrio entre la disponibilidad de los objetos y la coherencia de dichos objetos en diferentes nodos de almacenamiento y sitios, según lo requiera la aplicación. 
+---
+= Controles de consistencia
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Los controles de consistencia proporcionan un equilibrio entre la disponibilidad de los objetos y la coherencia de dichos objetos en diferentes nodos de almacenamiento y sitios, según lo requiera la aplicación.
+
+De forma predeterminada, StorageGRID garantiza la coherencia de lectura tras escritura de los objetos recién creados. Cualquier OBTENER después de un PUESTO completado correctamente podrá leer los datos recién escritos. Las sobrescrituras de objetos existentes, actualizaciones de metadatos y eliminaciones son coherentes en la actualidad. Por lo general, las sobrescrituras tardan segundos o minutos en propagarse, pero pueden tardar hasta 15 días.
+
+Si desea realizar operaciones de objetos en un nivel de coherencia diferente, puede especificar un control de coherencia para cada bloque o para cada operación de API.
+
+
+
+== Controles de consistencia
+
+El control de consistencia afecta a cómo los metadatos que utiliza StorageGRID para realizar un seguimiento de los objetos se distribuyen entre los nodos y, por lo tanto, la disponibilidad de los objetos para las solicitudes del cliente.
+
+Puede establecer el control de coherencia de un bloque o una operación API en uno de los siguientes valores:
+
+* *Todos*: Todos los nodos reciben los datos inmediatamente, o la solicitud fallará.
+* *Strong-global*: Garantiza la coherencia de lectura tras escritura para todas las solicitudes de clientes en todos los sitios.
+* *Strong-site*: Garantiza la coherencia de lectura después de escritura para todas las solicitudes de cliente dentro de un sitio.
+* *Read-after-new-write*: (Predeterminado) proporciona consistencia de lectura después de escritura para nuevos objetos y consistencia eventual para actualizaciones de objetos. Ofrece garantías de alta disponibilidad y protección de datos. Recomendado para la mayoría de los casos.
+* *Disponible*: Proporciona consistencia eventual tanto para nuevos objetos como para actualizaciones de objetos. Para los cubos S3, utilice solo según sea necesario (por ejemplo, para un depósito que contiene valores de registro que rara vez se leen, o para operaciones HEAD u GET en claves que no existen). No se admite para bloques de FabricPool S3.
+
+
+
+
+== Utilizar controles de coherencia «reescritura tras escritura» y «disponibles»
+
+Cuando una OPERACIÓN HEAD u GET utiliza el control de consistencia «relativamente una vez que una nueva escritura», StorageGRID realiza la búsqueda en varios pasos, como se indica a continuación:
+
+* Primero busca el objeto con una baja consistencia.
+* Si esa búsqueda falla, repite la búsqueda en el siguiente nivel de coherencia hasta que alcanza un nivel de coherencia equivalente al comportamiento de la búsqueda global.
+
+
+Si una operación HEAD u GET utiliza el control de consistencia “READ-after-new-write”, pero el objeto no existe, la búsqueda de objetos siempre alcanzará un nivel de consistencia equivalente al comportamiento de strong-global. Debido a que este nivel de coherencia requiere que haya varias copias de los metadatos del objeto disponibles en cada sitio, puede recibir un número elevado de errores del servidor interno 500 si no están disponibles dos o más nodos de almacenamiento en el mismo sitio.
+
+A menos que necesite garantías de coherencia similares a las de Amazon S3, podrá evitar estos errores en LAS operaciones DE CABEZA y OBTENER al establecer el control de coherencia en "'Available'". Cuando un CABEZAL o UNA operación DE OBTENER utiliza el control de consistencia "'disponible'", StorageGRID sólo proporciona consistencia eventual. No vuelve a intentar una operación fallida en los niveles de coherencia crecientes, por lo que no es necesario que haya disponibles varias copias de los metadatos de objeto.
+
+
+
+== Especifique el control de coherencia para la operación de API
+
+Para configurar el control de coherencia para una operación de API individual, deben ser compatibles los controles de coherencia para la operación y debe especificar el control de coherencia en el encabezado de la solicitud. En este ejemplo se establece el control de coherencia en «punto de referencia» para una operación GET Object.
+
+[listing, subs="specialcharacters,quotes"]
+----
+GET /bucket/object HTTP/1.1
+Date: date
+Authorization: _authorization name_
+Host: _host_
+Consistency-Control: strong-site
+----
+
+NOTE: Debe usar el mismo control de coherencia para las operaciones PUT Object y GET Object.
+
+
+
+== Especifique el control de coherencia para el bloque
+
+Para establecer el control de consistencia para el bloque, puede utilizar StorageGRID la solicitud de consistencia PUT Bucket y LA solicitud DE consistencia GET Bucket. También puede usar el Administrador de inquilinos o la API de gestión de inquilinos.
+
+Cuando configure los controles de coherencia para un cucharón, tenga en cuenta lo siguiente:
+
+* La configuración del control de coherencia para un bloque determina el control de coherencia que se utiliza para las operaciones de S3 realizadas en los objetos del bloque o en la configuración de bloques. No afecta a las operaciones del propio cucharón.
+* El control de coherencia de una operación API individual anula el control de coherencia del bloque.
+* En general, los depósitos deben usar el control de consistencia predeterminado, «read-after-new-write». Si las solicitudes no funcionan correctamente, cambie el comportamiento del cliente de aplicación si es posible. O bien, configure el cliente para especificar el control de consistencia de cada solicitud API. Establecer el control de consistencia a nivel de cucharón únicamente como último recurso.
+
+
+
+
+== [[How-consistency-controls-and-ilm-rules-interact]]Cómo interactúan los controles de coherencia y las reglas de ILM para afectar a la protección de datos
+
+Tanto la elección del control de coherencia como la regla de ILM afectan a la forma en que se protegen los objetos. Estos ajustes pueden interactuar.
+
+Por ejemplo, el control de consistencia usado cuando se almacena un objeto afecta a la colocación inicial de los metadatos de objetos, mientras que el comportamiento de procesamiento seleccionado para la regla de ILM afecta a la colocación inicial de las copias de objetos. Dado que StorageGRID requiere acceso tanto a los metadatos de un objeto como a sus datos para cumplir con las solicitudes de los clientes, seleccionar los niveles de protección correspondientes para el nivel de coherencia y el comportamiento de ingesta puede proporcionar una mejor protección de datos inicial y respuestas más predecibles del sistema.
+
+Para las reglas de ILM hay disponibles los siguientes comportamientos de consumo:
+
+* *Confirmación doble*: StorageGRID realiza inmediatamente copias provisionales del objeto y devuelve el éxito al cliente. Las copias especificadas en la regla ILM se realizan cuando es posible.
+* *Estricto*: Todas las copias especificadas en la regla ILM deben hacerse antes de que el éxito se devuelva al cliente.
+* *Balanceado*: StorageGRID intenta hacer todas las copias especificadas en la regla ILM en la ingesta; si esto no es posible, se hacen copias provisionales y se devuelve éxito al cliente. Las copias especificadas en la regla ILM se realizan cuando es posible.
+
+
+
+NOTE: Antes de seleccionar el comportamiento de procesamiento de una regla de ILM, lea la descripción completa de estos ajustes en las instrucciones para gestionar objetos con gestión del ciclo de vida de la información.
+
+
+
+== Ejemplo de cómo puede interactuar el control de consistencia y la regla de ILM
+
+Suponga que tiene una cuadrícula de dos sitios con la siguiente regla de ILM y la siguiente configuración de nivel de coherencia:
+
+* *Norma ILM*: Cree dos copias de objetos, una en el sitio local y otra en un sitio remoto. Se ha seleccionado el comportamiento de procesamiento estricto.
+* *Nivel de coherencia*: "Strong-global" (los metadatos de objetos se distribuyen inmediatamente a todos los sitios).
+
+
+Cuando un cliente almacena un objeto en el grid, StorageGRID realiza copias de objetos y distribuye los metadatos en ambos sitios antes de devolver el éxito al cliente.
+
+El objeto está completamente protegido contra la pérdida en el momento del mensaje de procesamiento correcto. Por ejemplo, si el sitio local se pierde poco después del procesamiento, seguirán existiendo copias de los datos del objeto y los metadatos del objeto en el sitio remoto. El objeto se puede recuperar completamente.
+
+Si en su lugar usa la misma regla de ILM y el nivel de consistencia de «otrong-site», es posible que el cliente reciba un mensaje de éxito después de replicar los datos del objeto en el sitio remoto, pero antes de que los metadatos del objeto se distribuyan allí. En este caso, el nivel de protección de los metadatos de objetos no coincide con el nivel de protección de los datos de objetos. Si el sitio local se pierde poco después del procesamiento, se pierden los metadatos del objeto. No se puede recuperar el objeto.
+
+La interrelación entre los niveles de coherencia y las reglas del ILM puede ser compleja. Póngase en contacto con NetApp si necesita ayuda.
+
+.Información relacionada
+link:../ilm/index.html["Gestión de objetos con ILM"]
+
+link:get-bucket-consistency-request.html["OBTENGA coherencia de bloques"]
+
+link:put-bucket-consistency-request.html["PONGA la consistencia del cucharón"]

@@ -1,0 +1,87 @@
+---
+permalink: sg5700/replacing-other-hardware-components-sg5700.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5700, storage node, storage appliance, Replacing, replace, hardware, components, remove, removing, removal, install, installing, installation, controller battery, battery, drive, fan, power supply 
+summary: Puede que necesite sustituir una batería de controladora, una unidad, un ventilador o un suministro de alimentación en el dispositivo StorageGRID. 
+---
+= Sustituir otros componentes de hardware
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede que necesite sustituir una batería de controladora, una unidad, un ventilador o un suministro de alimentación en el dispositivo StorageGRID.
+
+.Antes de empezar
+* Tiene el procedimiento de sustitución del hardware E-Series.
+* El aparato se ha estado link:../maintain/placing-appliance-into-maintenance-mode.html["se pone en modo de mantenimiento"] si el procedimiento de sustitución de componentes requiere que apague el aparato.
+
+
+.Acerca de esta tarea
+Para sustituir la batería en la controladora E2800, consulte las instrucciones de estas instrucciones para sustituir la controladora E2800. Estas instrucciones describen cómo extraer el controlador del aparato, extraer la batería del controlador, instalar la batería y sustituir el controlador.
+
+Para sustituir una unidad, un contenedor de alimentación/ventilador, un contenedor de ventilador, un contenedor de alimentación o un cajón de unidades en el dispositivo, acceda a los procedimientos de E-Series para mantener el hardware E2800.
+
+
+
+== Instrucciones para la sustitución de componentes SG5712
+
+[cols="1a,3a"]
+|===
+| FRU | Consulte las instrucciones de E-Series para 
+
+
+ a| 
+Unidad
+ a| 
+Reemplazar una unidad en bandejas de 12 o 24 unidades E2800
+
+
+
+ a| 
+Contenedor de alimentación/ventilador
+ a| 
+Reemplazar un contenedor de alimentación-ventilador en bandejas E2800
+
+|===
+
+
+== Instrucciones para la sustitución de componentes SG5760
+
+[cols="1a,3a"]
+|===
+| FRU | Consulte las instrucciones de E-Series para 
+
+
+ a| 
+Unidad
+ a| 
+Reemplazar una unidad en bandejas E2860
+
+
+
+ a| 
+Contenedor de alimentación
+ a| 
+Reemplazar un contenedor de alimentación en bandejas E2860
+
+
+
+ a| 
+Contenedor de ventilador
+ a| 
+Reemplazar un contenedor de ventiladores en bandejas E2860
+
+
+
+ a| 
+Cajón de unidades
+ a| 
+Reemplazar un cajón de unidades en bandejas E2860
+
+|===
+.Información relacionada
+link:replacing-e2800-controller.html["Sustituya la controladora E2800"]
+
+http://["Sitio de documentación para sistemas E-Series y EF-Series de NetApp"^]

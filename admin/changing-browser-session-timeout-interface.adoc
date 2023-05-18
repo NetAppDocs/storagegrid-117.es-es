@@ -1,0 +1,46 @@
+---
+permalink: admin/changing-browser-session-timeout-interface.html 
+sidebar: sidebar 
+keywords: browser inactivity timeout, inactive users 
+summary: Puede controlar si los usuarios de Grid Manager y de arrendatario Manager han cerrado la sesión si están inactivos durante más de un cierto período de tiempo. 
+---
+= Cambiar el tiempo de espera de inactividad del navegador
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede controlar si los usuarios de Grid Manager y de arrendatario Manager han cerrado la sesión si están inactivos durante más de un cierto período de tiempo.
+
+.Antes de empezar
+* Ha iniciado sesión en Grid Manager mediante un link:../admin/web-browser-requirements.html["navegador web compatible"].
+* Tiene permiso de acceso raíz.
+
+
+.Acerca de esta tarea
+El tiempo de espera de inactividad del navegador es de forma predeterminada 15 minutos. Si el explorador de un usuario no está activo durante este período de tiempo, el usuario se cerrará la sesión.
+
+Según sea necesario, puede aumentar o disminuir el período de tiempo de espera configurando la opción *Cerrar sesión de usuarios inactivos después*.
+
+El tiempo de espera de inactividad del navegador también se controla mediante lo siguiente:
+
+* Temporizador StorageGRID independiente no configurable, que se incluye para la seguridad del sistema. De forma predeterminada, el token de autenticación de cada usuario caduca 16 horas después de que el usuario inicia sesión. Cuando caduca la autenticación de un usuario, ese usuario se desconecta automáticamente, incluso si el tiempo de espera de inactividad del explorador está desactivado o no se ha alcanzado el valor del tiempo de espera del explorador. Para renovar el token, el usuario debe volver a iniciar sesión.
+* Configuración de tiempo de espera para el proveedor de identidad, asumiendo que el inicio de sesión único (SSO) está activado para StorageGRID.
++
+Si se activa SSO y se agota el tiempo de espera del explorador de un usuario, el usuario debe volver a introducir sus credenciales SSO para volver a acceder a StorageGRID. Consulte link:configuring-sso.html["Configurar el inicio de sesión único"].
+
+
+
+.Pasos
+. Selecciona *CONFIGURACIÓN* > *SEGURIDAD* > *CONFIGURACIÓN DE SEGURIDAD*.
+. Seleccione la pestaña *Tiempo de inactividad del navegador*.
+. En el campo *Cerrar sesión de usuarios inactivos después*, especifique un período de tiempo de espera del navegador entre 60 segundos y 7 días.
++
+Puede especificar el período de tiempo de espera del explorador en segundos, minutos, horas o días.
+
+. Seleccione *Guardar*. Si un explorador está inactivo durante la cantidad de tiempo especificada, el usuario se cierra sesión en Grid Manager o Tenant Manager.
++
+La nueva configuración no afecta a los usuarios que han iniciado sesión actualmente. Los usuarios deben iniciar sesión de nuevo o actualizar sus exploradores para que la nueva configuración de tiempo de espera tenga efecto.
+
+

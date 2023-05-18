@@ -1,0 +1,55 @@
+---
+permalink: installconfig/connecting-power-cords-and-applying-power-sg6000.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, wire, wiring, cabling, cable, Connecting, connect, power cords, power, applying power, apply power, turn on, power up, ac, ac power 
+summary: Después de conectar los cables de red, estará preparado para aplicar alimentación al controlador SG6000-CN y a los dos controladores de almacenamiento o a las bandejas de expansión opcionales. 
+---
+= Conexión de los cables de alimentación y alimentación (SG6000)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Después de conectar los cables de red, estará preparado para aplicar alimentación al controlador SG6000-CN y a los dos controladores de almacenamiento o a las bandejas de expansión opcionales.
+
+.Pasos
+. Confirmar que ambas controladoras de la bandeja de controladoras de almacenamiento están desactivadas.
++
+
+CAUTION: *Riesgo de descarga eléctrica* -- antes de conectar los cables de alimentación, asegúrese de que los interruptores de alimentación de cada uno de los dos controladores de almacenamiento están apagados.
+
+. Si tiene bandejas de expansión, confirme que ambos switches de alimentación de IOM están apagados.
++
+
+CAUTION: *Riesgo de descarga eléctrica* -- antes de conectar los cables de alimentación, asegúrese de que los dos interruptores de alimentación de cada uno de los estantes de expansión están apagados.
+
+. Conecte un cable de alimentación a cada una de las dos unidades de alimentación del controlador SG6000-CN.
+. Conecte estos dos cables de alimentación a dos unidades de distribución de alimentación (PDU) diferentes en el armario o rack.
+. Conecte un cable de alimentación a cada una de las dos unidades de alimentación de la bandeja del controlador de almacenamiento.
+. Si dispone de bandejas de expansión, conecte un cable de alimentación a cada una de las dos unidades de alimentación de cada bandeja de expansión.
+. Conecte los dos cables de alimentación de cada bandeja de almacenamiento (incluidas las bandejas de expansión opcionales) a dos PDU diferentes en el armario o rack.
+. Si el botón de encendido de la parte frontal del controlador SG6000-CN no está iluminado en azul actualmente, pulse el botón para encender el controlador.
++
+No vuelva a pulsar el botón de encendido durante el proceso de encendido.
+
+. Encienda los dos switches de alimentación en la parte posterior de la bandeja de controladoras de almacenamiento. Si tiene bandejas de expansión, encienda los dos switches de alimentación de cada bandeja.
++
+** No apague los interruptores de alimentación durante el proceso de encendido.
+** Es posible que los ventiladores de la bandeja de controladoras de almacenamiento y las bandejas de expansión opcionales sean muy ruidosos cuando se inician por primera vez. El ruido fuerte durante el arranque es normal.
+
+
+. Una vez arrancados los componentes, compruebe su estado.
++
+** Revise la visualización de siete segmentos en la parte posterior de cada controladora de almacenamiento. Consulte el artículo sobre la visualización de los códigos de estado de inicio para obtener más información.
+** Compruebe que el botón de encendido situado en la parte frontal del controlador SG6000-CN está encendido.
+
+
+. Si se producen errores, corrija los problemas.
+. Fije el bisel frontal al controlador SG6000-CN si se ha retirado.
+
+
+.Información relacionada
+* link:viewing-status-indicators.html["Ver indicadores de estado"]
+* link:../sg6000/reinstalling-sg6000-cn-controller-into-cabinet-or-rack.html["Vuelva a instalar el controlador SG6000-CN en el armario o bastidor"]
+

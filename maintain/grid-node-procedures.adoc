@@ -1,0 +1,22 @@
+---
+permalink: maintain/grid-node-procedures.html 
+sidebar: sidebar 
+keywords: storagegrid, grid node procedure 
+summary: Es posible que deba realizar procedimientos en un nodo de grid específico. Aunque puede realizar algunos de estos procedimientos desde Grid Manager, la mayoría de los procedimientos requieren que acceda a Server Manager desde la línea de comandos. 
+---
+= Procedimientos de nodo de cuadrícula: Descripción general
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es posible que deba realizar procedimientos en un nodo de grid específico. Aunque puede realizar algunos de estos procedimientos desde Grid Manager, la mayoría de los procedimientos requieren que acceda a Server Manager desde la línea de comandos del nodo.
+
+Server Manager se ejecuta en todos los nodos de grid para supervisar el inicio y la detención de los servicios y garantizar que estos se unen y salen correctamente del sistema StorageGRID. Server Manager también supervisa los servicios en todos los nodos de grid e intentará reiniciar automáticamente los servicios que informen de los errores.
+
+
+IMPORTANT: Debe acceder a Server Manager solo si el soporte técnico le ha indicado hacerlo.
+
+
+NOTE: Debe cerrar la sesión actual del shell de comandos y cerrar la sesión después de terminar con Server Manager. Introduzca: `exit`

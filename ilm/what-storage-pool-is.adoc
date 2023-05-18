@@ -1,0 +1,31 @@
+---
+permalink: ilm/what-storage-pool-is.html 
+sidebar: sidebar 
+keywords: what is a storage pool 
+summary: Un pool de almacenamiento es una agrupación lógica de nodos de almacenamiento o nodos de archivado. 
+---
+= ¿Qué es un pool de almacenamiento?
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Un pool de almacenamiento es una agrupación lógica de nodos de almacenamiento o nodos de archivado.
+
+Al instalar StorageGRID, se crea automáticamente un pool de almacenamiento por sitio. Es posible configurar pools de almacenamiento adicionales según sea necesario para cumplir sus requisitos de almacenamiento.
+
+[NOTE]
+====
+La compatibilidad con los nodos de archivo (tanto para archivar en la nube mediante la API S3 como para archivar en cinta mediante el middleware TSM) está obsoleta y se eliminará en una versión futura. Mover objetos de un nodo de archivado a un sistema de almacenamiento de archivado externo ha sido reemplazado por ILM Cloud Storage Pools, que ofrecen más funcionalidad.
+
+Consulte link:../ilm/what-cloud-storage-pool-is.html["Utilice Cloud Storage Pools"].
+
+====
+Los pools de almacenamiento tienen dos atributos:
+
+* *Grado de almacenamiento*: Para nodos de almacenamiento, el rendimiento relativo del almacenamiento de respaldo.
+* *Sitio*: El centro de datos donde se almacenarán los objetos.
+
+
+Los pools de almacenamiento se utilizan en las reglas de ILM para determinar dónde se almacenan los datos de objetos y el tipo de almacenamiento utilizado. Cuando se configuran las reglas de ILM para la replicación, se deben seleccionar uno o varios pools de almacenamiento que incluyen nodos de almacenamiento o nodos de archivado. Cuando se crean perfiles de código de borrado, se selecciona un pool de almacenamiento que incluye nodos de almacenamiento.

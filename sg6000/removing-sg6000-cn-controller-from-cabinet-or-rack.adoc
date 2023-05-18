@@ -1,0 +1,54 @@
+---
+permalink: sg6000/removing-sg6000-cn-controller-from-cabinet-or-rack.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, remove, removing, removal, cabinet, rack, controller, sg6000-cn 
+summary: Retire el controlador SG6000-CN de un armario o rack para acceder a la cubierta superior o para mover el controlador a una ubicación diferente. 
+---
+= Retire el controlador SG6000-CN del armario o bastidor
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Retire el controlador SG6000-CN de un armario o rack para acceder a la cubierta superior o para mover el controlador a una ubicación diferente.
+
+.Antes de empezar
+* Tiene etiquetas para identificar cada cable que está conectado al controlador SG6000-CN.
+* Ha localizado físicamente el controlador SG6000-CN en el que realiza tareas de mantenimiento en el centro de datos.
++
+link:locating-controller-in-data-center.html["Ubique la controladora en el centro de datos"]
+
+* Ha apagado el controlador SG6000-CN.
++
+link:shutting-down-sg6000-cn-controller.html["Apague el controlador SG6000-CN"]
+
++
+
+CAUTION: No apague la controladora con el switch de alimentación.
+
+
+
+.Pasos
+. Etiquete y desconecte los cables de alimentación de la controladora.
+. Envuelva el extremo de la correa de la muñequera ESD alrededor de su muñeca y fije el extremo de la pinza a una masa metálica para evitar descargas estáticas.
+. Etiquete y desconecte los cables de datos de la controladora y cualquier transceptor SFP+ o SFP28.
++
+
+IMPORTANT: Para evitar un rendimiento degradado, no tuerza, pliegue, pellizque ni pise los cables.
+
+. Afloje los dos tornillos cautivos del panel frontal del controlador.
++
+image::../media/sg6060_rack_retaining_screws.png[Tornillos de sujeción del bastidor SG6060]
+
+. Deslice el controlador SG6000-CN hacia adelante para sacarlo del rack hasta que los raíles de montaje se extiendan completamente y oirá un clic en los pestillos de ambos lados.
++
+Se puede acceder a la cubierta superior del controlador.
+
+. Opcional: Si va a extraer completamente la controladora del armario o rack, siga las instrucciones del kit de raíl para quitar la controladora de los rieles.
+
+
+Tras sustituir la pieza, devuelva la pieza que ha fallado a NetApp, tal y como se describe en las instrucciones de RMA incluidas con el kit. Consulte https://["Retorno de artículo  sustituciones"^] para obtener más información.
+
+.Información relacionada
+link:removing-sg6000-cn-controller-cover.html["Retire la cubierta del controlador SG6000-CN"]

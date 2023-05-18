@@ -1,0 +1,46 @@
+---
+permalink: tenant/changing-consistency-level.html 
+sidebar: sidebar 
+keywords: how to change bucket consistency level, read after new write, read-after-new-write, strong site, strong-site, strong global, strong-global 
+summary: Si está usando un inquilino de S3, puede cambiar el nivel de coherencia de las operaciones realizadas en los objetos en los bloques S3. 
+---
+= Cambiar el nivel de coherencia de un bloque
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Si está usando un inquilino de S3, puede cambiar el nivel de coherencia de las operaciones realizadas en los objetos en los bloques S3.
+
+.Antes de empezar
+* Ha iniciado sesión en el administrador de inquilinos mediante un link:../admin/web-browser-requirements.html["navegador web compatible"].
+* Pertenece a un grupo de usuarios que tiene el link:tenant-management-permissions.html["Gestione todos los bloques o permisos de acceso raíz"]. Estos permisos anulan la configuración de los permisos en las políticas de grupo o bloque.
+
+
+.Acerca de esta tarea
+Los controles de consistencia proporcionan un equilibrio entre la disponibilidad de los objetos y la coherencia de dichos objetos en distintos nodos de almacenamiento y sitios. En general, debe utilizar el nivel de consistencia de *lectura tras escritura nueva* para sus cucharones.
+
+Si el nivel de consistencia de *lectura tras escritura nueva* no cumple los requisitos de la aplicación cliente, puede cambiar el nivel de consistencia estableciendo el nivel de consistencia de la cuchara o utilizando la `Consistency-Control` encabezado. La `Consistency-Control` el encabezado anula el nivel de consistencia del cucharón.
+
+
+NOTE: Cuando se cambia el nivel de consistencia de un cubo, solo se garantiza que los objetos que se ingieren después del cambio alcancen el nivel revisado.
+
+.Pasos
+. Seleccione *Ver cubos* en el panel de control o seleccione *ALMACENAMIENTO (S3)* > *Buckets*.
+. Seleccione el nombre del cubo de la tabla.
++
+Aparece la página de detalles bucket.
+
+. En la pestaña *Opciones de cubo*, selecciona el acordeón *Nivel de consistencia*.
+. Seleccione un nivel de coherencia para las operaciones realizadas en los objetos de este bloque.
++
+** *Todo*: Proporciona el más alto nivel de consistencia. Todos los nodos reciben los datos inmediatamente o se produce un error en la solicitud.
+** *Strong-global*: Garantiza la consistencia de lectura tras escritura para todas las solicitudes de los clientes en todos los sitios.
+** *Strong-site*: Garantiza la consistencia de lectura después de escritura para todas las solicitudes de los clientes dentro de un sitio.
+** *Read-after-new-write* (por defecto): Proporciona consistencia de lectura después de escritura para nuevos objetos y consistencia eventual para las actualizaciones de objetos. Ofrece garantías de alta disponibilidad y protección de datos. Recomendado para la mayoría de los casos.
+** *Disponible*: Proporciona consistencia eventual tanto para nuevos objetos como para actualizaciones de objetos. Para los cubos S3, utilice solo según sea necesario (por ejemplo, para un depósito que contiene valores de registro que rara vez se leen, o para operaciones HEAD u GET en claves que no existen). No se admite para bloques de FabricPool S3.
+
+
+. Seleccione *Guardar cambios*.
+

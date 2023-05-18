@@ -1,0 +1,32 @@
+---
+permalink: maintain/decommissioning-disconnected-storage-nodes.html 
+sidebar: sidebar 
+keywords: storagegrid, connected nodes, decommission node, storage node, disconnected storage node 
+summary: 'Debe comprender lo que puede suceder si desdecomisiona un nodo de almacenamiento mientras está desconectado \(el estado es desconocido o administrativamente inactivo\).' 
+---
+= Retire nodos de almacenamiento desconectados
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Debe comprender qué puede suceder si decomisiona un nodo de almacenamiento mientras está desconectado (el estado es desconocido o inactivo administrativamente).
+
+Al decomisionar un nodo de almacenamiento desconectado del grid, StorageGRID utiliza datos de otros nodos de almacenamiento para reconstruir los datos de objetos y los metadatos que se encuentran en el nodo desconectado. Para ello, inicia automáticamente los trabajos de reparación de datos al final del proceso de retirada del servicio.
+
+Antes de retirar un nodo de almacenamiento desconectado, tenga en cuenta lo siguiente:
+
+* Nunca debe retirar un nodo desconectado a menos que esté seguro de que no se puede conectar o recuperar.
++
+
+IMPORTANT: No realice este procedimiento si cree que podría ser posible recuperar datos de objetos del nodo. En su lugar, póngase en contacto con el soporte técnico para determinar si es posible la recuperación del nodo.
+
+* Si un nodo de almacenamiento desconectado contiene la única copia de un objeto, se perderá ese objeto al retirar el nodo. Las tareas de reparación de datos solo pueden reconstruir y recuperar objetos si al menos una copia replicada o hay suficientes fragmentos codificados de borrado en los nodos de almacenamiento conectados actualmente.
+* Al retirar un nodo de almacenamiento desconectado, el procedimiento de retirada se completa con relativa rapidez. Sin embargo, los trabajos de reparación de datos pueden tardar días o semanas en ejecutarse y no son supervisados por el procedimiento de decomiso. Debe supervisar manualmente estos trabajos y reiniciarlos según sea necesario. Consulte link:checking-data-repair-jobs.html["Compruebe los trabajos de reparación de datos"].
+* Si decomisiona más de un nodo de almacenamiento desconectado a la vez, se podrían perder datos. Es posible que el sistema no pueda reconstruir los datos si hay muy pocas copias disponibles de datos de objetos, metadatos o fragmentos codificados para borrado.
++
+
+IMPORTANT: Si tiene más de un nodo de almacenamiento desconectado que no puede recuperar, póngase en contacto con el soporte técnico para determinar el mejor curso de acción.
+
+

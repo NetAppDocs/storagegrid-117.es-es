@@ -1,0 +1,51 @@
+---
+permalink: sg6000/verifying-fibre-channel-hba-to-replace.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, sg6000-cn, hba, host bus adapter, fibre channel, fiber channel, locate, identify, find, replace, replacing, replacement 
+summary: 'Si no está seguro del adaptador de bus de host \(HBA\) Fibre Channel que debe sustituirse, complete este procedimiento para identificarlo.' 
+---
+= Verifique el adaptador de bus de host de Fibre Channel que desea sustituir
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Si no está seguro del adaptador de bus de host (HBA) Fibre Channel que debe sustituirse, complete este procedimiento para identificarlo.
+
+.Antes de empezar
+* Dispone del número de serie del dispositivo de almacenamiento o del controlador SG6000-CN en los que es necesario sustituir el HBA Fibre Channel.
++
+
+NOTE: Si el número de serie del dispositivo de almacenamiento que contiene el HBA Fibre Channel que va a sustituir comienza por la letra Q, no aparecerá en el Grid Manager. Debe comprobar las etiquetas adjuntas a la parte frontal de cada controlador SG6000-CN del centro de datos hasta que encuentre una coincidencia.
+
+* Ha iniciado sesión en Grid Manager mediante un link:../admin/web-browser-requirements.html["navegador web compatible"].
+
+
+.Pasos
+. En Grid Manager, seleccione *NODES*.
+. En la tabla de la página Nodes, seleccione un dispositivo Storage Node.
+. Seleccione la ficha *hardware*.
++
+Compruebe el *número de serie del chasis del dispositivo de almacenamiento* y el *número de serie del controlador de computación* en la sección StorageGRID Appliance. Consulte si uno de estos números de serie coincide con el número de serie del dispositivo de almacenamiento en el que desea sustituir el HBA Fibre Channel. Si coincide alguno de los números de serie, ha encontrado el dispositivo correcto.
+
++
+image::../media/nodes_page_hardware_tab_for_appliance_verify_HBA.png[Sección de dispositivos para HCA de Fibre Channel]
+
++
+** Si no se muestra la sección dispositivo StorageGRID, el nodo seleccionado no es un dispositivo StorageGRID. Seleccione un nodo diferente en la vista de árbol.
+** Si el modelo de dispositivo no es SG6060 ni SG6060X, seleccione un nodo diferente en la vista de árbol.
+** Si los números de serie no coinciden, seleccione un nodo diferente en la vista de árbol.
+
+
+. Después de ubicar el nodo en el que es necesario reemplazar el adaptador de bus de host de Fibre Channel, escriba la dirección IP de BMC de la controladora de computación que aparece en la sección StorageGRID Appliance.
++
+Puede usar esta dirección IP para encender el LED de identificación de controladora de computación, para ayudarle a localizar el dispositivo en el centro de datos.
+
++
+link:turning-controller-identify-led-on-and-off.html["Enciende y apaga el LED de identificación de la controladora"]
+
+
+
+.Información relacionada
+link:removing-fibre-channel-hba.html["Quite el HBA Fibre Channel"]

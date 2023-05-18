@@ -1,0 +1,22 @@
+---
+permalink: maintain/considerations-for-decommissioning-admin-or-gateway-nodes.html 
+sidebar: sidebar 
+keywords: storagegrid, decommission admin node, decommission gateway node 
+summary: Revise las siguientes consideraciones antes de retirar un nodo de administración o un nodo de puerta de enlace. 
+---
+= Consideraciones para la retirada del nodo de administración o del nodo de puerta de enlace
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Revise las siguientes consideraciones antes de retirar un nodo de administración o un nodo de puerta de enlace.
+
+* El procedimiento de retirada del servicio requiere acceso exclusivo a algunos recursos del sistema, por lo que debe confirmar que no se están ejecutando otros procedimientos de mantenimiento.
+* No puede retirar el nodo de administración principal.
+* No puede retirar un nodo de administración o un nodo de puerta de enlace si una de sus interfaces de red forma parte de un grupo de alta disponibilidad (HA). Primero es necesario quitar las interfaces de red del grupo de alta disponibilidad. Consulte las instrucciones para link:../admin/managing-high-availability-groups.html["Gestionar grupos de alta disponibilidad"].
+* Según sea necesario, puede cambiar con seguridad la política de ILM mientras decomisiona un nodo de puerta de enlace o un nodo de administración.
+* Si retira de servicio un nodo de administración y está habilitado el inicio de sesión único (SSO) para su sistema StorageGRID, debe recordar que debe eliminar la confianza de la parte que confía del nodo desde los Servicios de Federación de Active Directory (AD FS).
+* Si utiliza link:../admin/grid-federation-overview.html["federación de grid"], Asegúrese de que la dirección IP del nodo que está decomisionado no se ha especificado para una conexión de federación de grid.
+

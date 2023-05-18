@@ -1,0 +1,44 @@
+---
+permalink: tenant/adding-users-to-local-group.html 
+sidebar: sidebar 
+keywords: how to add tenant user to local group 
+summary: Puede agregar usuarios a un grupo local según sea necesario. 
+---
+= Agregar usuarios a un grupo local
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puede agregar usuarios a un grupo local según sea necesario.
+
+.Antes de empezar
+* Ha iniciado sesión en el administrador de inquilinos mediante un link:../admin/web-browser-requirements.html["navegador web compatible"].
+* Pertenece a un grupo de usuarios que tiene el permiso de acceso root.
+
+
+.Pasos
+. Seleccione *ADMINISTRACIÓN de ACCESO* > *grupos*.
+. Seleccione el nombre del grupo local al que desea añadir usuarios.
++
+También puede seleccionar *acciones* > *Ver detalles del grupo*.
+
++
+Aparece la página de detalles del grupo.
+
++
+image::../media/tenant_group_details.png[Ver detalles del grupo]
+
+. Seleccione *usuarios* y, a continuación, seleccione *Agregar usuarios*.
++
+image::../media/manage_users.png[Gestionar usuarios]
+
+. Seleccione los usuarios que desea agregar al grupo y, a continuación, seleccione *Agregar usuarios*.
++
+image::../media/add_users_to_group.png[Agregar usuarios al grupo]
+
++
+Aparecerá un mensaje de confirmación en la esquina superior derecha de la página.
+
+
