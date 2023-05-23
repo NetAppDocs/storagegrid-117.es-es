@@ -31,7 +31,7 @@ Para habilitar la replicación de CloudMirror en un bloque, debe crear y aplicar
 
 NOTE: La replicación no es compatible con buckets de origen o destino con el bloqueo de objetos S3 habilitado.
 
-Para obtener información general sobre la replicación de bloques y cómo configurarla, consulte https://["Documentación de Amazon Simple Storage Service (S3): Replicación de objetos"^]. Para obtener información sobre cómo StorageGRID implementa GetBucketReplication, DeleteBucketReplication y PutBucketReplication, consulte link:../s3/operations-on-buckets.html["Operaciones en bloques"].
+Para obtener información general sobre la replicación de bloques y cómo configurarla, consulte https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html["Documentación de Amazon Simple Storage Service (S3): Replicación de objetos"^]. Para obtener información sobre cómo StorageGRID implementa GetBucketReplication, DeleteBucketReplication y PutBucketReplication, consulte link:../s3/operations-on-buckets.html["Operaciones en bloques"].
 
 Si habilita la replicación de CloudMirror en un bloque que contiene objetos, se replican los nuevos objetos agregados al bloque, pero los objetos existentes del bloque no se replican. Debe actualizar los objetos existentes para activar la replicación.
 

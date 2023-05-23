@@ -27,7 +27,7 @@ El sistema StorageGRID sólo admite formatos de fecha HTTP válidos para cualqui
 
 == Encabezados de solicitud comunes
 
-El sistema StorageGRID soporta las cabeceras de solicitud comunes definidas por https://["Referencia de API de Amazon Simple Storage Service: Encabezados de solicitud comunes"^], con una excepción.
+El sistema StorageGRID soporta las cabeceras de solicitud comunes definidas por https://docs.aws.amazon.com/AmazonS3/latest/API/RESTCommonRequestHeaders.html["Referencia de API de Amazon Simple Storage Service: Encabezados de solicitud comunes"^], con una excepción.
 
 [cols="1a,2a"]
 |===

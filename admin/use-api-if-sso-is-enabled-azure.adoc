@@ -42,7 +42,7 @@ Si tiene un problema de codificación URL, puede que aparezca el error: `Unsuppo
 .Pasos
 . Instale las dependencias necesarias de la siguiente manera:
 +
-.. Instale Node.js (consulte https://["https://nodejs.org/en/download/"^]).
+.. Instale Node.js (consulte https://nodejs.org/en/download/["https://nodejs.org/en/download/"^]).
 .. Instale los módulos Node.js necesarios (tippeteer y jsdom):
 +
 `npm install -g <module>`

@@ -17,7 +17,7 @@ Si hay una revisión o una nueva versión del software StorageGRID disponible, d
 Las correcciones urgentes de StorageGRID contienen cambios de software que se pueden hacer disponibles fuera de una función o una versión de revisión. Los mismos cambios se incluyen en una versión futura.
 
 .Pasos
-. Vaya a.https://["Descargas de NetApp: StorageGRID"^].
+. Vaya a.https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["Descargas de NetApp: StorageGRID"^].
 . Seleccione la flecha hacia abajo para el campo *Tipo/Seleccionar versión* para ver una lista de las actualizaciones disponibles para descargar:
 +
 ** *Versiones de software de StorageGRID*: 11._x.y_

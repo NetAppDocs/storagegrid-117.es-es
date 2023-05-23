@@ -17,7 +17,7 @@ Las restricciones de nombre de bloque siguen las restricciones de región están
 
 En la siguiente sección, se ofrece más información:
 
-* https://["Documentación de Amazon Web Services (AWS): Restricciones y limitaciones de buckets"^]
+* https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html["Documentación de Amazon Web Services (AWS): Restricciones y limitaciones de buckets"^]
 * link:../admin/configuring-s3-api-endpoint-domain-names.html["Configure los nombres de dominio de punto final S3"]
 
 
@@ -332,7 +332,7 @@ PUT Bucket replication
  a| 
 Esta operación configura link:../tenant/understanding-cloudmirror-replication-service.html["Replicación de CloudMirror de StorageGRID"] Para el depósito que utiliza el XML de configuración de replicación proporcionado en el cuerpo de la solicitud. Para la replicación de CloudMirror, debe tener en cuenta los siguientes detalles de la implementación:
 
-* StorageGRID solo admite V1 de la configuración de replicación. Esto significa que StorageGRID no admite el uso de `Filter` Elemento para reglas y sigue las convenciones V1 para eliminar versiones de objetos. Para obtener más detalles, consulte https://["Documentación de Amazon S3 en la configuración de la replicación"^].
+* StorageGRID solo admite V1 de la configuración de replicación. Esto significa que StorageGRID no admite el uso de `Filter` Elemento para reglas y sigue las convenciones V1 para eliminar versiones de objetos. Para obtener más detalles, consulte https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-add-config.html["Documentación de Amazon S3 en la configuración de la replicación"^].
 * La replicación de bloques se puede configurar en bloques con versiones o sin versiones.
 * Puede especificar un segmento de destino diferente en cada regla del XML de configuración de replicación. Un bloque de origen puede replicar en más de un bloque de destino.
 * Los bloques de destino se deben especificar como URN de extremos StorageGRID tal y como se especifica en el administrador de inquilinos o la API de gestión de inquilinos. Consulte link:../tenant/configuring-cloudmirror-replication.html["Configure la replicación de CloudMirror"].

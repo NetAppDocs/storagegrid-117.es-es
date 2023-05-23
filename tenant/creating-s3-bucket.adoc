@@ -56,7 +56,7 @@ Un nombre para el depósito que cumple con estas reglas:
 ** No debe utilizar periodos en solicitudes de estilo alojadas virtuales. Los períodos provocarán problemas en la verificación del certificado comodín del servidor.
 
 
-Para obtener más información, consulte https://["Documentación de Amazon Web Services (AWS) sobre reglas de nomenclatura de bloques"^].
+Para obtener más información, consulte https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html["Documentación de Amazon Web Services (AWS) sobre reglas de nomenclatura de bloques"^].
 
 *Nota*: No puedes cambiar el nombre del cubo después de crear el cubo.
 

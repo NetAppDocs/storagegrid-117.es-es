@@ -50,7 +50,7 @@ Este ejemplo muestra el XML utilizado para habilitar CORS para un bloque de S3. 
 </CORSConfiguration>
 ----
 +
-Para obtener más información acerca del XML de configuración de CORS, consulte http://["Documentación de Amazon Web Services (AWS): Guía para desarrolladores de Amazon simple Storage Service"^].
+Para obtener más información acerca del XML de configuración de CORS, consulte http://docs.aws.amazon.com/AmazonS3/latest/dev/Welcome.html["Documentación de Amazon Web Services (AWS): Guía para desarrolladores de Amazon simple Storage Service"^].
 
 . Seleccione *Ver cubos* en el panel de control o seleccione *ALMACENAMIENTO (S3)* > *Buckets*.
 . Seleccione el nombre del cubo de la tabla.

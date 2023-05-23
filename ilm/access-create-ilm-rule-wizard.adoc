@@ -24,7 +24,7 @@ NOTE: Si desea crear la regla de ILM predeterminada para una política, siga el 
 * Ha configurado los pools de Cloud Storage que desee utilizar. Consulte link:creating-cloud-storage-pool.html["Cree el pool de almacenamiento en el cloud"].
 * Usted está familiarizado con el link:data-protection-options-for-ingest.html["opciones de procesamiento"].
 * Si necesita crear una regla conforme para usarla con el bloqueo de objetos S3, ya está familiarizado con la link:requirements-for-s3-object-lock.html["Requisitos para el bloqueo de objetos de S3"].
-* Opcionalmente, ha visto el vídeo: https://["Vídeo: Reglas de gestión del ciclo de vida de la información en StorageGRID 11,7"^].
+* Opcionalmente, ha visto el vídeo: https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6baa2e69-95b7-4bcf-a0ff-afbd0092231c["Vídeo: Reglas de gestión del ciclo de vida de la información en StorageGRID 11,7"^].
 +
 [link=https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6baa2e69-95b7-4bcf-a0ff-afbd0092231c]
 image::../media/video-screenshot-ilm-rules-117.png[Vídeo: Reglas de gestión del ciclo de vida de la información en StorageGRID 11,7]

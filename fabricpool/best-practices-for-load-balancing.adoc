@@ -56,6 +56,6 @@ Para evitar problemas de caducidad de certificados, siga las siguientes práctic
 * Utilice un certificado de CA firmado públicamente. Si utiliza un certificado firmado por una CA, puede usar la API de gestión de grid para automatizar la rotación de certificados. Esto permite sustituir certificados que pronto caducan de forma no disruptiva.
 * Si generó un certificado StorageGRID autofirmado y ese certificado está a punto de caducar, debe sustituir manualmente el certificado tanto en StorageGRID como en ONTAP antes de que caduque el certificado existente. Si ya ha caducado un certificado autofirmado, desactive la validación de certificados en ONTAP para evitar la pérdida de acceso.
 +
-Consulte https://["Base de conocimientos de NetApp: Cómo configurar un certificado de servidor autofirmado de StorageGRID en una implementación existente de ONTAP FabricPool"^] si desea obtener instrucciones.
+Consulte https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_configure_a_new_StorageGRID_self-signed_server_certificate_on_an_existing_ONTAP_FabricPool_deployment["Base de conocimientos de NetApp: Cómo configurar un certificado de servidor autofirmado de StorageGRID en una implementación existente de ONTAP FabricPool"^] si desea obtener instrucciones.
 
 

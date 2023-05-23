@@ -99,7 +99,7 @@ Una vez completados estos pasos, puede utilizar solicitudes virtuales de estilo 
 Puede utilizar la interfaz de línea de comandos (CLI de AWS) de Amazon Web Services para probar la conexión al sistema y verificar que puede leer y escribir objetos en el sistema.
 
 .Antes de empezar
-* Ha descargado e instalado la CLI de AWS desde https://["aws.amazon.com/cli"^].
+* Ha descargado e instalado la CLI de AWS desde https://aws.amazon.com/cli["aws.amazon.com/cli"^].
 * Creó una cuenta de inquilino de S3 en el sistema StorageGRID.
 * Creó una clave de acceso en la cuenta de inquilino.
 

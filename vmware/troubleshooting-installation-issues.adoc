@@ -22,7 +22,7 @@ A continuación se muestran los archivos de registro de la instalación principa
 .Información relacionada
 Para obtener información sobre cómo acceder a los archivos de registro, consulte link:../monitor/logs-files-reference.html["Referencia de archivos de registro"].
 
-Si necesita ayuda adicional, póngase en contacto con https://["Soporte de NetApp"^].
+Si necesita ayuda adicional, póngase en contacto con https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"^].
 
 
 

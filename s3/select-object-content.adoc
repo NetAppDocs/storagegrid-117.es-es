@@ -13,7 +13,7 @@ summary: Puede utilizar la solicitud S3 SelectObjectContent para filtrar el cont
 [role="lead"]
 Puede utilizar la solicitud S3 SelectObjectContent para filtrar el contenido de un objeto S3 en función de una simple instrucción SQL.
 
-Para obtener más información, consulte https://["Documentación de AWS para SelectObjectContent"^].
+Para obtener más información, consulte https://docs.aws.amazon.com/AmazonS3/latest/API/API_SelectObjectContent.html["Documentación de AWS para SelectObjectContent"^].
 
 .Antes de empezar
 * La cuenta de inquilino tiene el permiso de S3 Select.

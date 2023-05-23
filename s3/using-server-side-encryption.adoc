@@ -110,4 +110,4 @@ IMPORTANT: Las claves de cifrado que proporcione no se almacenan nunca. Si pierd
 
 
 .Información relacionada
-https://["Guía para desarrolladores de Amazon S3: Protección de datos mediante cifrado en el lado del servidor con claves de cifrado proporcionadas por el cliente (SSE-C)"^]
+https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html["Guía para desarrolladores de Amazon S3: Protección de datos mediante cifrado en el lado del servidor con claves de cifrado proporcionadas por el cliente (SSE-C)"^]

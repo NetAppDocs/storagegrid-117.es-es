@@ -72,7 +72,7 @@ La documentación actual de su plataforma
  a| 
 Visite el sitio web del proveedor de la plataforma para obtener documentación.
 
-Para conocer las versiones compatibles actuales de la plataforma, consulte https://["Herramienta de matriz de interoperabilidad de NetApp"^].
+Para conocer las versiones compatibles actuales de la plataforma, consulte https://imt.netapp.com/matrix/#welcome["Herramienta de matriz de interoperabilidad de NetApp"^].
 
 |===
 
@@ -86,7 +86,7 @@ Debe utilizar la versión de StorageGRID que se esté ejecutando actualmente en 
 
 .Pasos
 . Determine qué versión del software está instalada actualmente. En la parte superior de Grid Manager, seleccione el icono de ayuda y seleccione *Acerca de*.
-. Vaya a la https://["Página de descargas de NetApp para StorageGRID"^].
+. Vaya a la https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["Página de descargas de NetApp para StorageGRID"^].
 . Seleccione la versión de StorageGRID que se está ejecutando actualmente en la cuadrícula.
 +
 Las versiones de software StorageGRID tienen el siguiente formato: `11.x.y`.

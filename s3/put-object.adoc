@@ -227,7 +227,7 @@ Cuando utilice la `Authorization` Encabezado Para autenticar solicitudes, Storag
 
 IMPORTANT: Como práctica recomendada general, incluya siempre estos encabezados en él `CanonicalHeaders` Para asegurarse de que se verifican; sin embargo, si excluye estas cabeceras, StorageGRID no devuelve un error.
 
-Para obtener más información, consulte https://["Cálculos de firma para la cabecera de autorización: Transferencia de carga útil en un solo fragmento (AWS Signature versión 4)"^].
+Para obtener más información, consulte https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-header-based-auth.html["Cálculos de firma para la cabecera de autorización: Transferencia de carga útil en un solo fragmento (AWS Signature versión 4)"^].
 
 .Información relacionada
 link:../ilm/index.html["Gestión de objetos con ILM"]

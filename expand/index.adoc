@@ -32,6 +32,6 @@ Como se muestra en el flujo de trabajo, los pasos para realizar una ampliación 
 Los pasos para añadir nodos también dependen de si va a añadir dispositivos StorageGRID o hosts que ejecuten VMware o Linux.
 
 
-NOTE: "'Linux'" se refiere a una implementación de Red Hat® Enterprise Linux®, Ubuntu®, CentOS o Debian®. Utilice la https://["Herramienta de matriz de interoperabilidad de NetApp (IMT)"^] para obtener una lista de las versiones compatibles.
+NOTE: "'Linux'" se refiere a una implementación de Red Hat® Enterprise Linux®, Ubuntu®, CentOS o Debian®. Utilice la https://imt.netapp.com/matrix/#welcome["Herramienta de matriz de interoperabilidad de NetApp (IMT)"^] para obtener una lista de las versiones compatibles.
 
 image::../media/expansion_workflow.png[diagrama de flujo que muestra una descripción general del proceso de expansión]

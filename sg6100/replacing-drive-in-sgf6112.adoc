@@ -162,4 +162,4 @@ Puede comprobar el estado de la reconstrucción mediante Grid Manager.
 . En Grid Manager, vaya a *NODES* > `*appliance Storage Node*` > *Hardware*. En la sección StorageGRID Appliance de la página, compruebe que el modo RAID de almacenamiento esté en buen estado.
 
 
-Tras sustituir la pieza, devuelva la pieza que ha fallado a NetApp, tal y como se describe en las instrucciones de RMA incluidas con el kit. Consulte https://["Retorno de artículo  sustituciones"^] para obtener más información.
+Tras sustituir la pieza, devuelva la pieza que ha fallado a NetApp, tal y como se describe en las instrucciones de RMA incluidas con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"^] para obtener más información.

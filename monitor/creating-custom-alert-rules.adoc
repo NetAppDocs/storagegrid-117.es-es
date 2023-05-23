@@ -17,8 +17,8 @@ Puede crear reglas de alerta personalizadas para definir sus propias condiciones
 * Ha iniciado sesión en Grid Manager mediante un link:../admin/web-browser-requirements.html["navegador web compatible"]
 * Tiene el permiso de gestión de alertas o acceso raíz
 * Usted está familiarizado con el link:commonly-used-prometheus-metrics.html["Métricas de Prometheus que se usan habitualmente"]
-* Usted entiende la https://["Sintaxis de las consultas Prometheus"^]
-* Opcionalmente, ha visto el vídeo: https://["Vídeo: Usar métricas para crear alertas personalizadas en StorageGRID 11,7"^]
+* Usted entiende la https://prometheus.io/docs/querying/basics/["Sintaxis de las consultas Prometheus"^]
+* Opcionalmente, ha visto el vídeo: https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=61acb7ba-7683-488a-a689-afb7010088f3["Vídeo: Usar métricas para crear alertas personalizadas en StorageGRID 11,7"^]
 +
 [link=https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=61acb7ba-7683-488a-a689-afb7010088f3]
 image::../media/video-screenshot-alert-create-custom-117.png[Vídeo: Usar métricas para crear alertas personalizadas en StorageGRID 11,7]

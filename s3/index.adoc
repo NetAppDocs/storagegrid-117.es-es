@@ -44,9 +44,9 @@ Para obtener más información acerca de HTTP, vea HTTP/1.1 (RFC 7230-35).
 
 |===
 .Información relacionada
-https://["RFC de IETF 2616: Protocolo de transferencia de hipertexto (HTTP/1.1)"^]
+https://datatracker.ietf.org/doc/html/rfc2616["RFC de IETF 2616: Protocolo de transferencia de hipertexto (HTTP/1.1)"^]
 
-http://["Documentación de Amazon Web Services (AWS): Referencia de API de Amazon simple Storage Service"^]
+http://docs.aws.amazon.com/AmazonS3/latest/API/Welcome.html["Documentación de Amazon Web Services (AWS): Referencia de API de Amazon simple Storage Service"^]
 
 
 

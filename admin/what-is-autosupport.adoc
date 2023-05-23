@@ -51,7 +51,7 @@ Active IQ es un asesor digital basado en cloud que aprovecha el análisis predic
 
 Debe habilitar AutoSupport si desea usar la funcionalidad y las consolas de Active IQ en el sitio de soporte de NetApp.
 
-https://["Documentación del asesor digital de Active IQ"^]
+https://docs.netapp.com/us-en/active-iq/index.html["Documentación del asesor digital de Active IQ"^]
 
 
 
@@ -98,4 +98,4 @@ StorageGRID AutoSupport no informa de problemas de hardware, como fallos de DIMM
 
 
 .Información relacionada
-https://["Soporte de NetApp"^]
+https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"^]

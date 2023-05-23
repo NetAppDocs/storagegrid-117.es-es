@@ -67,4 +67,4 @@ image::../media/sg6000_cn_insert_power_supply.gif[Fuente de alimentación desliz
 . link:../installconfig/connecting-power-cords-and-applying-power-sg100-and-sg1000.html["Conecte los cables de alimentación a las unidades sustituidas y aplique alimentación"].
 
 
-Tras sustituir la pieza, devuelva la pieza que ha fallado a NetApp, tal y como se describe en las instrucciones de RMA incluidas con el kit. Consulte https://["Retorno de artículo  sustituciones"^] para obtener más información.
+Tras sustituir la pieza, devuelva la pieza que ha fallado a NetApp, tal y como se describe en las instrucciones de RMA incluidas con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"^] para obtener más información.

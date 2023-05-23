@@ -36,7 +36,7 @@ sudo apparmor_parser -R /etc/apparmor.d/<profile.name>
 sudo ln -s /etc/apparmor.d/bin.ping /etc/apparmor.d/disable/
 sudo apparmor_parser -R /etc/apparmor.d/bin.ping
 ----
-* Desactive por completo AppArmor. Para Ubuntu 9.10 o posterior, siga las instrucciones de la comunidad en línea Ubuntu: https://["Desactive AppArmor"^]. Es posible que deshabilitar AppArmor por completo no sea posible en las versiones más recientes de Ubuntu.
+* Desactive por completo AppArmor. Para Ubuntu 9.10 o posterior, siga las instrucciones de la comunidad en línea Ubuntu: https://help.ubuntu.com/community/AppArmor#Disable_AppArmor_framework["Desactive AppArmor"^]. Es posible que deshabilitar AppArmor por completo no sea posible en las versiones más recientes de Ubuntu.
 +
 Una vez que haya desactivado AppArmor, no aparecerán entradas que indiquen que AppArmor esté activado en los archivos de registro de StorageGRID.
 

@@ -44,7 +44,7 @@ NOTE: Puede usar el enlace SANtricity System Manager para abrir la instancia de 
 
 Para ver detalles del rendimiento a nivel de la cabina de almacenamiento y el uso de capacidad, coloque el cursor sobre cada gráfico.
 
-Para obtener más detalles sobre cómo ver la información accesible en la pestaña System Manager de SANtricity, consulte https://["Documentación de E-Series y SANtricity de NetApp"^].
+Para obtener más detalles sobre cómo ver la información accesible en la pestaña System Manager de SANtricity, consulte https://mysupport.netapp.com/info/web/ECMP1658252.html["Documentación de E-Series y SANtricity de NetApp"^].
 
 .Información relacionada
 * link:../sg6000/index.html["Mantenimiento del dispositivo SG6000"]

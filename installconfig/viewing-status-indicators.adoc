@@ -275,7 +275,7 @@ image::../media/seven_segment_display_codes_for_e2800.gif[Códigos de visualizac
 
 
 .Información relacionada
-* https://["Soporte de NetApp"^]
+* https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"^]
 * link:../sg6000/powering-on-sg6000-cn-controller-and-verifying-operation.html["Encienda el controlador SG6000-CN y compruebe el funcionamiento"]
 
 
@@ -662,8 +662,8 @@ Se produjo un error en la instalación o la comunicación con la controladora E2
 
 
 .Información relacionada
-* https://["Soporte de NetApp"^]
-* https://["Guía de supervisión del sistema E5700 y E2800"^]
+* https://mysupport.netapp.com/site/global/dashboard["Soporte de NetApp"^]
+* https://library.netapp.com/ecmdocs/ECMLP2588751/html/frameset.html["Guía de supervisión del sistema E5700 y E2800"^]
 
 
 --

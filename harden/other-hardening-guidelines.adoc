@@ -53,4 +53,4 @@ Se recomienda un equilibrador de carga de terceros para el tráfico de clientes 
 
 == Mitigación de ransomware
 
-Ayuda a proteger los datos de objetos frente a ataques de ransomware siguiendo las recomendaciones de https://["Defensa contra ransomware con StorageGRID"^].
+Ayuda a proteger los datos de objetos frente a ataques de ransomware siguiendo las recomendaciones de https://www.netapp.com/media/69498-tr-4921.pdf["Defensa contra ransomware con StorageGRID"^].

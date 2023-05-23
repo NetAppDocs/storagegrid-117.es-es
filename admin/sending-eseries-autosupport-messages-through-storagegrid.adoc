@@ -13,7 +13,7 @@ summary: Puede enviar mensajes de AutoSupport de E-Series SANtricity System Mana
 [role="lead"]
 Puede enviar mensajes de AutoSupport de E-Series SANtricity System Manager al soporte técnico a través de un nodo de administrador de StorageGRID en lugar de hacerlo con el puerto de gestión del dispositivo de almacenamiento.
 
-Consulte https://["AutoSupport de hardware E-Series"^] Para obtener más información sobre el uso de AutoSupport con dispositivos E-Series.
+Consulte https://docs.netapp.com/us-en/e-series-santricity/sm-support/autosupport-feature-overview.html["AutoSupport de hardware E-Series"^] Para obtener más información sobre el uso de AutoSupport con dispositivos E-Series.
 
 .Antes de empezar
 * Se ha iniciado sesión en Grid Manager mediante un link:../admin/web-browser-requirements.html["navegador web compatible"].
@@ -34,7 +34,7 @@ Los mensajes de AutoSupport de E-Series contienen detalles del hardware de almac
 Es posible configurar una dirección de servidor proxy especial en SANtricity System Manager para transmitir mensajes de AutoSupport a través de un nodo de administración de StorageGRID sin el uso del puerto de gestión del dispositivo. Los mensajes de AutoSupport transmitidos de esta manera los envía el link:../admin/what-admin-node-is.html["Nodo de administración de remitente preferido"], y usan cualquiera link:../admin/configuring-admin-proxy-settings.html["Configuración de proxy de administración"] Que se han configurado en Grid Manager.
 
 
-NOTE: Este procedimiento solo se utiliza para configurar un servidor proxy StorageGRID para los mensajes de AutoSupport E-Series. Si quiere más información sobre la configuración de la serie AutoSupport de E-Series, consulte https://["Documentación de SANtricity y E-Series de NetApp"^].
+NOTE: Este procedimiento solo se utiliza para configurar un servidor proxy StorageGRID para los mensajes de AutoSupport E-Series. Si quiere más información sobre la configuración de la serie AutoSupport de E-Series, consulte https://mysupport.netapp.com/info/web/ECMP1658252.html["Documentación de SANtricity y E-Series de NetApp"^].
 
 .Pasos
 . En Grid Manager, seleccione *NODES*.

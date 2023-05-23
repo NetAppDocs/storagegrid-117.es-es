@@ -35,7 +35,7 @@ Después de agregar XML de configuración de notificación de metadatos a un blo
 * Realice una acción en todos los objetos que ya están en el bloque que activará un mensaje de notificación de metadatos que se enviará al destino.
 
 
-El servicio de integración de búsqueda StorageGRID admite un clúster de Elasticsearch como destino. Al igual que con los demás servicios de plataforma, el destino se especifica en el extremo cuyo URN se utiliza en el XML de configuración del servicio. Utilice la https://["Herramienta de matriz de interoperabilidad de NetApp"^] Para determinar las versiones compatibles de Elasticsearch.
+El servicio de integración de búsqueda StorageGRID admite un clúster de Elasticsearch como destino. Al igual que con los demás servicios de plataforma, el destino se especifica en el extremo cuyo URN se utiliza en el XML de configuración del servicio. Utilice la https://imt.netapp.com/matrix/#welcome["Herramienta de matriz de interoperabilidad de NetApp"^] Para determinar las versiones compatibles de Elasticsearch.
 
 .Información relacionada
 link:configuration-xml-for-search-configuration.html["XML de configuración para la integración de búsqueda"]

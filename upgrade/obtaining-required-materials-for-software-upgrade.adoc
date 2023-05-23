@@ -56,8 +56,8 @@ Si alguno de los nodos se implementa en hosts Linux, debe link:linux-installing-
 Documentación de StorageGRID
  a| 
 * link:../release-notes/index.html["Notas de la versión"] Para StorageGRID 11,7 (es necesario iniciar sesión). Asegúrese de leerlos detenidamente antes de iniciar la actualización.
-* https://["Guía de resolución de actualización de software StorageGRID"^] para la versión principal a la que está actualizando (es necesario iniciar sesión)
-* Otros https://["Documentación de StorageGRID 11,7"^], según sea necesario.
+* https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/StorageGRID_software_upgrade_resolution_guide["Guía de resolución de actualización de software StorageGRID"^] para la versión principal a la que está actualizando (es necesario iniciar sesión)
+* Otros https://docs.netapp.com/us-en/storagegrid-117/index.html["Documentación de StorageGRID 11,7"^], según sea necesario.
 
 
 |===

@@ -42,12 +42,12 @@ A menos que se indique lo contrario, se admiten las siguientes cabeceras de soli
 
 .Información relacionada
 * link:../s3/s3-rest-api-supported-operations-and-limitations.html["S3 Detalles de implementación de la API de REST"]
-* https://["Referencia de API de Amazon Simple Storage Service: Encabezados de solicitud comunes"^]
+* https://docs.aws.amazon.com/AmazonS3/latest/API/RESTCommonRequestHeaders.html["Referencia de API de Amazon Simple Storage Service: Encabezados de solicitud comunes"^]
 
 
 
 
-== https://["AbortMultipartUpload"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html["AbortMultipartUpload"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> Para esta solicitud, además de este parámetro de consulta URI adicional:
@@ -63,7 +63,7 @@ link:operations-for-multipart-uploads.html["Operaciones para cargas de varias pa
 
 
 
-== https://["CompleteMultipartUpload"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html["CompleteMultipartUpload"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> Para esta solicitud, además de este parámetro de consulta URI adicional:
@@ -85,7 +85,7 @@ link:complete-multipart-upload.html["Completar carga de varias partes"]
 
 
 
-== https://["CopyObject"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html["CopyObject"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud, además de estos encabezados adicionales:
@@ -120,7 +120,7 @@ link:put-object-copy.html["PONER Objeto-Copia"]
 
 
 
-== https://["CreateBucket"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html["CreateBucket"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud, además de estos encabezados adicionales:
@@ -136,7 +136,7 @@ link:operations-on-buckets.html["Operaciones en bloques"]
 
 
 
-== https://["CreateMultipartUpload"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html["CreateMultipartUpload"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud, además de estos encabezados adicionales:
@@ -166,7 +166,7 @@ link:initiate-multipart-upload.html["Inicie la carga de varias partes"]
 
 
 
-== https://["DeleteBucket"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html["DeleteBucket"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -176,20 +176,7 @@ link:operations-on-buckets.html["Operaciones en bloques"]
 
 
 
-== https://["DeleteBucketCors"^]
-
-.Parámetros de consulta URI y cabeceras de solicitud
-StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
-
-.Solicitar el cuerpo
-Ninguno
-
-.Documentación de StorageGRID
-link:operations-on-buckets.html["Operaciones en bloques"]
-
-
-
-== https://["DeleteBucketEncryption"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketCors.html["DeleteBucketCors"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -202,7 +189,20 @@ link:operations-on-buckets.html["Operaciones en bloques"]
 
 
 
-== https://["DeleteBucketLifecycle"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketEncryption.html["DeleteBucketEncryption"^]
+
+.Parámetros de consulta URI y cabeceras de solicitud
+StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
+
+.Solicitar el cuerpo
+Ninguno
+
+.Documentación de StorageGRID
+link:operations-on-buckets.html["Operaciones en bloques"]
+
+
+
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html["DeleteBucketLifecycle"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -217,7 +217,7 @@ Ninguno
 
 
 
-== https://["DeleteBucketPolicy"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketPolicy.html["DeleteBucketPolicy"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -230,7 +230,7 @@ link:operations-on-buckets.html["Operaciones en bloques"]
 
 
 
-== https://["DeleteBucketReplication"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketReplication.html["DeleteBucketReplication"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -243,7 +243,7 @@ link:operations-on-buckets.html["Operaciones en bloques"]
 
 
 
-== https://["DeleteBucketTagging"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html["DeleteBucketTagging"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -256,7 +256,7 @@ link:operations-on-buckets.html["Operaciones en bloques"]
 
 
 
-== https://["DeleteObject"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html["DeleteObject"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud, además de esta cabecera de solicitud adicional:
@@ -272,7 +272,7 @@ link:operations-on-objects.html["Operaciones en objetos"]
 
 
 
-== https://["DeleteObjects"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjects.html["DeleteObjects"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud, además de esta cabecera de solicitud adicional:
@@ -288,7 +288,7 @@ link:operations-on-objects.html["Operaciones en objetos"] (ELIMINAR varios objet
 
 
 
-== https://["DeleteObjectTagging"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectTagging.html["DeleteObjectTagging"^]
 
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
 
@@ -300,7 +300,7 @@ link:operations-on-objects.html["Operaciones en objetos"]
 
 
 
-== https://["GetBucketAcl"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAcl.html["GetBucketAcl"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -313,7 +313,7 @@ link:operations-on-buckets.html["Operaciones en bloques"]
 
 
 
-== https://["GetBucketCors"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketCors.html["GetBucketCors"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -326,7 +326,7 @@ link:operations-on-buckets.html["Operaciones en bloques"]
 
 
 
-== https://["GetBucketEncryption"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketEncryption.html["GetBucketEncryption"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -339,7 +339,7 @@ link:operations-on-buckets.html["Operaciones en bloques"]
 
 
 
-== https://["GetBucketLifecycleConfiguration"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html["GetBucketLifecycleConfiguration"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -354,7 +354,7 @@ Ninguno
 
 
 
-== https://["GetBucketLocation"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLocation.html["GetBucketLocation"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -367,7 +367,7 @@ link:operations-on-buckets.html["Operaciones en bloques"]
 
 
 
-== https://["GetBucketNotificationConfiguration"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html["GetBucketNotificationConfiguration"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -380,7 +380,7 @@ link:operations-on-buckets.html["Operaciones en bloques"] (OBTENER notificación
 
 
 
-== https://["GetBucketPolicy"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicy.html["GetBucketPolicy"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -393,7 +393,7 @@ link:operations-on-buckets.html["Operaciones en bloques"]
 
 
 
-== https://["GetBucketReplication"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketReplication.html["GetBucketReplication"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -406,7 +406,7 @@ link:operations-on-buckets.html["Operaciones en bloques"]
 
 
 
-== https://["Etiquetado de GetBucketTagging"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html["Etiquetado de GetBucketTagging"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -419,7 +419,7 @@ link:operations-on-buckets.html["Operaciones en bloques"]
 
 
 
-== https://["GetBucketVersioning"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html["GetBucketVersioning"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -432,7 +432,7 @@ link:operations-on-buckets.html["Operaciones en bloques"]
 
 
 
-== https://["GetObject"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html["GetObject"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> Para esta solicitud, además de estos parámetros de consulta URI adicionales:
@@ -466,7 +466,7 @@ link:get-object.html["OBTENER objeto"]
 
 
 
-== https://["GetObjectAcl"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html["GetObjectAcl"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -479,7 +479,7 @@ link:operations-on-objects.html["Operaciones en objetos"]
 
 
 
-== https://["GetObjectLegalHold"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectLegalHold.html["GetObjectLegalHold"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -492,7 +492,7 @@ link:../s3/use-s3-api-for-s3-object-lock.html["Use la API REST DE S3 para config
 
 
 
-== https://["GetObjectLockConfiguration"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectLockConfiguration.html["GetObjectLockConfiguration"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -505,7 +505,7 @@ link:../s3/use-s3-api-for-s3-object-lock.html["Use la API REST DE S3 para config
 
 
 
-== https://["GetObjectRetention"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectRetention.html["GetObjectRetention"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -518,7 +518,7 @@ link:../s3/use-s3-api-for-s3-object-lock.html["Use la API REST DE S3 para config
 
 
 
-== https://["GetObjectEtiquetado"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html["GetObjectEtiquetado"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -531,7 +531,7 @@ link:operations-on-objects.html["Operaciones en objetos"]
 
 
 
-== https://["Segmento de cabeza"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html["Segmento de cabeza"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -544,7 +544,7 @@ link:operations-on-buckets.html["Operaciones en bloques"]
 
 
 
-== https://["Objeto principal"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html["Objeto principal"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud, además de estos encabezados adicionales:
@@ -567,7 +567,7 @@ link:head-object.html["OBJETO HEAD"]
 
 
 
-== https://["ListCuchers"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html["ListCuchers"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -580,7 +580,7 @@ link:operations-on-the-service.html["Operaciones en el servicio > OBTENER servic
 
 
 
-== https://["ListCargas multipartitas"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html["ListCargas multipartitas"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud, además de estos parámetros adicionales:
@@ -601,7 +601,7 @@ link:list-multipart-uploads.html["Enumerar cargas de varias partes"]
 
 
 
-== https://["ListObjects"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html["ListObjects"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud, además de estos parámetros adicionales:
@@ -621,7 +621,7 @@ link:operations-on-buckets.html["Operaciones en bloques"] (OBTENER bloque)
 
 
 
-== https://["ListObjectsV2"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html["ListObjectsV2"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud, además de estos parámetros adicionales:
@@ -643,7 +643,7 @@ link:operations-on-buckets.html["Operaciones en bloques"] (OBTENER bloque)
 
 
 
-== https://["ListObjectVersions"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectVersions.html["ListObjectVersions"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud, además de estos parámetros adicionales:
@@ -664,7 +664,7 @@ link:operations-on-buckets.html["Operaciones en bloques"] (OBTENER versiones de 
 
 
 
-== https://["ListParts"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html["ListParts"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud, además de estos parámetros adicionales:
@@ -682,7 +682,7 @@ link:list-multipart-uploads.html["Enumerar cargas de varias partes"]
 
 
 
-== https://["A cargo de PutBucketCors"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html["A cargo de PutBucketCors"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -695,7 +695,7 @@ link:operations-on-buckets.html["Operaciones en bloques"]
 
 
 
-== https://["PutBucketEncryption"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketEncryption.html["PutBucketEncryption"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -714,7 +714,7 @@ link:operations-on-buckets.html["Operaciones en bloques"]
 
 
 
-== https://["PutBucketLifecycleConfiguration"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html["PutBucketLifecycleConfiguration"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -751,7 +751,7 @@ StorageGRID soporta las siguientes etiquetas XML del cuerpo de la solicitud:
 
 
 
-== https://["PutBucketNotificationConfiguration"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotificationConfiguration.html["PutBucketNotificationConfiguration"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -778,7 +778,7 @@ link:operations-on-buckets.html["Operaciones en bloques"] (NOTIFICACIÓN PUT Buc
 
 
 
-== https://["Política de PutBucketPolicy"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketPolicy.html["Política de PutBucketPolicy"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -788,7 +788,7 @@ Para obtener detalles sobre los campos del cuerpo JSON admitidos, consultelink:b
 
 
 
-== https://["PutBucketReplication"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketReplication.html["PutBucketReplication"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -808,7 +808,7 @@ link:operations-on-buckets.html["Operaciones en bloques"]
 
 
 
-== https://["PutBucketTagging"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html["PutBucketTagging"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -821,7 +821,7 @@ link:operations-on-buckets.html["Operaciones en bloques"]
 
 
 
-== https://["PutBucketVersioning"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html["PutBucketVersioning"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -838,7 +838,7 @@ link:operations-on-buckets.html["Operaciones en bloques"]
 
 
 
-== https://["Objeto de puta"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html["Objeto de puta"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud, además de estos encabezados adicionales:
@@ -868,7 +868,7 @@ link:put-object.html["OBJETO PUT"]
 
 
 
-== https://["PutObjectLegalHold"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectLegalHold.html["PutObjectLegalHold"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -881,7 +881,7 @@ link:use-s3-api-for-s3-object-lock.html["Use la API REST DE S3 para configurar e
 
 
 
-== https://["PutObjectLockConfiguration"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectLockConfiguration.html["PutObjectLockConfiguration"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -894,7 +894,7 @@ link:use-s3-api-for-s3-object-lock.html["Use la API REST DE S3 para configurar e
 
 
 
-== https://["PutObjectRetention"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectRetention.html["PutObjectRetention"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud, además de esta cabecera adicional:
@@ -910,7 +910,7 @@ link:use-s3-api-for-s3-object-lock.html["Use la API REST DE S3 para configurar e
 
 
 
-== https://["PutObjectEtiquetado"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html["PutObjectEtiquetado"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -923,7 +923,7 @@ link:operations-on-objects.html["Operaciones en objetos"]
 
 
 
-== https://["SelectObjectContent"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_SelectObjectContent.html["SelectObjectContent"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> para esta solicitud.
@@ -937,7 +937,7 @@ Para obtener más información sobre los campos de cuerpo admitidos, consulte lo
 
 
 
-== https://["UploadPart"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html["UploadPart"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> Para esta solicitud, además de estos parámetros de consulta URI adicionales:
@@ -962,7 +962,7 @@ link:upload-part.html["Cargar artículo"]
 
 
 
-== https://["UploadPartCopy"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html["UploadPartCopy"^]
 
 .Parámetros de consulta URI y cabeceras de solicitud
 StorageGRID admite todos <<common-params,parámetros y cabeceras comunes>> Para esta solicitud, además de estos parámetros de consulta URI adicionales:

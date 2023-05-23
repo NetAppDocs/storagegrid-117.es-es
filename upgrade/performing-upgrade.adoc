@@ -41,7 +41,7 @@ TIP: Si no se muestra ninguna ruta de actualización, es posible que su navegado
 . Para el paso *Seleccionar archivos*, revise la ruta de actualización.
 . En la sección Descargar archivos, seleccione cada enlace de *Descargar* para descargar los archivos requeridos del sitio de soporte de NetApp.
 +
-Si no se muestra ninguna ruta de actualización, vaya al https://["Descargas de NetApp: StorageGRID"^] para determinar si hay una nueva versión o revisión disponible y para descargar los archivos que necesita.
+Si no se muestra ninguna ruta de actualización, vaya al https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["Descargas de NetApp: StorageGRID"^] para determinar si hay una nueva versión o revisión disponible y para descargar los archivos que necesita.
 
 +
 
@@ -74,7 +74,7 @@ Debe descargar la copia actual del archivo del paquete de recuperación antes de
 IMPORTANT: El archivo del paquete de recuperación debe estar protegido porque contiene claves de cifrado y contraseñas que se pueden usar para obtener datos del sistema StorageGRID.
 
 . Seleccione *Ejecutar comprobaciones previas* y espere a que se completen las comprobaciones previas.
-. Revise los detalles de cada comprobación previa informada y resuelva los errores notificados. Consulte https://["Guía de resolución de actualización de software StorageGRID"^] Para el lanzamiento de StorageGRID 11,7.
+. Revise los detalles de cada comprobación previa informada y resuelva los errores notificados. Consulte https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/StorageGRID_software_upgrade_resolution_guide["Guía de resolución de actualización de software StorageGRID"^] Para el lanzamiento de StorageGRID 11,7.
 +
 Debe resolver todas las comprobaciones previas _ERRORES_ antes de actualizar el sistema. Sin embargo, no es necesario abordar la comprobación previa _WARNINGS_ antes de actualizar.
 

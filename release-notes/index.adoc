@@ -13,4 +13,4 @@ summary: Obtener información específica de la versión sobre funciones nuevas,
 [role="lead"]
 Obtener información específica de la versión sobre funciones nuevas, funciones eliminadas o obsoletas, problemas solucionados y problemas conocidos.
 
-Inicie sesión en el sitio de soporte de NetApp en https://["Vea o descargue un archivo PDF"^] Que contiene las notas de la versión de StorageGRID 11,7.
+Inicie sesión en el sitio de soporte de NetApp en https://library.netapp.com/ecm/ecm_download_file/ECMLP2884438["Vea o descargue un archivo PDF"^] Que contiene las notas de la versión de StorageGRID 11,7.

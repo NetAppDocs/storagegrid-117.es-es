@@ -19,7 +19,7 @@ Antes de configurar un servidor de gestión de claves (KMS) externo, debe compre
 
 StorageGRID admite la versión KMIP 1.4.
 
-http://["Especificación del protocolo de interoperabilidad de gestión de claves versión 1.4"^]
+http://docs.oasis-open.org/kmip/spec/v1.4/os/kmip-spec-v1.4-os.html["Especificación del protocolo de interoperabilidad de gestión de claves versión 1.4"^]
 
 Las comunicaciones entre los nodos del dispositivo y el KMS configurado utilizan conexiones TLS seguras. StorageGRID admite los siguientes cifrados TLS v1.2 para KMIP:
 

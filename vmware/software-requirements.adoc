@@ -40,6 +40,6 @@ CAUTION: Debe configurar correctamente el protocolo de hora de red (NTP) en cada
 
 Debe instalar y configurar VMware vSphere y vCenter antes de implementar los nodos de grid de StorageGRID.
 
-Para obtener información sobre las versiones compatibles del hipervisor de VMware vSphere y el software VMware vCenter Server, consulte la https://["Herramienta de matriz de interoperabilidad de NetApp"^].
+Para obtener información sobre las versiones compatibles del hipervisor de VMware vSphere y el software VMware vCenter Server, consulte la https://imt.netapp.com/matrix/#welcome["Herramienta de matriz de interoperabilidad de NetApp"^].
 
 Para conocer los pasos necesarios para instalar estos productos de VMware, consulte la documentación de VMware.

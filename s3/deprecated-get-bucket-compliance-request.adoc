@@ -20,7 +20,7 @@ link:../s3/use-s3-api-for-s3-object-lock.html["Use la API REST DE S3 para config
 
 link:../ilm/index.html["Gestión de objetos con ILM"]
 
-https://["Base de conocimientos de NetApp: Cómo gestionar bloques heredados que cumplen con la normativa StorageGRID 11.5"^]
+https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["Base de conocimientos de NetApp: Cómo gestionar bloques heredados que cumplen con la normativa StorageGRID 11.5"^]
 
 Tiene el permiso s3:GetBucketCompliance o ser la raíz de la cuenta para completar esta operación.
 

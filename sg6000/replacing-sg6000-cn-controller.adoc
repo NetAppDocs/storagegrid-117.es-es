@@ -105,7 +105,7 @@ IMPORTANT: Para evitar un rendimiento degradado, no tuerza, pliegue, pellizque n
 . Confirme que el nodo del dispositivo aparece en Grid Manager y que no aparece ninguna alerta.
 
 
-Tras sustituir la pieza, devuelva la pieza que ha fallado a NetApp, tal y como se describe en las instrucciones de RMA incluidas con el kit. Consulte https://["Retorno de artículo  sustituciones"^] para obtener más información.
+Tras sustituir la pieza, devuelva la pieza que ha fallado a NetApp, tal y como se describe en las instrucciones de RMA incluidas con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"^] para obtener más información.
 
 .Información relacionada
 link:../installconfig/sg6000-cn-installing-into-cabinet-or-rack.html["Instale SG6000-CN en el armario o rack"]

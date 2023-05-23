@@ -264,5 +264,5 @@ Cambiar el modo de CUMPLIMIENTO a GOBIERNO nunca está permitido.
 .Información relacionada
 * link:../ilm/managing-objects-with-s3-object-lock.html["Gestione objetos con S3 Object Lock"]
 * link:../tenant/using-s3-object-lock.html["Utilice Bloqueo de objetos S3 para retener objetos"]
-* https://["Guía del usuario de Amazon simple Storage Service: Uso del bloqueo de objetos de S3"^]
+* https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html["Guía del usuario de Amazon simple Storage Service: Uso del bloqueo de objetos de S3"^]
 

@@ -111,7 +111,7 @@ El estado final es `HA`.
 . Confirme que el nodo de almacenamiento del dispositivo aparece en Grid Manager y que no aparece ninguna alarma.
 
 
-Tras sustituir la pieza, devuelva la pieza que ha fallado a NetApp, tal y como se describe en las instrucciones de RMA incluidas con el kit. Consulte https://["Retorno de artículo  sustituciones"^] para obtener más información.
+Tras sustituir la pieza, devuelva la pieza que ha fallado a NetApp, tal y como se describe en las instrucciones de RMA incluidas con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"^] para obtener más información.
 
 .Información relacionada
-http://["Sitio de documentación para sistemas E-Series y EF-Series de NetApp"^]
+http://mysupport.netapp.com/info/web/ECMP1658252.html["Sitio de documentación para sistemas E-Series y EF-Series de NetApp"^]

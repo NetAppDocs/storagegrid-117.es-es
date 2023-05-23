@@ -14,11 +14,11 @@ summary: 'Para los controladores de almacenamiento que actualmente utilizan SANt
 Para aplicar una actualización, se deben usar Grid Manager para las controladoras de almacenamiento que actualmente utilizan SANtricity OS 08.42.20.00 (11.42) o posterior.
 
 .Antes de empezar
-* Ha consultado el https://["Herramienta de matriz de interoperabilidad de NetApp (IMT)"^] Para confirmar que la versión de sistema operativo SANtricity que utiliza para la actualización es compatible con el dispositivo.
+* Ha consultado el https://imt.netapp.com/matrix/#welcome["Herramienta de matriz de interoperabilidad de NetApp (IMT)"^] Para confirmar que la versión de sistema operativo SANtricity que utiliza para la actualización es compatible con el dispositivo.
 * Usted tiene la link:../admin/admin-group-permissions.html["Permiso de mantenimiento o acceso raíz"].
 * Ha iniciado sesión en Grid Manager mediante un link:../admin/web-browser-requirements.html["navegador web compatible"].
 * Tiene la clave de acceso de aprovisionamiento.
-* Tiene acceso a. https://["Descargas de NetApp: Dispositivo de StorageGRID"^].
+* Tiene acceso a. https://mysupport.netapp.com/site/products/all/details/storagegrid-appliance/downloads-tab["Descargas de NetApp: Dispositivo de StorageGRID"^].
 
 
 .Acerca de esta tarea
@@ -36,7 +36,7 @@ NOTE: Este procedimiento actualizará automáticamente la NVSRAM a la versión m
 IMPORTANT: Asegúrese de aplicar la revisión de StorageGRID más reciente antes de comenzar este procedimiento. Consulte link:../maintain/storagegrid-hotfix-procedure.html["Procedimiento de revisión de StorageGRID"] para obtener más detalles.
 
 .Pasos
-. [[download-santricity-os]] Descargue el nuevo archivo de software de sistema operativo SANtricity de https://["Descargas de NetApp: Dispositivo de StorageGRID"^].
+. [[download-santricity-os]] Descargue el nuevo archivo de software de sistema operativo SANtricity de https://mysupport.netapp.com/site/products/all/details/storagegrid-appliance/downloads-tab["Descargas de NetApp: Dispositivo de StorageGRID"^].
 +
 Asegúrese de elegir la versión de sistema operativo SANtricity para las controladoras de almacenamiento.
 
@@ -195,6 +195,6 @@ NOTE: Para cualquier nodo con el estado necesita atención, utilice el modo de m
 
 
 .Información relacionada
-https://["Herramienta de matriz de interoperabilidad de NetApp"^]
+https://mysupport.netapp.com/matrix["Herramienta de matriz de interoperabilidad de NetApp"^]
 
 link:upgrading-santricity-os-on-storage-controllers-using-maintenance-mode-sg6000.html["Actualizar el sistema operativo SANtricity en controladoras de almacenamiento mediante el modo de mantenimiento"]

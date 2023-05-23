@@ -61,7 +61,7 @@ Puede usar System Manager de SANtricity para configurar las siguientes opciones:
 * Alertas por correo electrónico, alertas SNMP o alertas de syslog para los componentes de la bandeja de controladoras de almacenamiento
 * Configuración de AutoSupport de E-Series para los componentes de la bandeja de la controladora de almacenamiento.
 +
-Si quiere más información sobre E-Series AutoSupport, consulte http://["Sitio de documentación para sistemas E-Series y EF-Series de NetApp"^].
+Si quiere más información sobre E-Series AutoSupport, consulte http://mysupport.netapp.com/info/web/ECMP1658252.html["Sitio de documentación para sistemas E-Series y EF-Series de NetApp"^].
 
 * Claves Drive Security, que se necesitan para desbloquear unidades seguras (este paso es necesario si la función Drive Security está habilitada)
 * Contraseña de administrador para acceder a System Manager de SANtricity

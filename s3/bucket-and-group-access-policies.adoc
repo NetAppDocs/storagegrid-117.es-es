@@ -173,7 +173,7 @@ Otras consideraciones:
 * Puede utilizar el asterisco (*) como comodín para que coincida con cero o más caracteres dentro de la clave de objeto.
 * Los caracteres internacionales, que se pueden especificar en la clave de objeto, deben codificarse mediante JSON UTF-8 o mediante secuencias de escape JSON \u. No se admite el porcentaje de codificación.
 +
-https://["Sintaxis de URN RFC 2141"^]
+https://www.ietf.org/rfc/rfc2141.txt["Sintaxis de URN RFC 2141"^]
 
 +
 El cuerpo de solicitud HTTP para la operación DE política PUT Bucket debe codificarse con charset=UTF-8.

@@ -117,7 +117,7 @@ Solo datos de objetos y metadatos (los datos de configuración del sistema no es
 
 Un método de cifrado externo proporciona un control más estricto sobre los algoritmos y claves de cifrado. Se puede combinar con los otros métodos enumerados.
 
-https://["Amazon simple Storage Service - Guía para desarrolladores: Protección de datos mediante cifrado en el cliente"^]
+https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html["Amazon simple Storage Service - Guía para desarrolladores: Protección de datos mediante cifrado en el cliente"^]
 
 |===
 

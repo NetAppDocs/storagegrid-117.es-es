@@ -53,4 +53,4 @@ El conjunto de tarjeta vertical tiene dos adaptadores: Un HBA Fibre Channel y un
 .Después de terminar
 link:reinstalling-fibre-channel-hba.html["Instale el HBA Fibre Channel de repuesto"].
 
-Tras sustituir la pieza, devuelva la pieza que ha fallado a NetApp, tal y como se describe en las instrucciones de RMA incluidas con el kit. Consulte https://["Retorno de artículo  sustituciones"^] para obtener más información.
+Tras sustituir la pieza, devuelva la pieza que ha fallado a NetApp, tal y como se describe en las instrucciones de RMA incluidas con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"^] para obtener más información.

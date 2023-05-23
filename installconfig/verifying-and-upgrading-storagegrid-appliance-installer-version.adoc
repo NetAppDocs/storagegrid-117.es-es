@@ -27,7 +27,7 @@ El instalador de dispositivos de StorageGRID se actualiza automáticamente cuand
 +
 El segundo dígito de las dos versiones debe coincidir. Por ejemplo, si el sistema StorageGRID está ejecutando la versión 11.*6*._x_._y_, la versión del instalador de dispositivos StorageGRID debe ser 3.*6*._z_.
 
-. Si el dispositivo tiene una versión de nivel inferior del instalador de dispositivos de StorageGRID, vaya a. https://["Descargas de NetApp: Dispositivo de StorageGRID"^].
+. Si el dispositivo tiene una versión de nivel inferior del instalador de dispositivos de StorageGRID, vaya a. https://mysupport.netapp.com/site/products/all/details/storagegrid-appliance/downloads-tab["Descargas de NetApp: Dispositivo de StorageGRID"^].
 +
 Inicie sesión con el nombre de usuario y la contraseña de su cuenta de NetApp.
 

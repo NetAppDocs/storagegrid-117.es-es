@@ -14,7 +14,7 @@ summary: 'Para aplicar una actualización a las controladoras de almacenamiento 
 Para las controladoras de almacenamiento que utilizan actualmente el sistema operativo SANtricity con una versión anterior a 08.42.20.00 (11.42), debe utilizar el procedimiento del modo de mantenimiento para aplicar una actualización.
 
 .Antes de empezar
-* Ha consultado el https://["Herramienta de matriz de interoperabilidad de NetApp (IMT)"^] Para confirmar que la versión de sistema operativo SANtricity que utiliza para la actualización es compatible con el dispositivo.
+* Ha consultado el https://imt.netapp.com/matrix/#welcome["Herramienta de matriz de interoperabilidad de NetApp (IMT)"^] Para confirmar que la versión de sistema operativo SANtricity que utiliza para la actualización es compatible con el dispositivo.
 * Si el dispositivo StorageGRID se está ejecutando en un sistema StorageGRID, colocó la controladora SG6000-CN en link:../commonhardware/placing-appliance-into-maintenance-mode.html["modo de mantenimiento"].
 +
 
@@ -59,6 +59,6 @@ image::../media/nodes_menu.png[El nodo del dispositivo se ha vuelto a unir a la 
 
 
 .Información relacionada
-https://["Herramienta de matriz de interoperabilidad de NetApp"^]
+https://imt.netapp.com/matrix/#welcome["Herramienta de matriz de interoperabilidad de NetApp"^]
 
 link:upgrading-santricity-os-on-storage-controllers-using-grid-manager-sg6000.html["Actualizar el sistema operativo SANtricity en controladoras de almacenamiento mediante Grid Manager"]

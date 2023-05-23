@@ -17,7 +17,7 @@ Este documento proporciona una descripción general de las directrices generales
 
 Al instalar y configurar StorageGRID, puede usar estas directrices para ayudarle a cumplir los objetivos de seguridad prescritos para la confidencialidad, la integridad y la disponibilidad del sistema de información.
 
-StorageGRID sigue el https://["Política de gestión de vulnerabilidades de NetApp"^]. Las vulnerabilidades notificadas se verifican y se tratan de acuerdo con el proceso de respuesta a incidentes de seguridad del producto.
+StorageGRID sigue el https://security.netapp.com/policy/["Política de gestión de vulnerabilidades de NetApp"^]. Las vulnerabilidades notificadas se verifican y se tratan de acuerdo con el proceso de respuesta a incidentes de seguridad del producto.
 
 
 

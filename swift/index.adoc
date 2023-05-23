@@ -38,4 +38,4 @@ HTTP
 
 |===
 .Información relacionada
-http://["OpenStack: API de almacenamiento de objetos"^]
+http://docs.openstack.org/developer/swift/api/object_api_v1_overview.html["OpenStack: API de almacenamiento de objetos"^]

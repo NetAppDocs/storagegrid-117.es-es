@@ -14,7 +14,7 @@ summary: Debe descargar el archivo de instalación de StorageGRID y extraer los 
 Debe descargar el archivo de instalación de StorageGRID y extraer los archivos necesarios.
 
 .Pasos
-. Vaya a la https://["Página de descargas de NetApp para StorageGRID"^].
+. Vaya a la https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["Página de descargas de NetApp para StorageGRID"^].
 . Seleccione el botón para descargar la última versión, o seleccione otra versión en el menú desplegable y seleccione *Ir*.
 . Inicie sesión con el nombre de usuario y la contraseña de su cuenta de NetApp.
 . Si aparece una declaración Precaution/MustRead, léala y seleccione la casilla de verificación.

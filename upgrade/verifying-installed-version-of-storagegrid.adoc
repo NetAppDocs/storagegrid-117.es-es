@@ -19,9 +19,9 @@ Antes de actualizar a StorageGRID 11,7, su grid debe tener instalado StorageGRID
 En la <<Ejemplo: Actualice a StorageGRID 11,6 desde la versión 11.3.0.8,ejemplo>>.
 
 
-IMPORTANT: NetApp recomienda encarecidamente que aplique la revisión más reciente para cada versión de StorageGRID antes de actualizar a la siguiente versión y que también aplique la revisión más reciente para cada versión nueva que instale. En algunos casos, debe aplicar una revisión para evitar el riesgo de pérdida de datos. Consulte https://["Descargas de NetApp: StorageGRID"^] y las notas de la versión de cada revisión para obtener más información.
+IMPORTANT: NetApp recomienda encarecidamente que aplique la revisión más reciente para cada versión de StorageGRID antes de actualizar a la siguiente versión y que también aplique la revisión más reciente para cada versión nueva que instale. En algunos casos, debe aplicar una revisión para evitar el riesgo de pérdida de datos. Consulte https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["Descargas de NetApp: StorageGRID"^] y las notas de la versión de cada revisión para obtener más información.
 
-Tenga en cuenta que puede ejecutar una secuencia de comandos para actualizar de 11.3.0.13+ a 11.4.0._y_ en un solo paso y de 11.4.0.7+ a 11.5.0._y_ en un solo paso. Consulte https://["Base de conocimientos de NetApp: Cómo ejecutar scripts combinados de actualizaciones importantes y revisiones para StorageGRID"^].
+Tenga en cuenta que puede ejecutar una secuencia de comandos para actualizar de 11.3.0.13+ a 11.4.0._y_ en un solo paso y de 11.4.0.7+ a 11.5.0._y_ en un solo paso. Consulte https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_run_combined_major_upgrade_and_hotfix_script_for_StorageGRID["Base de conocimientos de NetApp: Cómo ejecutar scripts combinados de actualizaciones importantes y revisiones para StorageGRID"^].
 
 .Pasos
 . Inicie sesión en Grid Manager mediante una link:../admin/web-browser-requirements.html["navegador web compatible"].
@@ -35,7 +35,7 @@ En el número de versión de StorageGRID 11,6._x.y_:
 ** Un *hotfix*, si se ha aplicado uno, tiene un valor _y_ (por ejemplo, 11,6.0,1).
 
 
-. Si *Version* no es 11,6._x.y_, vaya a. https://["Descargas de NetApp: StorageGRID"^] para descargar los archivos de cada versión anterior, incluida la revisión más reciente de cada versión.
+. Si *Version* no es 11,6._x.y_, vaya a. https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["Descargas de NetApp: StorageGRID"^] para descargar los archivos de cada versión anterior, incluida la revisión más reciente de cada versión.
 . Obtenga las instrucciones de actualización de cada versión descargada. A continuación, realice el procedimiento de actualización de software para esa versión y aplique la revisión más reciente para esa versión (recomendado expresamente).
 +
 Consulte link:../maintain/storagegrid-hotfix-procedure.html["Procedimiento de revisión de StorageGRID"].
@@ -49,7 +49,7 @@ Consulte link:../maintain/storagegrid-hotfix-procedure.html["Procedimiento de re
 El ejemplo siguiente muestra los pasos para actualizar de la versión 11.3.0.8 de StorageGRID a la versión 11,6 en la preparación para una actualización de StorageGRID 11,7.
 
 
-IMPORTANT: Opcionalmente, puede ejecutar una secuencia de comandos para combinar los pasos 2 y 3 (actualización de 11.3.0.13+ a 11.4.0._y_) y combinar los pasos 4 y 5 (actualización de 11.4.0.7+ a 11.5.0._y_). Consulte https://["Base de conocimientos de NetApp: Cómo ejecutar scripts combinados de actualizaciones importantes y revisiones para StorageGRID"^].
+IMPORTANT: Opcionalmente, puede ejecutar una secuencia de comandos para combinar los pasos 2 y 3 (actualización de 11.3.0.13+ a 11.4.0._y_) y combinar los pasos 4 y 5 (actualización de 11.4.0.7+ a 11.5.0._y_). Consulte https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_run_combined_major_upgrade_and_hotfix_script_for_StorageGRID["Base de conocimientos de NetApp: Cómo ejecutar scripts combinados de actualizaciones importantes y revisiones para StorageGRID"^].
 
 Descargue e instale software en la siguiente secuencia para preparar el sistema para la actualización:
 

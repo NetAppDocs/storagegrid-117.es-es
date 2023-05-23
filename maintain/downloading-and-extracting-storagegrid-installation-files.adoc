@@ -19,7 +19,7 @@ Debe utilizar la versión de StorageGRID que se esté ejecutando actualmente en 
 . Determine qué versión del software está instalada actualmente. En la parte superior de Grid Manager, seleccione el icono de ayuda y seleccione *Acerca de*.
 . Vaya a la página de descargas de NetApp para StorageGRID.
 +
-https://["Descargas de NetApp: StorageGRID"^]
+https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["Descargas de NetApp: StorageGRID"^]
 
 . Seleccione la versión de StorageGRID que se está ejecutando actualmente en la cuadrícula.
 +

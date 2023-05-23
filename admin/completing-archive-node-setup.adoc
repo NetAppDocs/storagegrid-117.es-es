@@ -15,6 +15,6 @@ El nodo de archivado no funciona después de completar el proceso de instalació
 
 Consulte la siguiente documentación de IBM, según sea necesario, cuando prepare el servidor TSM para la integración con el nodo de archivado en un sistema StorageGRID:
 
-* http://["Guía del usuario e instalación de los controladores de dispositivos de cinta de IBM"^]
-* http://["Referencia de programación de controladores de dispositivo de cinta IBM"^]
+* http://www.ibm.com/support/docview.wss?rs=577&uid=ssg1S7002972["Guía del usuario e instalación de los controladores de dispositivos de cinta de IBM"^]
+* http://www.ibm.com/support/docview.wss?rs=577&uid=ssg1S7003032["Referencia de programación de controladores de dispositivo de cinta IBM"^]
 

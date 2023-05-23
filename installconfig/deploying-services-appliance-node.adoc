@@ -49,7 +49,7 @@ El nombre del nodo está asignado a este nodo del dispositivo en el sistema Stor
 +
 .. Descargue el archivo de instalación:
 +
-https://["Descargas de NetApp: Dispositivo de StorageGRID"^]
+https://mysupport.netapp.com/site/products/all/details/storagegrid-appliance/downloads-tab["Descargas de NetApp: Dispositivo de StorageGRID"^]
 
 .. Extraiga el archivo.
 .. En el instalador de dispositivos StorageGRID, seleccione *Avanzado* > *Cargar software StorageGRID*.
@@ -162,7 +162,7 @@ El nombre que aparece aquí será el nombre del sistema del nodo del dispositivo
 +
 .. Descargue el archivo de instalación:
 +
-https://["Descargas de NetApp: Dispositivo de StorageGRID"^]
+https://mysupport.netapp.com/site/products/all/details/storagegrid-appliance/downloads-tab["Descargas de NetApp: Dispositivo de StorageGRID"^]
 
 .. Extraiga el archivo.
 .. En el instalador de dispositivos StorageGRID, seleccione *Avanzado* > *Cargar software StorageGRID*.

@@ -30,5 +30,5 @@ Mensajes del link:../audit/index.html["registro de auditoría"] indica el tiempo
 
 Al analizar los resultados, observe el tiempo medio necesario para satisfacer una solicitud, así como el rendimiento general que puede obtener. Repita las mismas pruebas regularmente y registre los resultados, para que pueda identificar tendencias que podrían requerir investigación.
 
-* Puede hacerlo https://["Descargue el probador S3del github"^].
+* Puede hacerlo https://github.com/s3tester["Descargue el probador S3del github"^].
 

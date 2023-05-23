@@ -16,7 +16,7 @@ StorageGRID admite las siguientes cláusulas, tipos de datos y operadores de Ama
 
 NOTE: No se admiten los elementos que no aparecen en la lista.
 
-Para obtener sintaxis, consulte link:select-object-content.html["SelectObjectContent"]. Para obtener más información acerca de S3 Select, consulte https://["Documentación de AWS para S3 Select"^].
+Para obtener sintaxis, consulte link:select-object-content.html["SelectObjectContent"]. Para obtener más información acerca de S3 Select, consulte https://docs.aws.amazon.com/AmazonS3/latest/userguide/selecting-content-from-objects.html["Documentación de AWS para S3 Select"^].
 
 Solo las cuentas de inquilino con S3 Select habilitado pueden emitir consultas de SelectObjectContent. Consulte link:../admin/manage-s3-select-for-tenant-accounts.html["Consideraciones y requisitos para usar S3 Select"].
 

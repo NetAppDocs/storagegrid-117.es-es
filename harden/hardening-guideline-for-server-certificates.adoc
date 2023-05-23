@@ -34,7 +34,7 @@ NOTE: StorageGRID gestiona los certificados utilizados para los extremos del equ
 
 Cuando utilice certificados de servidor personalizados, siga estas directrices:
 
-* Los certificados deben tener un `_subjectAltName_` Que coincida con las entradas de DNS para StorageGRID. Para obtener más información, consulte la sección 4.2.1.6, "Nombre alternativo de la expulsión" en https://["RFC 5280: Certificado PKIX y perfil CRL"^].
+* Los certificados deben tener un `_subjectAltName_` Que coincida con las entradas de DNS para StorageGRID. Para obtener más información, consulte la sección 4.2.1.6, "Nombre alternativo de la expulsión" en https://tools.ietf.org/html/rfc5280#section-4.2.1.6["RFC 5280: Certificado PKIX y perfil CRL"^].
 * Cuando sea posible, evite el uso de certificados comodín. Una excepción a esta directriz es el certificado para un punto final de estilo alojado virtual S3, que requiere el uso de un comodín si los nombres de depósito no se conocen por adelantado.
 * Cuando debe utilizar comodines en los certificados, debe tomar medidas adicionales para reducir los riesgos. Utilice un patrón comodín como `*.s3.example.com`, y no utilice el `s3.example.com` sufijo para otras aplicaciones. Este patrón también funciona con acceso S3 de estilo de ruta como, por ejemplo `dc1-s1.s3.example.com/mybucket`.
 * Establezca los tiempos de caducidad del certificado como cortos (por ejemplo, 2 meses) y utilice la API de gestión de grid para automatizar la rotación del certificado. Esto es especialmente importante para los certificados con caracteres comodín.

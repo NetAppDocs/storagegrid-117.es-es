@@ -23,7 +23,7 @@ Si anteriormente habilitó la configuración de cumplimiento global, la opción 
 
 * link:use-s3-api-for-s3-object-lock.html["Use la API REST DE S3 para configurar el bloqueo de objetos de S3"]
 * link:../ilm/index.html["Gestión de objetos con ILM"]
-* https://["Base de conocimientos de NetApp: Cómo gestionar bloques heredados que cumplen con la normativa StorageGRID 11.5"^]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["Base de conocimientos de NetApp: Cómo gestionar bloques heredados que cumplen con la normativa StorageGRID 11.5"^]
 
 
 Solicitudes de cumplimiento de normativas obsoletas:

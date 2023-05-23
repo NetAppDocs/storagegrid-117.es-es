@@ -94,7 +94,7 @@ La práctica recomendada general es asociar un solo nivel cloud a varios niveles
 NetApp no recomienda vincular un único nivel de cloud a niveles locales en varios clústeres.
 
 
-NOTE: Para conocer las prácticas recomendadas para usar StorageGRID con NetApp MetroCluster™ y FabricPool Mirror, consulte https://["TR-4598: Prácticas recomendadas de FabricPool en ONTAP"^].
+NOTE: Para conocer las prácticas recomendadas para usar StorageGRID con NetApp MetroCluster™ y FabricPool Mirror, consulte https://www.netapp.com/pdf.html?item=/media/17239-tr4598pdf.pdf["TR-4598: Prácticas recomendadas de FabricPool en ONTAP"^].
 
 
 

@@ -31,9 +31,9 @@ NOTE: Debe crear una aplicación empresarial para cada nodo administrador en el 
 == Acceda a Azure AD
 
 .Pasos
-. Inicie sesión en la https://["Portal de Azure"^].
-. Vaya a. https://["Active Directory para Azure"^].
-. Seleccione https://["Aplicaciones de negocio"^].
+. Inicie sesión en la https://portal.azure.com["Portal de Azure"^].
+. Vaya a. https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade["Active Directory para Azure"^].
+. Seleccione https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/Overview/menuId/["Aplicaciones de negocio"^].
 
 
 

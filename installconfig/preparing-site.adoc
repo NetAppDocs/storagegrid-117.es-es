@@ -14,7 +14,7 @@ summary: Antes de instalar el dispositivo, debe asegurarse de que el sitio y el 
 Antes de instalar el dispositivo, debe asegurarse de que el sitio y el armario o rack que desee usar cumplan con las especificaciones de un dispositivo StorageGRID.
 
 .Pasos
-. Confirmar que el emplazamiento cumple los requisitos de temperatura, humedad, rango de altitud, flujo de aire, disipación de calor, cableado, alimentación y conexión a tierra. Consulte https://["Hardware Universe de NetApp"^] si quiere más información.
+. Confirmar que el emplazamiento cumple los requisitos de temperatura, humedad, rango de altitud, flujo de aire, disipación de calor, cableado, alimentación y conexión a tierra. Consulte https://hwu.netapp.com["Hardware Universe de NetApp"^] si quiere más información.
 . Confirme que su ubicación proporciona el voltaje correcto de la alimentación de CA:
 +
 [cols="1a,1a"]

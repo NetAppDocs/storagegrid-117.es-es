@@ -20,7 +20,7 @@ Si hay algún nodo de StorageGRID implementado en hosts Linux, debe descargar e 
 Cuando realiza una actualización de StorageGRID desde Grid Manager, se le pedirá que descargue el archivo de actualización y cualquier revisión necesaria como primer paso. Sin embargo, si necesita descargar archivos para actualizar los hosts de Linux, puede ahorrar tiempo descargando todos los archivos necesarios con antelación.
 
 .Pasos
-. Vaya a. https://["Descargas de NetApp: StorageGRID"^].
+. Vaya a. https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["Descargas de NetApp: StorageGRID"^].
 . Seleccione el botón para descargar la última versión, o seleccione otra versión en el menú desplegable y seleccione *Ir*.
 +
 Las versiones de software de StorageGRID tienen este formato: 11._x.y_. Las revisiones StorageGRID tienen este formato: 11._x. y.z_.
@@ -48,7 +48,7 @@ Aparece la página de descargas de la versión seleccionada. La página contiene
 
 . Si necesita aceptar un aviso de Precaución/MustRead debido a una revisión requerida, descargue la revisión:
 +
-.. Vuelva a. https://["Descargas de NetApp: StorageGRID"^].
+.. Vuelva a. https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["Descargas de NetApp: StorageGRID"^].
 .. Seleccione el número de revisión en la lista desplegable.
 .. Acepte de nuevo el aviso de precaución y el EULA.
 .. Descargue y guarde la revisión y su README.

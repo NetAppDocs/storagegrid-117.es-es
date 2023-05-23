@@ -13,9 +13,9 @@ summary: Para garantizar el funcionamiento óptimo de la controladora de almacen
 [role="lead"]
 Para garantizar el funcionamiento óptimo de la controladora de almacenamiento, debe actualizarse a la versión de mantenimiento más reciente del sistema operativo SANtricity que esté cualificado para su dispositivo StorageGRID.
 
-Consulte la https://["Herramienta de matriz de interoperabilidad de NetApp (IMT)"^] para determinar qué versión debe usar.
+Consulte la https://imt.netapp.com/matrix/#welcome["Herramienta de matriz de interoperabilidad de NetApp (IMT)"^] para determinar qué versión debe usar.
 
-Descargue el nuevo archivo de software de sistema operativo SANtricity desde https://["Descargas de NetApp: Dispositivo de StorageGRID"^].
+Descargue el nuevo archivo de software de sistema operativo SANtricity desde https://mysupport.netapp.com/site/products/all/details/storagegrid-appliance/downloads-tab["Descargas de NetApp: Dispositivo de StorageGRID"^].
 
 Siga uno de los siguientes procedimientos según la versión de SANtricity OS instalada actualmente:
 

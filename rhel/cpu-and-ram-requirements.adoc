@@ -13,7 +13,7 @@ summary: Antes de instalar el software StorageGRID, verifique y configure el har
 [role="lead"]
 Antes de instalar el software StorageGRID, verifique y configure el hardware de manera que esté listo para admitir el sistema StorageGRID.
 
-Para obtener información sobre los servidores compatibles, consulte https://["Herramienta de matriz de interoperabilidad de NetApp"^].
+Para obtener información sobre los servidores compatibles, consulte https://imt.netapp.com/matrix/#welcome["Herramienta de matriz de interoperabilidad de NetApp"^].
 
 Cada nodo StorageGRID requiere los siguientes recursos mínimos:
 

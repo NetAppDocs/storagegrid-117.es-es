@@ -8,7 +8,7 @@ settings:
     pdf_enabled: true
     harmony_enabled: false
     hide_language_selector: false
-  langs: es-es,us-en,ja-jp,ko-kr,zh-cn,zh-tw,de-de,fr-fr
+  langs: es-es,us-en,ja-jp,ko-kr,zh-cn,zh-tw,de-de,fr-fr,it-it
 sidebar:
   entries:
   - title: Documentos de StorageGRID 11,7

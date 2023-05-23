@@ -48,7 +48,7 @@ Se puede acceder a la cubierta superior del aparato.
 . Opcional: Si está retirando completamente el dispositivo del armario o rack, siga las instrucciones del kit de guías para quitar el aparato de los rieles.
 
 
-Tras sustituir la pieza, devuelva la pieza que ha fallado a NetApp, tal y como se describe en las instrucciones de RMA incluidas con el kit. Consulte https://["Retorno de artículo  sustituciones"^] para obtener más información.
+Tras sustituir la pieza, devuelva la pieza que ha fallado a NetApp, tal y como se describe en las instrucciones de RMA incluidas con el kit. Consulte https://mysupport.netapp.com/site/info/rma["Retorno de artículo  sustituciones"^] para obtener más información.
 
 .Información relacionada
 link:removing-sgf6112-cover.html["Retire la cubierta SGF6112"]

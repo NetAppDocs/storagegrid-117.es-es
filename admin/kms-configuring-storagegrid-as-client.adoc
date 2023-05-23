@@ -14,7 +14,7 @@ summary: Debe configurar StorageGRID como cliente para cada servidor de gestión
 Debe configurar StorageGRID como cliente para cada servidor de gestión de claves externo o clúster de KMS antes de poder añadir el KMS a StorageGRID.
 
 .Acerca de esta tarea
-Estas instrucciones se aplican a Thales CipherTrust Manager. Para obtener una lista de versiones compatibles, utilice https://["Herramienta de matriz de interoperabilidad de NetApp (IMT)"^].
+Estas instrucciones se aplican a Thales CipherTrust Manager. Para obtener una lista de versiones compatibles, utilice https://imt.netapp.com/matrix/#welcome["Herramienta de matriz de interoperabilidad de NetApp (IMT)"^].
 
 .Pasos
 . Desde el software KMS, cree un cliente StorageGRID para cada clúster KMS o KMS que vaya a utilizar.

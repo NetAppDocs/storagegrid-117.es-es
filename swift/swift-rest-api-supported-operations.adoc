@@ -31,4 +31,4 @@ Se admiten las siguientes operaciones de API de Swift:
 El sistema StorageGRID implementa todos los encabezados comunes para las operaciones compatibles según lo definido por la API de almacenamiento de objetos Swift de OpenStack v1.
 
 .Información relacionada
-http://["OpenStack: API de almacenamiento de objetos"^]
+http://docs.openstack.org/developer/swift/api/object_api_v1_overview.html["OpenStack: API de almacenamiento de objetos"^]
