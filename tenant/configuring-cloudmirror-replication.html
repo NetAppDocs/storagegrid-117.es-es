@@ -42,6 +42,7 @@
   <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/storagegrid-117/tenant/configuring-cloudmirror-replication.html" />
   <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/storagegrid-117/tenant/configuring-cloudmirror-replication.html" />
   <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/storagegrid-117/tenant/configuring-cloudmirror-replication.html" />
+  <link rel="alternate" hreflang="it" href="https://docs.netapp.com/it-it/storagegrid-117/tenant/configuring-cloudmirror-replication.html" />
   <link rel='stylesheet' href='/es-es/storagegrid-117/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
     function addAdobeLaunch(adobeId) {
       var head = document.getElementsByTagName('head')[0];
@@ -311,6 +312,8 @@
           <a href="https://docs.netapp.com/de-de/storagegrid-117/tenant/configuring-cloudmirror-replication.html" target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
         </li><li>
           <a href="https://docs.netapp.com/fr-fr/storagegrid-117/tenant/configuring-cloudmirror-replication.html" target="_self"><span translate="no" class="notranslate">Français</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/it-it/storagegrid-117/tenant/configuring-cloudmirror-replication.html" target="_self"><span translate="no" class="notranslate">Italiano</span></a>
         </li></ul>
     </div>
     <!-- End Language Selector -->
@@ -15002,7 +15005,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-18 19:58:16 +0000">05/18/2023</time>
+    <time datetime="2023-05-23 19:11:06 +0000">05/23/2023</time>
     
   
 
@@ -15064,7 +15067,7 @@ La replicación no es compatible con buckets de origen o destino con el bloqueo 
 </table>
 </div>
 <div class="paragraph">
-<p>Para obtener información general sobre la replicación de bloques y cómo configurarla, consulte https://["Documentación de Amazon Simple Storage Service (S3): Replicación de objetos"^]. Para obtener información sobre cómo StorageGRID implementa GetBucketReplication, DeleteBucketReplication y PutBucketReplication, consulte <a href="../s3/operations-on-buckets.html">"Operaciones en bloques"</a>.</p>
+<p>Para obtener información general sobre la replicación de bloques y cómo configurarla, consulte <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html" target="_blank" rel="noopener">"Documentación de Amazon Simple Storage Service (S3): Replicación de objetos"</a>. Para obtener información sobre cómo StorageGRID implementa GetBucketReplication, DeleteBucketReplication y PutBucketReplication, consulte <a href="../s3/operations-on-buckets.html">"Operaciones en bloques"</a>.</p>
 </div>
 <div class="paragraph">
 <p>Si habilita la replicación de CloudMirror en un bloque que contiene objetos, se replican los nuevos objetos agregados al bloque, pero los objetos existentes del bloque no se replican. Debe actualizar los objetos existentes para activar la replicación.</p>

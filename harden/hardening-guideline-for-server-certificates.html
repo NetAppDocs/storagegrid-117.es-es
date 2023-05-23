@@ -42,6 +42,7 @@
   <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/storagegrid-117/harden/hardening-guideline-for-server-certificates.html" />
   <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/storagegrid-117/harden/hardening-guideline-for-server-certificates.html" />
   <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/storagegrid-117/harden/hardening-guideline-for-server-certificates.html" />
+  <link rel="alternate" hreflang="it" href="https://docs.netapp.com/it-it/storagegrid-117/harden/hardening-guideline-for-server-certificates.html" />
   <link rel='stylesheet' href='/es-es/storagegrid-117/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
     function addAdobeLaunch(adobeId) {
       var head = document.getElementsByTagName('head')[0];
@@ -311,6 +312,8 @@
           <a href="https://docs.netapp.com/de-de/storagegrid-117/harden/hardening-guideline-for-server-certificates.html" target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
         </li><li>
           <a href="https://docs.netapp.com/fr-fr/storagegrid-117/harden/hardening-guideline-for-server-certificates.html" target="_self"><span translate="no" class="notranslate">Français</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/it-it/storagegrid-117/harden/hardening-guideline-for-server-certificates.html" target="_self"><span translate="no" class="notranslate">Italiano</span></a>
         </li></ul>
     </div>
     <!-- End Language Selector -->
@@ -15002,7 +15005,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-18 19:58:16 +0000">05/18/2023</time>
+    <time datetime="2023-05-23 19:11:06 +0000">05/23/2023</time>
     
   
 
@@ -15062,7 +15065,7 @@ StorageGRID gestiona los certificados utilizados para los extremos del equilibra
 <div class="ulist">
 <ul>
 <li>
-<p>Los certificados deben tener un <code><em>subjectAltName</em></code> Que coincida con las entradas de DNS para StorageGRID. Para obtener más información, consulte la sección 4.2.1.6, "Nombre alternativo de la expulsión" en https://["RFC 5280: Certificado PKIX y perfil CRL"^].</p>
+<p>Los certificados deben tener un <code><em>subjectAltName</em></code> Que coincida con las entradas de DNS para StorageGRID. Para obtener más información, consulte la sección 4.2.1.6, "Nombre alternativo de la expulsión" en <a href="https://tools.ietf.org/html/rfc5280#section-4.2.1.6" target="_blank" rel="noopener">"RFC 5280: Certificado PKIX y perfil CRL"</a>.</p>
 </li>
 <li>
 <p>Cuando sea posible, evite el uso de certificados comodín. Una excepción a esta directriz es el certificado para un punto final de estilo alojado virtual S3, que requiere el uso de un comodín si los nombres de depósito no se conocen por adelantado.</p>
