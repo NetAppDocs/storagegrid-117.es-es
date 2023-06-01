@@ -38,7 +38,7 @@ Para utilizar sistemas y protocolos como SMTP, DNS, SSH o DHCP, debe reasignar p
 En la siguiente tabla se muestran los puertos que se utilizan para el tráfico hacia los nodos.
 
 
-NOTE: En esta lista no se incluyen los puertos que se pueden configurar como link:../admin/configuring-load-balancer-endpoints.html["puntos finales del equilibrador de carga"].
+NOTE: En esta lista no se incluyen los puertos que se pueden configurar como link:../admin/configuring-load-balancer-endpoints.html["puntos finales del equilibrador de carga"] o se utiliza para link:../monitor/configuring-syslog-server.html["servidores de syslog"].
 
 [cols="1a,1a,1a,1a,1a,4a"]
 |===
