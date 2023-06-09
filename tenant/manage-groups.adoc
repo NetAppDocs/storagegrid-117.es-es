@@ -71,9 +71,28 @@ Si la cuenta de inquilino tiene el permiso *Usar conexión de federación de gri
 *** Si está editando un grupo Swift, opcionalmente seleccione o desactive la casilla de verificación *Swift Administrator*.
 
 
-.. En la pestaña *Usuarios*, agregue o elimine usuarios locales.
+
+
+. Para añadir uno o varios usuarios locales existentes al grupo:
++
+.. Seleccione la ficha Usuarios.
 +
 image::../media/manage_users.png[Gestionar usuarios]
+
+.. Selecciona *Añadir usuarios*.
+.. Seleccione los usuarios existentes que desea agregar y seleccione *Agregar usuarios*.
++
+Aparece un mensaje de éxito en la parte superior derecha.
+
+
+
+. Para eliminar usuarios locales del grupo:
++
+.. Seleccione la ficha Usuarios.
+.. Selecciona *Eliminar usuarios*.
+.. Seleccione los usuarios que desea eliminar y seleccione *Eliminar usuarios*.
++
+Aparece un mensaje de éxito en la parte superior derecha.
 
 
 
