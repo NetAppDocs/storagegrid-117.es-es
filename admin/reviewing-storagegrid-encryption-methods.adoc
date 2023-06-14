@@ -25,7 +25,10 @@ Servidor de gestión de claves (KMS) en Grid Manager
  a| 
 Usted link:kms-configuring.html["configurar un servidor de gestión de claves"] Para el sitio de StorageGRID y. link:../installconfig/optional-enabling-node-encryption.html["habilite el cifrado de nodos para el dispositivo"]. A continuación, un nodo de dispositivo se conecta al KMS para solicitar una clave de cifrado (KEK). Esta clave cifra y descifra la clave de cifrado de datos (DEK) en cada volumen.
  a| 
-Nodos de dispositivo con *cifrado de nodos* activado durante la instalación. Todos los datos del dispositivo están protegidos frente a la pérdida física o la eliminación del centro de datos. Se puede usar con algunos dispositivos de almacenamiento y servicios de StorageGRID.
+Nodos de dispositivo con *cifrado de nodos* activado durante la instalación. Todos los datos del dispositivo están protegidos frente a la pérdida física o la eliminación del centro de datos.
+
+
+NOTE: La gestión de claves de cifrado con un KMS solo es compatible con los nodos de almacenamiento y los dispositivos de servicio.
 
 
 
