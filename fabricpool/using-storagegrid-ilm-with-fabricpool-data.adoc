@@ -18,6 +18,9 @@ Este ejemplo asume que está diseñando las reglas del ILM y una política de IL
 
 CAUTION: Las siguientes reglas y políticas de ILM son solo ejemplos. Existen varias formas de configurar las reglas de ILM. Antes de activar una nueva directiva, simule la política propuesta para confirmar que funcionará con el fin de proteger el contenido de las pérdidas. Para obtener más información, consulte link:../ilm/index.html["Gestión de objetos con ILM"].
 
+
+CAUTION: Para evitar la pérdida de datos, no use una regla de ILM que caduque o elimine los datos del nivel de cloud de FabricPool. Establezca el período de retención en *Forever* para asegurarse de que los objetos FabricPool no sean eliminados por StorageGRID ILM.
+
 .Antes de empezar
 * Ha revisado el link:best-practices-ilm.html["Prácticas recomendadas para usar ILM con datos de FabricPool"].
 * Ha iniciado sesión en Grid Manager mediante un link:../admin/web-browser-requirements.html["navegador web compatible"].
@@ -74,7 +77,10 @@ Período de tiempo y colocaciones
  a| 
 Desde la tienda del día 0 para siempre
 
-Almacene objetos mediante la codificación de borrado usando el esquema EC 2+1 en Denver.
+Almacene objetos mediante la codificación de borrado usando el esquema EC 2+1 en Denver y conserve esos objetos en StorageGRID para siempre.
+
+
+CAUTION: Para evitar la pérdida de datos, no use una regla de ILM que caduque o elimine los datos del nivel de cloud de FabricPool.
 
 
 
@@ -144,5 +150,5 @@ Cuando se activa esta política, StorageGRID coloca los datos de objetos de la s
 
 * Los datos se organizan en niveles desde FabricPool en `fabricpool-bucket` se codificará mediante el esquema de codificación de borrado 2+1. Se colocarán dos fragmentos de datos y un fragmento de paridad en tres nodos de almacenamiento diferentes.
 * Se replicarán todos los objetos de todos los demás bloques. Se crearán dos copias y se colocarán en dos nodos de almacenamiento diferentes.
-* Las copias replicadas y con código de borrado se mantendrán en StorageGRID hasta que se eliminen en ONTAP. El ILM de StorageGRID no eliminará nunca estos elementos.
+* Las copias se mantendrán en StorageGRID para siempre. Gestión de la vida útil de la información de StorageGRID no eliminará estos objetos.
 

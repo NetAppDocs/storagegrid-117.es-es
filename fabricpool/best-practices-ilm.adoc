@@ -33,7 +33,11 @@ La mejor práctica recomendada es utilizar códigos de borrado 2+1 dentro de las
 
 CAUTION: Una regla de ILM que crea solo una copia replicada en cualquier periodo de tiempo pone los datos en riesgo de pérdida permanente. Si sólo existe una copia replicada de un objeto, éste se pierde si falla un nodo de almacenamiento o tiene un error importante. También perderá temporalmente el acceso al objeto durante procedimientos de mantenimiento, como las actualizaciones.
 
-* No utilice una regla de ILM que caduque o elimine los datos del nivel cloud de FabricPool. Establezca el período de retención en cada regla de ILM en ««Forever»» para garantizar que los objetos de FabricPool no se eliminen por parte de ILM de StorageGRID.
+* Si lo necesita link:remove-fabricpool-data.html["Eliminar datos de FabricPool de StorageGRID"], Use ONTAP para recuperar todos los datos del volumen FabricPool y promocionarlo al nivel de rendimiento.
++
+
+CAUTION: Para evitar la pérdida de datos, no use una regla de ILM que caduque o elimine los datos del nivel de cloud de FabricPool. Establezca el período de retención en cada regla de gestión de la vida útil de la información en *forever* para asegurarse de que los objetos de FabricPool no se eliminen mediante gestión de la vida útil de la información de StorageGRID.
+
 * No cree reglas que trasladarán los datos de nivel del cloud de FabricPool fuera del bloque a otra ubicación. No se puede usar un Pool de almacenamiento en cloud para mover datos de FabricPool a otro almacén de objetos. De forma similar, no es posible archivar datos FabricPool en cinta utilizando un nodo de archivado.
 +
 

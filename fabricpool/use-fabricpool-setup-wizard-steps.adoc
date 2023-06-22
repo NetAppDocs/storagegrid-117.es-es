@@ -525,12 +525,12 @@ La instrucción de colocación comienza cuando los objetos se guardan inicialmen
  a| 
 Instrucción de colocación
  a| 
-codificación de borrado 2+1
+Use el código de borrado 2+1 desde el día 0 hasta siempre
 
 |===
 . Ordena el diagrama de retención por *periodo de tiempo* y *Grupo de almacenamiento* para confirmar la instrucción de colocación.
 +
-** El *período de tiempo* para la regla es *Día 0 - Para siempre*. *Día 0* significa que la regla se aplica cuando los datos se almacenan en niveles desde ONTAP. *Forever* significa que StorageGRID no eliminará los datos que se han almacenado en niveles de ONTAP a menos que reciba una solicitud de eliminación de ONTAP.
+** El *período de tiempo* para la regla es *Día 0 - Para siempre*. *Día 0* significa que la regla se aplica cuando los datos se almacenan en niveles desde ONTAP. *Forever* significa que StorageGRID ILM no eliminará los datos que se han organizado en niveles desde ONTAP.
 ** El *Pool de almacenamiento* para la regla es el pool de almacenamiento seleccionado. *EC 2+1* significa que los datos se almacenarán utilizando la codificación de borrado 2+1. Cada objeto se guardará como dos fragmentos de datos y un fragmento de paridad. Los tres fragmentos para cada objeto se guardarán en nodos de almacenamiento diferentes en un único sitio.
 
 
@@ -547,6 +547,9 @@ Para obtener más información sobre este paso, consulte link:../ilm/creating-il
 
 
 CAUTION: Al activar una nueva política de ILM, StorageGRID utiliza esa política para gestionar la ubicación, la duración y la protección de datos de todos los objetos del grid, incluidos los objetos existentes y los objetos recién procesados. En algunos casos, la activación de una nueva política puede provocar que los objetos existentes se muevan a nuevas ubicaciones.
+
+
+CAUTION: Para evitar la pérdida de datos, no use una regla de ILM que caduque o elimine los datos del nivel de cloud de FabricPool. Establezca el período de retención en *Forever* para asegurarse de que los objetos FabricPool no sean eliminados por StorageGRID ILM.
 
 .Pasos
 . Opcionalmente, actualice el *Policy name* generado por el sistema. De forma predeterminada, el sistema agrega «`+ FabricPool » al nombre de su política activa o propuesta, pero puede proporcionar su propio nombre.
@@ -598,7 +601,7 @@ Puesto que la regla FabricPool es la primera regla, los objetos del depósito de
 . Revise el diagrama de retención para saber cómo se retendrán los diferentes objetos.
 +
 .. Seleccione *Expandir todo* para ver un diagrama de retención para cada regla en la política propuesta.
-.. Seleccione *Período de tiempo* y *Grupo de almacenamiento* para revisar el diagrama de retención.
+.. Seleccione *Período de tiempo* y *Grupo de almacenamiento* para revisar el diagrama de retención. Confirme que cualquier regla que se aplique al depósito o inquilino de FabricPool retenga objetos *para siempre*.
 
 
 . Cuando haya revisado la política propuesta, seleccione *Activar y continuar* para activar la política y vaya al paso de clasificación de tráfico.
