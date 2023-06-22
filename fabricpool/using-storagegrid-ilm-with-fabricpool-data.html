@@ -3318,6 +3318,8 @@
   
 
 
+
+
         </li>
       </ul>
     
@@ -10573,7 +10575,14 @@
       class=" "
     ><a class="na-navbar-padding" href="/es-es/storagegrid-117/fabricpool/other-best-practices-for-storagegrid-and-fabricpool.html">
         Otras prácticas recomendadas
-      </a></li></ul></li></ul></li></ul></li><li 
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eliminar datos de FabricPool de StorageGRID"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/es-es/storagegrid-117/fabricpool/remove-fabricpool-data.html">
+        Eliminar datos de FabricPool de StorageGRID
+      </a></li></ul></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Utilice StorageGRID"
       data-li-level="1" 
@@ -15005,7 +15014,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-18 19:58:16 +0000">05/18/2023</time>
+    <time datetime="2023-06-22 22:08:14 +0000">06/22/2023</time>
     
   
 
@@ -15029,6 +15038,18 @@
 </td>
 <td class="content">
 Las siguientes reglas y políticas de ILM son solo ejemplos. Existen varias formas de configurar las reglas de ILM. Antes de activar una nueva directiva, simule la política propuesta para confirmar que funcionará con el fin de proteger el contenido de las pérdidas. Para obtener más información, consulte <a href="../ilm/index.html">"Gestión de objetos con ILM"</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/storagegrid-117/images/caution.svg" alt="Precaución">
+</td>
+<td class="content">
+Para evitar la pérdida de datos, no use una regla de ILM que caduque o elimine los datos del nivel de cloud de FabricPool. Establezca el período de retención en <strong>Forever</strong> para asegurarse de que los objetos FabricPool no sean eliminados por StorageGRID ILM.
 </td>
 </tr>
 </table>
@@ -15125,7 +15146,19 @@ Este requisito previo no se aplica a las nuevas instalaciones de StorageGRID 11,
 <p>Desde la tienda del día 0 para siempre</p>
 </div>
 <div class="paragraph">
-<p>Almacene objetos mediante la codificación de borrado usando el esquema EC 2+1 en Denver.</p>
+<p>Almacene objetos mediante la codificación de borrado usando el esquema EC 2+1 en Denver y conserve esos objetos en StorageGRID para siempre.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/storagegrid-117/images/caution.svg" alt="Precaución">
+</td>
+<td class="content">
+Para evitar la pérdida de datos, no use una regla de ILM que caduque o elimine los datos del nivel de cloud de FabricPool.
+</td>
+</tr>
+</table>
 </div></div></td>
 </tr>
 <tr>
@@ -15233,7 +15266,7 @@ Este requisito previo no se aplica a las nuevas instalaciones de StorageGRID 11,
 <p>Se replicarán todos los objetos de todos los demás bloques. Se crearán dos copias y se colocarán en dos nodos de almacenamiento diferentes.</p>
 </li>
 <li>
-<p>Las copias replicadas y con código de borrado se mantendrán en StorageGRID hasta que se eliminen en ONTAP. El ILM de StorageGRID no eliminará nunca estos elementos.</p>
+<p>Las copias se mantendrán en StorageGRID para siempre. Gestión de la vida útil de la información de StorageGRID no eliminará estos objetos.</p>
 </li>
 </ul>
 </div>
