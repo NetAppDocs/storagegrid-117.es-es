@@ -28,7 +28,7 @@ Se puede configurar un KMS en Grid Manager antes o después de instalar el dispo
 
 
 
-IMPORTANT: Los datos que existen en un dispositivo que tiene el cifrado de nodo habilitado antes de conectarse al KMS se cifran con una clave temporal que no es segura. El dispositivo no está protegido de la retirada o robo hasta que la clave se configure en un valor proporcionado por el KMS.
+IMPORTANT: Antes de que un dispositivo con el cifrado de nodo habilitado se conecte al sistema de gestión de claves (KMS), los datos del dispositivo se cifran con una clave temporal que no es segura. El dispositivo no está protegido de la retirada o robo hasta que la clave se configure en un valor proporcionado por el KMS.
 
 Sin la clave KMS necesaria para descifrar el disco, los datos del dispositivo no se pueden recuperar y se pierden efectivamente. Este es el caso cuando la clave de descifrado no se puede recuperar del KMS. La clave se vuelve inaccesible si un cliente borra la configuración de KMS, caduca una clave KMS, se pierde la conexión con el KMS o se elimina el dispositivo del sistema StorageGRID donde se instalan sus claves KMS.
 
