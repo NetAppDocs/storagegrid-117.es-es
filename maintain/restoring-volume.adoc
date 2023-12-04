@@ -114,7 +114,7 @@ La pestaña *Progreso de la restauración* muestra el estado del proceso de rest
 
 image::../media/vol-restore-restore-progress.png[Restauración de volumen: Pestaña Progreso de restauración]
 
-Las tasas de reparación de datos para objetos replicados y con código de borrado en todos los volúmenes son estimaciones que resumen todas las restauraciones en proceso, incluidas las restauraciones iniciadas mediante el `repair-data` guión. También se indica el porcentaje de objetos en esos volúmenes que están intactos y no requieren restauración.
+Las tasas de reparación de datos para objetos replicados y con código de borrado en todos los volúmenes son medias que resumen todas las restauraciones en curso, incluidas las restauraciones iniciadas mediante el `repair-data` guión. También se indica el porcentaje de objetos en esos volúmenes que están intactos y no requieren restauración.
 
 
 NOTE: La restauración de datos replicada depende de la disponibilidad de los recursos donde se almacenan las copias replicadas. El progreso de la restauración de datos replicados no es lineal y puede tardar días o semanas en completarse.

@@ -606,17 +606,17 @@ link:../ubuntu/configuring-host-network.html#considerations-and-recommendations-
 
 
  a| 
-INTERFACES_TARGET_nnnn
+INTERFAZ_DESTINO_nnnn
  a| 
 O
  a| 
 Nombre y descripción opcional para una interfaz adicional que se desea añadir a este nodo. Puede añadir varias interfaces adicionales a cada nodo.
 
-Para _nnnn_, especifique un número único para cada entrada_DESTINO_INTERFACES que esté agregando.
+Para _nnnn_, especifique un número único para cada entrada de INTERFAZ_DESTINO que agregue.
 
 Para el valor, especifique el nombre de la interfaz física en el host de configuración básica. A continuación, de manera opcional, añada una coma y proporcione una descripción de la interfaz, que se muestra en la página interfaces VLAN y en la página grupos de alta disponibilidad.
 
-Por ejemplo: `INTERFACES_TARGET_01=ens256, Trunk`
+Por ejemplo: `INTERFACE_TARGET_0001=ens256, Trunk`
 
 Si añade una interfaz troncal, debe configurar una interfaz VLAN en StorageGRID. Si agrega una interfaz de acceso, puede añadir la interfaz directamente a un grupo de alta disponibilidad; no es necesario configurar una interfaz de VLAN.
 

@@ -15,12 +15,19 @@ La interfaz de usuario del controlador de gestión de placa base (BMC) en el dis
 
 Utilice los siguientes procedimientos en esta sección para configurar BMC al instalar el dispositivo:
 
-* Cambie la contraseña raíz de la interfaz de BMC
-* Establezca la dirección IP para el puerto de administración de BMC
-* Acceda a la interfaz de BMC
-* Configure los ajustes de SNMP
-* Configurar notificaciones por correo electrónico y alertas
+* link:../installconfig/changing-root-password-for-bmc-interface.html["Cambie la contraseña raíz de la interfaz de BMC"]
+* link:../installconfig/setting-ip-address-for-bmc-management-port.html["Establezca la dirección IP para el puerto de administración de BMC"]
+* link:../installconfig/accessing-bmc-interface.html["Acceda a la interfaz de BMC"]
+* link:../installconfig/configuring-snmp-settings-for-bmc.html["Configure los ajustes de SNMP"]
+* link:../installconfig/setting-up-email-notifications-for-alerts.html["Configurar notificaciones por correo electrónico para las alertas de BMC"]
 
 
+[NOTE]
+====
+Si el dispositivo ya se ha instalado en un grid y está ejecutando el software StorageGRID, siga estos procedimientos:
 
-NOTE: Si el dispositivo ya se ha instalado en un grid y está ejecutando el software StorageGRID, consulte los siguientes procedimientos para ver un mecanismo alternativo para la configuración de BMC.
+* link:../commonhardware/placing-appliance-into-maintenance-mode.html["Coloque el dispositivo en modo de mantenimiento"] Para acceder al instalador del dispositivo StorageGRID.
+* Consulte link:../installconfig/setting-ip-address-for-bmc-management-port.html["Establezca la dirección IP para el puerto de administración de BMC"] Para obtener información sobre cómo acceder a la interfaz de BMC mediante el instalador de dispositivos StorageGRID.
+
+
+====

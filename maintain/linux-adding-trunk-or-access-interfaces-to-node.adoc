@@ -42,10 +42,10 @@ El nodo no está disponible durante un breve periodo de tiempo cuando se añaden
 
 . Agregue una entrada al archivo para especificar el nombre y, opcionalmente, la descripción de cada interfaz adicional que desee agregar al nodo. Utilice este formato.
 +
-`INTERFACES_TARGET_nnnn=_value_`
+`INTERFACE_TARGET_nnnn=_value_`
 
 +
-Para _nnnn_, especifique un número único para cada uno `INTERFACES_TARGET` entrada que está agregando.
+Para _nnnn_, especifique un número único para cada uno `INTERFACE_TARGET` entrada que está agregando.
 
 +
 En _value_, especifique el nombre de la interfaz física en el host de configuración básica. A continuación, de manera opcional, añada una coma y proporcione una descripción de la interfaz, que se muestra en la página interfaces VLAN y en la página grupos de alta disponibilidad.
@@ -54,7 +54,7 @@ En _value_, especifique el nombre de la interfaz física en el host de configura
 Por ejemplo:
 
 +
-`INTERFACES_TARGET_01=ens256, Trunk`
+`INTERFACE_TARGET_0001=ens256, Trunk`
 
 +
 

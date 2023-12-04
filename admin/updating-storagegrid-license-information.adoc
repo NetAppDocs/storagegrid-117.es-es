@@ -13,9 +13,6 @@ summary: Debe actualizar la información de licencia del sistema de StorageGRID 
 [role="lead"]
 Debe actualizar la información de licencia del sistema de StorageGRID en cualquier momento que cambien las condiciones de su licencia. Por ejemplo, debe actualizar la información de la licencia si adquiere capacidad de almacenamiento adicional para su grid.
 
-
-NOTE: Si necesita cambiar los términos de su licencia o desea fusionar, dividir o redistribuir una licencia existente, póngase en contacto con el servicio de soporte para abrir un caso de soporte no técnico.
-
 .Antes de empezar
 * Tiene un nuevo archivo de licencia que se aplicará al sistema StorageGRID.
 * Tiene permisos de acceso específicos.
