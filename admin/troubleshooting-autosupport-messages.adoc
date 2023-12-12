@@ -18,6 +18,9 @@ Cuando el mensaje AutoSupport no se envía, aparece "'failed'" en la ficha *resu
 image::../media/autosupport_results_tab.png[Fallo al enviar el mensaje de AutoSupport]
 
 
+NOTE: Si configuró un servidor proxy para reenviar mensajes de AutoSupport a NetApp, debería hacerlo link:configuring-admin-proxy-settings.html["compruebe que los valores de configuración del servidor proxy son correctos"].
+
+
 
 == Fallo de mensaje semanal de AutoSupport
 
