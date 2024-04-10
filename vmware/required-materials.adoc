@@ -44,7 +44,7 @@ Durante la instalación, se usa VMware vSphere Web Client para implementar nodos
  a| 
 Portátil de servicio
  a| 
-El sistema StorageGRID se instala mediante un laptop de mantenimiento.el portátil de servicio debe tener:
+El sistema StorageGRID se instala a través de un ordenador portátil de servicio. El portátil de servicio debe tener:
 
 * Puerto de red
 * Cliente SSH (por ejemplo, PuTTY)
