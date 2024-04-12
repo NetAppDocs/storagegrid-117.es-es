@@ -61,9 +61,10 @@ Aparece la página de inicio de sesión de BMC.
 
 NOTE: Si aún no ha configurado `BMC_Port_IP`, siga las instrucciones de link:configuring-bmc-interface.html["Configurar la interfaz de BMC"]. Si no puede seguir este procedimiento debido a un problema de hardware y aún no ha configurado una dirección IP de BMC, es posible que aún pueda acceder al BMC. De forma predeterminada, el BMC obtiene una dirección IP mediante DHCP. Si DHCP está activado en la red de BMC, el administrador de red puede proporcionar la dirección IP asignada al MAC de BMC, que está impresa en la etiqueta de la parte frontal del dispositivo. Si DHCP no está habilitado en la red BMC, el BMC no responderá después de unos minutos y se asignará la IP estática predeterminada `192.168.0.120`. Es posible que necesite conectar su portátil directamente al puerto BMC y cambiar la configuración de red para asignar una IP a su portátil `192.168.0.200/24`, para navegar a. `192.168.0.120`.
 
-. Introduzca el nombre de usuario y la contraseña de raíz con la contraseña que estableció al usuario link:changing-root-password-for-bmc-interface.html["se ha cambiado la contraseña raíz predeterminada"]:
+. Introduzca el nombre de usuario y la contraseña de administrador o raíz, con la contraseña que configuró cuando lo hizo link:changing-root-password-for-bmc-interface.html["se ha cambiado la contraseña raíz predeterminada"]:
 +
-image::../media/bmc_signin_page.gif[Página de inicio de sesión de BMC]
+
+NOTE: El usuario predeterminado depende de la fecha en que haya instalado el dispositivo StorageGRID. El usuario predeterminado es *admin* para nuevas instalaciones y *root* para instalaciones más antiguas.
 
 . Seleccione *Iniciar sesión*.
 +
