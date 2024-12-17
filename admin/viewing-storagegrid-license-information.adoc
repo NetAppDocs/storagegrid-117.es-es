@@ -39,7 +39,7 @@ image::../media/dashboard_health_panel_license_status.png[Estado de la licencia 
 ** Fecha de finalización de la licencia. *N/A* aparece para una licencia perpetua.
 ** Fecha de finalización del contrato de servicio de soporte
 +
-Esta fecha se lee del archivo de licencia actual y puede estar obsoleta si se amplió o renovó el contrato de servicio de soporte después de obtener el archivo de licencia. Para actualizar este valor, consulte link:updating-storagegrid-license-information.html["Actualice la información de licencia de StorageGRID"]. También puede consultar la fecha de finalización real del contrato mediante Active IQ.
+Esta fecha se lee del archivo de licencia actual y puede estar obsoleta si se amplió o renovó el contrato de servicio de soporte después de obtener el archivo de licencia. Para actualizar este valor, consulte link:updating-storagegrid-license-information.html["Actualice la información de licencia de StorageGRID"]. También puede ver la fecha de finalización real del contrato con el asesor digital de Active IQ (también conocido como asesor digital).
 
 ** Contenido del archivo de texto de licencia
 +
