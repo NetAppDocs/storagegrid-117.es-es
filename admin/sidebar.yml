@@ -285,6 +285,8 @@ entries:
       url: "/admin/what-storage-volume-watermarks-are.html"
   - title: Gestione el almacenamiento de metadatos de objetos
     url: "/admin/managing-object-metadata-storage.html"
+  - title: Aumentar la configuración del espacio reservado de metadatos
+    url: "/admin/increasing-metadata-reserved-space-setting.html"
   - title: Comprimir objetos almacenados
     url: "/admin/configuring-stored-object-compression.html"
   - title: Opciones de configuración del nodo de almacenamiento
