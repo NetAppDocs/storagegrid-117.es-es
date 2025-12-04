@@ -11,7 +11,7 @@ summary: Cuando se activa la alerta *objetos perdidos*, debe investigar inmediat
 
 
 [role="lead"]
-Cuando se activa la alerta *objetos perdidos*, debe investigar inmediatamente. Recopile información sobre los objetos afectados y póngase en contacto con el soporte técnico.
+Cuando se activa la alerta de Objetos perdidos, debes investigar de inmediato. Recopile información sobre los objetos afectados y comuníquese con el soporte técnico.
 
 .Antes de empezar
 * Debe iniciar sesión en Grid Manager mediante un link:../admin/web-browser-requirements.html["navegador web compatible"].
